@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+  // MARK: - PROPERTIES
+  
+  // MARK: - BODY
+  var body: some View {
+    TabView {
+      CalendarView()
+        .tabItem {
+          Label("Calendar", systemImage: "calendar")
+        }
+      
+      MedicationView()
+        .tabItem {
+          Label("Medication", systemImage: "pills")
+        }
+      
+      JournalView()
+        .tabItem {
+          Label("Journal", systemImage: "book.closed")
+        }
+    } //: TABVIEW
+  }
 }
 
+// MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

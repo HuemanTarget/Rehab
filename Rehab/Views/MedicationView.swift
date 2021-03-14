@@ -1,0 +1,20 @@
+//
+//  MedicationView.swift
+//  Rehab
+//
+//  Created by Joshua Basche on 3/14/21.
+//
+
+import SwiftUI
+
+struct MedicationView: View {
+    var body: some View {
+        Text("Medication View")
+    }
+}
+
+struct MedicationView_Previews: PreviewProvider {
+    static var previews: some View {
+        MedicationView()
+    }
+}
