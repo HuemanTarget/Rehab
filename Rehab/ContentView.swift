@@ -12,22 +12,7 @@ struct ContentView: View {
   
   // MARK: - BODY
   var body: some View {
-    TabView {
-      CalendarView()
-        .tabItem {
-          Label("Calendar", systemImage: "calendar")
-        }
-      
-      MedicationView()
-        .tabItem {
-          Label("Medication", systemImage: "pills")
-        }
-      
-      JournalView()
-        .tabItem {
-          Label("Journal", systemImage: "book.closed")
-        }
-    } //: TABVIEW
+    TabBarView()
   }
 }
 

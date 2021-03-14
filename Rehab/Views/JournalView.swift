@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct JournalView: View {
-    var body: some View {
-        Text("Journal View")
-    }
+  // MARK: - PROPERTIES
+  
+  // MARK: - BODY
+  var body: some View {
+    Text("Journal View")
+  }
 }
 
+// MARK: - PREVIEW
 struct JournalView_Previews: PreviewProvider {
-    static var previews: some View {
-        JournalView()
-    }
+  static var previews: some View {
+    JournalView()
+  }
 }

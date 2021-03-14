@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct MedicationView: View {
-    var body: some View {
-        Text("Medication View")
-    }
+  // MARK: - PROPERTIES
+  
+  // MARK: - BODY
+  var body: some View {
+    Text("Medication View")
+  }
 }
 
+// MARK: - PREVIEW
 struct MedicationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MedicationView()
-    }
+  static var previews: some View {
+    MedicationView()
+  }
 }

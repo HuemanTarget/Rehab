@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct CalendarView: View {
-    var body: some View {
-        Text("Calendar View")
+  // MARK: - PROPERTIES
+  
+  // MARK: - BODY
+  var body: some View {
+    VStack {
+      Text("Calendar View")
     }
+    
+  }
 }
 
+// MARK: - PREVIEW
 struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
-    }
+  static var previews: some View {
+    CalendarView()
+  }
 }
