@@ -15,6 +15,7 @@ struct AddJournalView: View {
   @State private var date = Date()
   @State private var desc: String = ""
   @State private var hr: String = ""
+  @State private var bp: String = ""
   
   // MARK: - BODY
   var body: some View {
@@ -36,11 +37,21 @@ struct AddJournalView: View {
           
           // Heart Rate
           Section(header: Text("Heart Rate")) {
-            TextField("Systolic / Diastolic", text: $hr)
+            TextField("BPM", text: $hr)
               .padding(8)
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
           }
+          
+          // Blood Pressure
+          Section(header: Text("Blood Pressure")) {
+            TextField("Systolic / Diastolic", text: $bp)
+              .padding(8)
+              .cornerRadius(9)
+              .font(.system(size: 20, weight: .bold, design: .default))
+          }
+          
+          // Pain
         }
       }
     }
