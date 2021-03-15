@@ -18,6 +18,7 @@
 		4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */; };
 		4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8D25FEC10600AB4F0B /* JournalView.swift */; };
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
+		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
 		4E580E8D25FEC10600AB4F0B /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,8 @@
 		4E580E6C25FEBFAE00AB4F0B /* Rehab */ = {
 			isa = PBXGroup;
 			children = (
+				4E580E9325FEC5D800AB4F0B /* App */,
 				4E580E8525FEC08B00AB4F0B /* Views */,
-				4E580E9325FEC5D800AB4F0B /* Swift Controllers */,
-				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
 				4E580E7625FEBFAF00AB4F0B /* Assets.xcassets */,
 				4E580E7B25FEBFAF00AB4F0B /* LaunchScreen.storyboard */,
 				4E580E7E25FEBFAF00AB4F0B /* Info.plist */,
@@ -89,21 +90,23 @@
 		4E580E8525FEC08B00AB4F0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
 				4E580E8725FEC0C300AB4F0B /* CalendarView.swift */,
 				4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */,
 				4E580E8D25FEC10600AB4F0B /* JournalView.swift */,
 				4E580E9025FEC4B900AB4F0B /* TabBarView.swift */,
+				4EED442E2600213F002D4A15 /* AddJournalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4E580E9325FEC5D800AB4F0B /* Swift Controllers */ = {
+		4E580E9325FEC5D800AB4F0B /* App */ = {
 			isa = PBXGroup;
 			children = (
 				4E580E6D25FEBFAE00AB4F0B /* AppDelegate.swift */,
 				4E580E6F25FEBFAE00AB4F0B /* SceneDelegate.swift */,
 			);
-			path = "Swift Controllers";
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +186,7 @@
 				4E580E6E25FEBFAE00AB4F0B /* AppDelegate.swift in Sources */,
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
+				4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */,
 				4E580E7225FEBFAE00AB4F0B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -307,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
