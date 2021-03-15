@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct AddJournalView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  // MARK: - PROPERTIES
+  @Environment(\.managedObjectContext) var managedObjectContext
+  @Environment(\.presentationMode) var presentationMode
+  
+  @State private var date = Date()
+  @State private var desc: String = ""
+  
+  // MARK: - BODY
+  var body: some View {
+    NavigationView {
+      VStack(alignment: .center, spacing: 0) {
+        Form {
+          // Date
+          Section(header: Text("Journal Date")) {
+            
+          }
+          
+          // Description
+          Section(header: Text("Journal Description")) {
+            TextField("Description", text: $desc)
+              .padding(10)
+              .cornerRadius(9)
+              .font(.system(size: 24, weight: .bold, design: .default))
+          }
+        }
+      }
     }
+  }
 }
 
+// MARK: - PREVIEW
 struct AddJournalView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddJournalView()
-    }
+  static var previews: some View {
+    AddJournalView()
+  }
 }
