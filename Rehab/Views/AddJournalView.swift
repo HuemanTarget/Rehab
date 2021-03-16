@@ -79,6 +79,21 @@ struct AddJournalView: View {
           
           // Save Button
           Button(action: {
+            if self.hr == "" {
+              hr = "N/A"
+            } else {
+              hr = "\(hr) bpm"
+            }
+            
+            if self.bp == "" {
+              bp = "N/A"
+            }
+            
+            if self.notes == "" {
+              notes = "N/A"
+            }
+            
+            
             if self.desc != "" {
               let journal = Journal(context: self.managedObjectContext)
               journal.date = self.date
@@ -91,7 +106,6 @@ struct AddJournalView: View {
               
               do {
                 try self.managedObjectContext.save()
-                print("date: \(date), description: \(desc), HR: \(hr), BP: \(bp), pain: \(pain), notes: \(notes)")
                 self.desc = ""
                 self.hr = ""
                 self.bp = ""

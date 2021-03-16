@@ -37,7 +37,7 @@ struct JournalView: View {
                 .padding(.bottom, 2)
                 .font(.title)
               HStack {
-                Text("HR: \(journal.hr!) bpm" )
+                Text("HR: \(journal.hr!)" )
                 
                 Spacer()
                 
