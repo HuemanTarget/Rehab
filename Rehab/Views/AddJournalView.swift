@@ -32,7 +32,7 @@ struct AddJournalView: View {
         VStack(alignment: .leading, spacing: 20) {
           
           // Date
-          DatePicker("Journal Entry Date", selection: $date)
+          DatePicker("Journal Entry", selection: $date)
             .padding()
           
           // Description

@@ -20,11 +20,37 @@ struct JournalView: View {
     NavigationView {
       ZStack {
         List {
-          ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-            Text("Journal View")
+          ForEach(self.journals, id: \.self) { journal in
+            VStack(alignment: .leading) {
+              Text(journal.desc ?? "Unkown")
+                .padding(.bottom, 2)
+                .font(.title)
+              HStack {
+                Text("HR: \(journal.hr!) bpm" )
+                
+                Spacer()
+                
+                Text("BP: \(journal.bp!)")
+                
+                Spacer()
+                
+                Text("Pain Level: \(journal.pain!)")
+              }
+              .padding(.bottom, 2)
+              .font(.subheadline)
+              
+              Text("Notes: \(journal.notes!)")
+                .padding(.bottom, 2)
+            }
           } //: FOREACH
+          .onDelete(perform: deleteJournal)
         } //: LIST
         .navigationBarTitle("Journal", displayMode: .inline)
+        
+        if journals.count == 0 {
+          Text("There Are No Journal Entries")
+        }
+        
       } //: ZSTACK
       .sheet(isPresented: $showingAddJournalView) {
         AddJournalView().environment(\.managedObjectContext, self.managedObjectContext)
@@ -45,7 +71,7 @@ struct JournalView: View {
           Button(action: {
             self.showingAddJournalView.toggle()
           }) {
-            Image(systemName: "book.closed")
+            Image(systemName: "book.circle.fill")
               .resizable()
               .scaledToFit()
               .background(Circle().fill(Color("ColorBase")))
@@ -58,11 +84,30 @@ struct JournalView: View {
       ) //: OVERLAY
     } //: NAVIGATION
   }
+  
+  // MARK: - FUNCTIONS
+  
+  private func deleteJournal(at offsets: IndexSet) {
+    for index in offsets {
+      let journal = journals[index]
+      managedObjectContext.delete(journal)
+      
+      do {
+        try managedObjectContext.save()
+      } catch {
+        print(error)
+      }
+    }
+  }
 }
 
 // MARK: - PREVIEW
 struct JournalView_Previews: PreviewProvider {
   static var previews: some View {
-    JournalView()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    return JournalView()
+      .environment(\.managedObjectContext, context)
+    
   }
 }
