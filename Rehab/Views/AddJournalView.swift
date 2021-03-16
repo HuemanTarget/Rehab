@@ -16,11 +16,15 @@ struct AddJournalView: View {
   @State private var desc: String = ""
   @State private var hr: String = ""
   @State private var bp: String = ""
+  @State private var pain: String = "N/A"
+  
+  
+  let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      VStack(alignment: .center, spacing: 0) {
+      VStack(alignment: .center, spacing: 10) {
         Form {
           // Date
           Section(header: Text("Journal Date")) {
@@ -52,9 +56,18 @@ struct AddJournalView: View {
           }
           
           // Pain
-        }
-      }
-    }
+          Section(header: Text("Pain Level: 1(low) - 10(high)")) {
+            Picker("Pain", selection: $pain) {
+              ForEach(painLevels, id: \.self) {
+                Text($0)
+              }
+            }
+            .pickerStyle(DefaultPickerStyle())
+            .padding(8)
+          }
+        } //: FORM
+      } //: VSTACK
+    } //: NAVIGATION
   }
 }
 
