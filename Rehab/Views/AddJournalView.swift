@@ -87,6 +87,7 @@ struct AddJournalView: View {
               journal.bp = self.bp
               journal.pain = self.pain
               journal.notes = self.notes
+              journal.id = UUID()
               
               do {
                 try self.managedObjectContext.save()

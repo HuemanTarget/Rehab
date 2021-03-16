@@ -15,6 +15,13 @@ struct JournalView: View {
   
   @State private var showingAddJournalView: Bool = false
   
+  var dateFormatter: DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    formatter.timeStyle = .medium
+    return formatter
+  }
+  
   // MARK: - BODY
   var body: some View {
     NavigationView {
@@ -22,6 +29,10 @@ struct JournalView: View {
         List {
           ForEach(self.journals, id: \.self) { journal in
             VStack(alignment: .leading) {
+              Text("\(journal.date ?? Date(), formatter: self.dateFormatter)")
+                .padding(.bottom, 2)
+                .font(.subheadline)
+              
               Text(journal.desc ?? "Unkown")
                 .padding(.bottom, 2)
                 .font(.title)
