@@ -90,6 +90,7 @@ struct AddJournalView: View {
               
               do {
                 try self.managedObjectContext.save()
+                print("date: \(date), description: \(desc), HR: \(hr), BP: \(bp), pain: \(pain), notes: \(notes)")
                 self.desc = ""
                 self.hr = ""
                 self.bp = ""
@@ -102,7 +103,7 @@ struct AddJournalView: View {
             } else {
               self.errorShowing = true
               self.errorTitle = "Invalid Journal Description"
-              self.errorMessage = "Make sure to enter something for\nthe journal description."
+              self.errorMessage = "Please enter something for\nthe journal description."
               
               return
             } //: CONDITIONAL
@@ -123,6 +124,17 @@ struct AddJournalView: View {
         Spacer()
       } //: VSTACK
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
+      .navigationBarItems(
+        trailing:
+          Button(action: {
+            presentationMode.wrappedValue.dismiss()
+          }) {
+            Image(systemName: "xmark")
+          }
+      )
+      .alert(isPresented: $errorShowing) {
+        Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+      }
     } //: NAVIGATION
   }
 }
