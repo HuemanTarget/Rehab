@@ -17,56 +17,72 @@ struct AddJournalView: View {
   @State private var hr: String = ""
   @State private var bp: String = ""
   @State private var pain: String = "N/A"
-  
+  @State private var notes: String = ""
   
   let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      VStack(alignment: .center, spacing: 10) {
-        Form {
+      VStack {
+        VStack(alignment: .leading, spacing: 20) {
+          
           // Date
-          Section(header: Text("Journal Date")) {
-            
-          }
+          DatePicker("Journal Entry Date", selection: $date)
+            .padding()
           
           // Description
-          Section(header: Text("Journal Description")) {
-            TextField("Description", text: $desc)
-              .padding(8)
-              .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
-          }
+          TextField("Journal Description", text: $desc)
+            .padding()
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 24, weight: .bold, design: .default))
+          
           
           // Heart Rate
-          Section(header: Text("Heart Rate")) {
-            TextField("BPM", text: $hr)
-              .padding(8)
-              .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
-          }
+          TextField("Heart Rate - BPM", text: $hr)
+            .padding()
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 24, weight: .bold, design: .default))
           
           // Blood Pressure
-          Section(header: Text("Blood Pressure")) {
-            TextField("Systolic / Diastolic", text: $bp)
-              .padding(8)
-              .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
-          }
+          TextField("Blood Pressure - Systolic / Diastolic", text: $bp)
+            .padding()
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 24, weight: .bold, design: .default))
           
           // Pain
-          Section(header: Text("Pain Level: 1(low) - 10(high)")) {
-            Picker("Pain", selection: $pain) {
-              ForEach(painLevels, id: \.self) {
-                Text($0)
-              }
+          Text("Pain Level 1(low) - 10(high)")
+            .padding(.leading)
+            .padding(.bottom, 0)
+          Picker("Pain", selection: $pain) {
+            ForEach(painLevels, id: \.self) {
+              Text($0)
             }
-            .pickerStyle(DefaultPickerStyle())
-            .padding(8)
           }
-        } //: FORM
+          .pickerStyle(SegmentedPickerStyle())
+          .padding()
+          .padding(.top, 0)
+          
+          // Misc Notes
+          TextField("Misc Notes", text: $notes)
+            .padding(30)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 24, weight: .bold, design: .default))
+          
+          // Save Button
+          Button(action: {
+            // Code Here
+          }) {
+            Text("Save Entry")
+          }
+        } //: VSTACK
+        Spacer()
       } //: VSTACK
+      .navigationBarTitle("New Journal Entry", displayMode: .inline)
     } //: NAVIGATION
   }
 }
