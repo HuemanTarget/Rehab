@@ -11,7 +11,7 @@ struct JournalView: View {
   // MARK: - PROPERTIES
   @Environment(\.managedObjectContext) var managedObjectContext
   
-  @FetchRequest(entity: Journal.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Journal.date, ascending: true)]) var journals: FetchedResults<Journal>
+  @FetchRequest(entity: Journal.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Journal.date, ascending: false)]) var journals: FetchedResults<Journal>
   
   @State private var showingAddJournalView: Bool = false
   
