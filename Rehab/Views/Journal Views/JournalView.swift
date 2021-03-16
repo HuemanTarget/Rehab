@@ -18,7 +18,7 @@ struct JournalView: View {
   var dateFormatter: DateFormatter {
     let formatter = DateFormatter()
     formatter.dateStyle = .long
-    formatter.timeStyle = .medium
+    formatter.timeStyle = .short
     return formatter
   }
   
