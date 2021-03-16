@@ -19,6 +19,10 @@ struct AddJournalView: View {
   @State private var pain: String = "N/A"
   @State private var notes: String = ""
   
+  @State private var errorShowing: Bool = false
+  @State private var errorTitle: String = ""
+  @State private var errorMessage: String = ""
+  
   let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
   // MARK: - BODY
@@ -75,11 +79,47 @@ struct AddJournalView: View {
           
           // Save Button
           Button(action: {
-            // Code Here
+            if self.desc != "" {
+              let journal = Journal(context: self.managedObjectContext)
+              journal.date = self.date
+              journal.desc = self.desc
+              journal.hr = self.hr
+              journal.bp = self.bp
+              journal.pain = self.pain
+              journal.notes = self.notes
+              
+              do {
+                try self.managedObjectContext.save()
+                self.desc = ""
+                self.hr = ""
+                self.bp = ""
+                self.pain = "N/A"
+                self.notes = ""
+              } catch {
+                print(error)
+              }
+    
+            } else {
+              self.errorShowing = true
+              self.errorTitle = "Invalid Journal Description"
+              self.errorMessage = "Make sure to enter something for\nthe journal description."
+              
+              return
+            } //: CONDITIONAL
+            self.presentationMode.wrappedValue.dismiss()
           }) {
-            Text("Save Entry")
-          }
+            Text("Save Journal Entry")
+              .font(.system(size: 24, weight: .bold, design: .default))
+              .padding()
+              .frame(minWidth: 0, maxWidth: .infinity)
+              .background(Color.blue)
+              .cornerRadius(9)
+              .foregroundColor(.white)
+          } //: BUTTON
         } //: VSTACK
+        .padding(.horizontal)
+        .padding(.vertical, 10)
+        
         Spacer()
       } //: VSTACK
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
