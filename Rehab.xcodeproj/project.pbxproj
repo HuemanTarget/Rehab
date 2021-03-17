@@ -33,6 +33,7 @@
 		4EED44AB26025A6B002D4A15 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44AA26025A6B002D4A15 /* KeyboardGuardian.swift */; };
 		4EED44AF26025C00002D4A15 /* CalendarChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44AE26025C00002D4A15 /* CalendarChooser.swift */; };
 		4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B126025CDE002D4A15 /* EventRow.swift */; };
+		4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		4EED44AA26025A6B002D4A15 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		4EED44AE26025C00002D4A15 /* CalendarChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarChooser.swift; sourceTree = "<group>"; };
 		4EED44B126025CDE002D4A15 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCalendarsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				4EED44AE26025C00002D4A15 /* CalendarChooser.swift */,
 				4EED44B126025CDE002D4A15 /* EventRow.swift */,
+				4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */,
 			);
 			path = "Calendar Views";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
 				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
 				4EED44A826025A3A002D4A15 /* GeometryGetter.swift in Sources */,
+				4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */,
 				4EED449F26025708002D4A15 /* UIResponderCurrent.swift in Sources */,
 				4EED449726017EFD002D4A15 /* EKCalendarExtension.swift in Sources */,
 				4EED44AF26025C00002D4A15 /* CalendarChooser.swift in Sources */,
