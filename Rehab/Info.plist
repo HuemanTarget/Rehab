@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Rehab needs access to your camera to take photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Rehab needs acces to your photo library to add photos</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Rehab would like access to your Calendars to import into the app.</string>
+	<string>Rehab needs access to your calendars to import into the app</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

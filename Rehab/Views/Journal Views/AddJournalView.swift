@@ -26,6 +26,8 @@ struct AddJournalView: View {
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
+  @State private var value: CGFloat = 0
+  
   let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
   // MARK: - BODY
@@ -35,29 +37,30 @@ struct AddJournalView: View {
         VStack(alignment: .leading, spacing: 20) {
           
           // Date
-          DatePicker("Journal Entry", selection: $date)
-            .padding()
+//          DatePicker("Journal Entry", selection: $date)
+//            .padding(.top, 10)
           
           // Description
           TextField("Journal Description", text: $desc)
-            .padding()
+            .padding(5)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+            .font(.system(size: 20, weight: .bold, design: .default))
+          
           
           
           // Heart Rate
           TextField("Heart Rate - BPM", text: $hr)
-            .padding()
+            .padding(5)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+            .font(.system(size: 20, weight: .bold, design: .default))
             .keyboardType(.numberPad)
           
           // Blood Pressure
           HStack {
             TextField("BP - Systolic", text: $bp)
-              .padding()
+              .padding(5)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
@@ -66,7 +69,7 @@ struct AddJournalView: View {
             Text(" / ")
             
             TextField("BP - Diastolic", text: $bpd)
-              .padding()
+              .padding(5)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
@@ -75,23 +78,21 @@ struct AddJournalView: View {
           
           // Pain
           Text("Pain Level 1(low) - 10(high)")
-            .padding(.leading)
-            .padding(.bottom, 0)
           Picker("Pain", selection: $pain) {
             ForEach(painLevels, id: \.self) {
               Text($0)
             }
           }
           .pickerStyle(SegmentedPickerStyle())
-          .padding()
-          .padding(.top, 0)
+          .padding(0)
+          
           
           // Misc Notes
           TextField("Misc Notes", text: $notes)
-            .padding(30)
+            .padding(5)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+            .font(.system(size: 20, weight: .bold, design: .default))
           
           // Save Button
           Button(action: {
@@ -101,13 +102,14 @@ struct AddJournalView: View {
               hr = "\(hr) bpm"
             }
             
-            if self.bp == "" {
-              bp = "N/A"
+            if self.bp == "" && self.bpd == "" {
+              bp = "-"
+              bpd = "-"
             }
             
-            if self.bpd == "" {
-              bpd = "N/A"
-            }
+//            if self.bpd == "" {
+//              bpd = "N/A"
+//            }
             
             if self.notes == "" {
               notes = "N/A"
@@ -147,8 +149,8 @@ struct AddJournalView: View {
             self.presentationMode.wrappedValue.dismiss()
           }) {
             Text("Save Journal Entry")
-              .font(.system(size: 24, weight: .bold, design: .default))
-              .padding()
+              .font(.system(size: 20, weight: .bold, design: .default))
+              .padding(10)
               .frame(minWidth: 0, maxWidth: .infinity)
               .background(Color.blue)
               .cornerRadius(9)
@@ -161,6 +163,26 @@ struct AddJournalView: View {
         Spacer()
       } //: VSTACK
       .keyboardAdaptive()
+//      .offset(y: -self.value)
+//      .animation(.spring())
+//      .onAppear {
+//
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+//
+//          let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+//          let height = value.height
+//
+//          self.value = height
+//
+//        }
+//
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
+//
+//          self.value = 0
+//
+//        }
+//
+//      }
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
       .navigationBarItems(
         trailing:
