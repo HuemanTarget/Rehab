@@ -22,11 +22,111 @@ struct AddMedicationView: View {
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
-  let shapes = [String]()
+//  let shapes = ["String(Image("capsule"))", Image("circular"), Image("gell"), Image("long-split"), Image("oval-split") ]
   
   // MARK: - BODY
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    NavigationView {
+      VStack {
+        VStack(alignment: .leading, spacing: 20) {
+          
+          // Name
+          TextField("Name", text: $name)
+            .padding(5)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 20, weight: .bold, design: .default))
+          
+          // Shape
+          Text("Pain Level 1(low) - 10(high)")
+          Picker("Pain", selection: $shape) {
+            Image("capsule").tag(0)
+            Image("circular").tag(1)
+            Image("gell").tag(2)
+            Image("long-split").tag(3)
+            Image("oval-split").tag(4)
+          }
+          .pickerStyle(SegmentedPickerStyle())
+          .padding(0)
+          
+          // Color
+          TextField("Color", text: $color)
+            .padding(5)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 20, weight: .bold, design: .default))
+          
+          // Logo
+          TextField("Logo", text: $logo)
+            .padding(5)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 20, weight: .bold, design: .default))
+          
+          // Quantity
+          TextField("Quantity", value: $quantity, formatter: NumberFormatter())
+            .padding(5)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 20, weight: .bold, design: .default))
+          
+          // Save Button
+          Button(action: {
+            if self.name != "" {
+              let pill = Pill(context: self.managedObjectContext)
+              pill.name = self.name
+              pill.shape = self.shape
+              pill.color = self.color
+              pill.logo = self.logo
+              pill.quantity = Int16(self.quantity)
+              pill.id = UUID()
+              
+              do {
+                try self.managedObjectContext.save()
+                self.name = ""
+                self.color = ""
+                self.logo = ""
+                self.quantity = 0
+              } catch {
+                print(error)
+              }
+    
+            } else {
+              self.errorShowing = true
+              self.errorTitle = "Invalid Pill Name"
+              self.errorMessage = "Please enter something for\nthe pill name."
+              
+              return
+            } //: CONDITIONAL
+            self.presentationMode.wrappedValue.dismiss()
+          }) {
+            Text("Save Pill")
+              .font(.system(size: 20, weight: .bold, design: .default))
+              .padding(10)
+              .frame(minWidth: 0, maxWidth: .infinity)
+              .background(Color.blue)
+              .cornerRadius(9)
+              .foregroundColor(.white)
+          } //: BUTTON
+        } //: VSTACK
+        .padding(.horizontal)
+        .padding(.vertical, 10)
+        
+        Spacer()
+      } //: VSTACK
+      .navigationBarTitle("New Pill", displayMode: .inline)
+      .navigationBarItems(
+        trailing:
+          Button(action: {
+            presentationMode.wrappedValue.dismiss()
+          }) {
+            Image(systemName: "xmark")
+          }
+      )
+      .alert(isPresented: $errorShowing) {
+        Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+      }
+    } //: NAVIGATION
   }
 }
 
