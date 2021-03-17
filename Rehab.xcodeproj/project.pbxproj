@@ -21,6 +21,7 @@
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
+		4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448D26017C36002D4A15 /* EventExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
+		4EED448D26017C36002D4A15 /* EventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				4EED448126017538002D4A15 /* Styles */,
+				4EED448826017BFA002D4A15 /* Extensions */,
 				4E580E9325FEC5D800AB4F0B /* App */,
 				4E580E8525FEC08B00AB4F0B /* Views */,
 				4E580E7625FEBFAF00AB4F0B /* Assets.xcassets */,
@@ -129,6 +132,14 @@
 				4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		4EED448826017BFA002D4A15 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4EED448D26017C36002D4A15 /* EventExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			files = (
 				4E580E8825FEC0C300AB4F0B /* CalendarView.swift in Sources */,
 				4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */,
+				4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */,
 				4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */,
 				4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */,
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
