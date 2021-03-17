@@ -5,8 +5,8 @@
 //  Created by Joshua Basche on 3/17/21.
 //
 
-import EventKit
 import SwiftUI
+import EventKit
 
 struct EventRow: View {
     let event: EKEvent

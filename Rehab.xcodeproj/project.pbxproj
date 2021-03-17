@@ -34,6 +34,7 @@
 		4EED44AF26025C00002D4A15 /* CalendarChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44AE26025C00002D4A15 /* CalendarChooser.swift */; };
 		4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B126025CDE002D4A15 /* EventRow.swift */; };
 		4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */; };
+		4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B7260261C9002D4A15 /* EventEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		4EED44AE26025C00002D4A15 /* CalendarChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarChooser.swift; sourceTree = "<group>"; };
 		4EED44B126025CDE002D4A15 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCalendarsList.swift; sourceTree = "<group>"; };
+		4EED44B7260261C9002D4A15 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
-				4E580E8725FEC0C300AB4F0B /* CalendarView.swift */,
 				4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */,
 				4E580E9025FEC4B900AB4F0B /* TabBarView.swift */,
 				4EED447F26017503002D4A15 /* Journal Views */,
@@ -187,9 +188,11 @@
 		4EED44AD26025BCB002D4A15 /* Calendar Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E580E8725FEC0C300AB4F0B /* CalendarView.swift */,
 				4EED44AE26025C00002D4A15 /* CalendarChooser.swift */,
 				4EED44B126025CDE002D4A15 /* EventRow.swift */,
 				4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */,
+				4EED44B7260261C9002D4A15 /* EventEditView.swift */,
 			);
 			path = "Calendar Views";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				4E580E8825FEC0C300AB4F0B /* CalendarView.swift in Sources */,
 				4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */,
 				4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */,
+				4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */,
 				4EED44A52602579E002D4A15 /* KeyboardAvoidance.swift in Sources */,
 				4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */,
 				4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */,
