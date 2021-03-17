@@ -10,7 +10,16 @@
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="pain" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Pill" representedClassName="Pill" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="logo" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shape" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="Pill" positionX="-54" positionY="54" width="128" height="119"/>
     </elements>
 </model>

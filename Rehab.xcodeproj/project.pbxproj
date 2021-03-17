@@ -35,6 +35,7 @@
 		4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B126025CDE002D4A15 /* EventRow.swift */; };
 		4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */; };
 		4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B7260261C9002D4A15 /* EventEditView.swift */; };
+		4EED44C126028F14002D4A15 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44C026028F14002D4A15 /* AddMedicationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		4EED44B126025CDE002D4A15 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		4EED44B426025F02002D4A15 /* SelectedCalendarsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCalendarsList.swift; sourceTree = "<group>"; };
 		4EED44B7260261C9002D4A15 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		4EED44C026028F14002D4A15 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
-				4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */,
 				4E580E9025FEC4B900AB4F0B /* TabBarView.swift */,
 				4EED447F26017503002D4A15 /* Journal Views */,
 				4EED44AD26025BCB002D4A15 /* Calendar Views */,
+				4EED44BE26028ED7002D4A15 /* Medication Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +197,15 @@
 				4EED44B7260261C9002D4A15 /* EventEditView.swift */,
 			);
 			path = "Calendar Views";
+			sourceTree = "<group>";
+		};
+		4EED44BE26028ED7002D4A15 /* Medication Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */,
+				4EED44C026028F14002D4A15 /* AddMedicationView.swift */,
+			);
+			path = "Medication Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +293,7 @@
 				4EED449426017EB1002D4A15 /* Notifications.swift in Sources */,
 				4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
+				4EED44C126028F14002D4A15 /* AddMedicationView.swift in Sources */,
 				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
 				4EED44A826025A3A002D4A15 /* GeometryGetter.swift in Sources */,
 				4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */,
