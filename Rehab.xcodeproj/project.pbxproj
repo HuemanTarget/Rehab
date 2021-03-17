@@ -22,6 +22,9 @@
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
 		4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448D26017C36002D4A15 /* EventExtension.swift */; };
+		4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED449026017E42002D4A15 /* TimeIntervalExtension.swift */; };
+		4EED449426017EB1002D4A15 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED449326017EB1002D4A15 /* Notifications.swift */; };
+		4EED449726017EFD002D4A15 /* EKCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED449626017EFD002D4A15 /* EKCalendarExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
 		4EED448D26017C36002D4A15 /* EventExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventExtension.swift; sourceTree = "<group>"; };
+		4EED449026017E42002D4A15 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		4EED449326017EB1002D4A15 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		4EED449626017EFD002D4A15 /* EKCalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKCalendarExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				4EED448D26017C36002D4A15 /* EventExtension.swift */,
+				4EED449026017E42002D4A15 /* TimeIntervalExtension.swift */,
+				4EED449326017EB1002D4A15 /* Notifications.swift */,
+				4EED449626017EFD002D4A15 /* EKCalendarExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,8 +229,11 @@
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
 				4E580E6E25FEBFAE00AB4F0B /* AppDelegate.swift in Sources */,
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
+				4EED449426017EB1002D4A15 /* Notifications.swift in Sources */,
 				4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
+				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
+				4EED449726017EFD002D4A15 /* EKCalendarExtension.swift in Sources */,
 				4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */,
 				4E580E7225FEBFAE00AB4F0B /* ContentView.swift in Sources */,
 			);
