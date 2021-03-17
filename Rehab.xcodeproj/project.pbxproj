@@ -32,6 +32,7 @@
 		4EED44A826025A3A002D4A15 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44A726025A3A002D4A15 /* GeometryGetter.swift */; };
 		4EED44AB26025A6B002D4A15 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44AA26025A6B002D4A15 /* KeyboardGuardian.swift */; };
 		4EED44AF26025C00002D4A15 /* CalendarChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44AE26025C00002D4A15 /* CalendarChooser.swift */; };
+		4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44B126025CDE002D4A15 /* EventRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		4EED44A726025A3A002D4A15 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		4EED44AA26025A6B002D4A15 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		4EED44AE26025C00002D4A15 /* CalendarChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarChooser.swift; sourceTree = "<group>"; };
+		4EED44B126025CDE002D4A15 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4EED44AE26025C00002D4A15 /* CalendarChooser.swift */,
+				4EED44B126025CDE002D4A15 /* EventRow.swift */,
 			);
 			path = "Calendar Views";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */,
 				4EED44A52602579E002D4A15 /* KeyboardAvoidance.swift in Sources */,
 				4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */,
+				4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */,
 				4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */,
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
 				4EED449B26017FFA002D4A15 /* EventsRepository.swift in Sources */,
