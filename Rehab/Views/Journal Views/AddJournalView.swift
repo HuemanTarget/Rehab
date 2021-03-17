@@ -16,6 +16,7 @@ struct AddJournalView: View {
   @State private var desc: String = ""
   @State private var hr: String = ""
   @State private var bp: String = ""
+  @State private var bpd: String = ""
   @State private var pain: String = "N/A"
   @State private var notes: String = ""
   
@@ -49,13 +50,26 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 24, weight: .bold, design: .default))
+            .keyboardType(.numberPad)
           
           // Blood Pressure
-          TextField("Blood Pressure - Systolic / Diastolic", text: $bp)
-            .padding()
-            .background(Color(UIColor.tertiarySystemFill))
-            .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+          HStack {
+            TextField("BP - Systolic", text: $bp)
+              .padding()
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 20, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+            
+            Text(" / ")
+            
+            TextField("BP - Diastolic", text: $bpd)
+              .padding()
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 20, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+          }
           
           // Pain
           Text("Pain Level 1(low) - 10(high)")
@@ -89,6 +103,10 @@ struct AddJournalView: View {
               bp = "N/A"
             }
             
+            if self.bpd == "" {
+              bpd = "N/A"
+            }
+            
             if self.notes == "" {
               notes = "N/A"
             }
@@ -100,6 +118,7 @@ struct AddJournalView: View {
               journal.desc = self.desc
               journal.hr = self.hr
               journal.bp = self.bp
+              journal.bpd = self.bpd
               journal.pain = self.pain
               journal.notes = self.notes
               journal.id = UUID()
@@ -109,6 +128,7 @@ struct AddJournalView: View {
                 self.desc = ""
                 self.hr = ""
                 self.bp = ""
+                self.bpd = ""
                 self.pain = "N/A"
                 self.notes = ""
               } catch {

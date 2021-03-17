@@ -41,7 +41,7 @@ struct JournalView: View {
                 
                 Spacer()
                 
-                Text("BP: \(journal.bp!)")
+                Text("BP: \(journal.bp ?? "N/A") / \(journal.bpd ?? "N/A")")
                 
                 Spacer()
                 

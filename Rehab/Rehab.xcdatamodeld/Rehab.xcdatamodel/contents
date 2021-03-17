@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
         <attribute name="bp" optional="YES" attributeType="String"/>
+        <attribute name="bpd" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="hr" optional="YES" attributeType="String"/>
@@ -10,6 +11,6 @@
         <attribute name="pain" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Journal" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>
