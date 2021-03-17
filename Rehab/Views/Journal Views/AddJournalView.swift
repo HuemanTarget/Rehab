@@ -12,6 +12,8 @@ struct AddJournalView: View {
   @Environment(\.managedObjectContext) var managedObjectContext
   @Environment(\.presentationMode) var presentationMode
   
+  @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 1)
+  
   @State private var date = Date()
   @State private var desc: String = ""
   @State private var hr: String = ""
@@ -158,6 +160,7 @@ struct AddJournalView: View {
         
         Spacer()
       } //: VSTACK
+      .keyboardAdaptive()
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
       .navigationBarItems(
         trailing:
