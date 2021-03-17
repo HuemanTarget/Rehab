@@ -36,9 +36,12 @@ struct AddMedicationView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
+            .padding(.top, 5)
+
           
           // Shape
-          Text("Pain Level 1(low) - 10(high)")
+          Text("Pill Shape:")
+            .padding(.top, 0)
           Picker("Pain", selection: $shape) {
             Image("capsule").tag(0)
             Image("circular").tag(1)
@@ -46,8 +49,12 @@ struct AddMedicationView: View {
             Image("long-split").tag(3)
             Image("oval-split").tag(4)
           }
+          .frame(height: 40)
           .pickerStyle(SegmentedPickerStyle())
-          .padding(0)
+          .scaledToFit()
+          .scaleEffect(CGSize(width: 1, height: 2.0))
+          .padding(.top, 5)
+          .padding(.bottom, 5)
           
           // Color
           TextField("Color", text: $color)
@@ -69,6 +76,7 @@ struct AddMedicationView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
+            .keyboardType(.numberPad)
           
           // Save Button
           Button(action: {
@@ -114,6 +122,7 @@ struct AddMedicationView: View {
         
         Spacer()
       } //: VSTACK
+      .keyboardAdaptive()
       .navigationBarTitle("New Pill", displayMode: .inline)
       .navigationBarItems(
         trailing:
