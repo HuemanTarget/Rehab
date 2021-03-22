@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bell" representedClassName="Bell" syncable="YES" codeGenerationType="class">
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
         <attribute name="bp" optional="YES" attributeType="String"/>
         <attribute name="bpd" optional="YES" attributeType="String"/>
@@ -21,5 +25,6 @@
     <elements>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
         <element name="Pill" positionX="-54" positionY="54" width="128" height="119"/>
+        <element name="Bell" positionX="-54" positionY="63" width="128" height="59"/>
     </elements>
 </model>

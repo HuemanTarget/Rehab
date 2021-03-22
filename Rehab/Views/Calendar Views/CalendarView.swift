@@ -70,7 +70,7 @@ struct CalendarView: View {
           }
         }
       }
-      .navigationBarTitle("Rehab Calendar", displayMode: .inline)
+      .navigationBarTitle("Calendar", displayMode: .inline)
       .navigationBarItems(trailing: Button(action: {
         self.selectedEvent = nil
         self.activeSheet = .calendarEdit
