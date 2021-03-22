@@ -19,28 +19,7 @@ struct MedicationView: View {
   var body: some View {
     NavigationView {
       ZStack {
-        List {
-          ForEach(self.pills, id: \.self) { pill in
-            HStack {
-              VStack(alignment: .leading, spacing: 20) {
-                Text(pill.name ?? "Unkown")
-                  .padding(.bottom, 2)
-                  .font(.title)
-                HStack {
-                  Text(pill.shape ?? "Unkown")
-                  
-                  Spacer()
-                  
-                  Text(pill.color ?? "Unkown")
-                  
-                  Spacer()
-                  
-                  Text(pill.logo ?? "Unkown")
-                }
-              } //: VSTACK
-            } //: HSTACK
-          } //: FOREACH
-        } //: LIST
+        Text("Hello World")
       } //: ZSTACK
       .sheet(isPresented: $showingAddPillView) {
         AddMedicationView().environment(\.managedObjectContext, self.managedObjectContext)
@@ -57,7 +36,7 @@ struct MedicationView: View {
               .opacity(0.15)
               .frame(width: 88, height: 88, alignment: .center)
           } //: GROUP
-          
+
           Button(action: {
             self.showingAddPillView.toggle()
           }) {
