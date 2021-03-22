@@ -16,13 +16,13 @@ struct AddMedicationView: View {
   @State private var shape: String = ""
   @State private var color: String = ""
   @State private var logo: String = ""
-  @State private var quantity: Int = 0
+  @State private var pillQuantity: String = ""
   
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
-//  let shapes = ["String(Image("capsule"))", Image("circular"), Image("gell"), Image("long-split"), Image("oval-split") ]
+  let shapes = [ "capsule", "circular", "gell", "long-split", "oval-split" ]
   
   // MARK: - BODY
   var body: some View {
@@ -43,11 +43,14 @@ struct AddMedicationView: View {
           Text("Pill Shape:")
             .padding(.top, 0)
           Picker("Pain", selection: $shape) {
-            Image("capsule").tag(0)
-            Image("circular").tag(1)
-            Image("gell").tag(2)
-            Image("long-split").tag(3)
-            Image("oval-split").tag(4)
+//            Image("capsule").tag(0)
+//            Image("circular").tag(1)
+//            Image("gell").tag(2)
+//            Image("long-split").tag(3)
+//            Image("oval-split").tag(4)
+            ForEach(shapes, id: \.self) { shape in
+              Image("\(shape)").tag(shape)
+            }
           }
           .frame(height: 40)
           .pickerStyle(SegmentedPickerStyle())
@@ -71,7 +74,7 @@ struct AddMedicationView: View {
             .font(.system(size: 20, weight: .bold, design: .default))
           
           // Quantity
-          TextField("Quantity", value: $quantity, formatter: NumberFormatter())
+          TextField("Quantity", text: $pillQuantity)
             .padding(5)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
@@ -86,7 +89,7 @@ struct AddMedicationView: View {
               pill.shape = self.shape
               pill.color = self.color
               pill.logo = self.logo
-              pill.quantity = Int16(self.quantity)
+              pill.pillQuantity = self.pillQuantity
               pill.id = UUID()
               
               do {
@@ -94,7 +97,7 @@ struct AddMedicationView: View {
                 self.name = ""
                 self.color = ""
                 self.logo = ""
-                self.quantity = 0
+                self.pillQuantity = ""
               } catch {
                 print(error)
               }

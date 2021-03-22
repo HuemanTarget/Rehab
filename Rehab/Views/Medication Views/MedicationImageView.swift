@@ -19,11 +19,11 @@ struct MedicationImageView: View {
     image!
       .resizable()
       .scaledToFit()
-//      .aspectRatio(contentMode: .fill)
+      .aspectRatio(contentMode: .fit)
       .frame(width: 75, height: 75)
       .clipShape(Circle())
       .overlay(Circle().stroke(Color.white, lineWidth: 4))
-      .shadow(radius: 10)
+      .shadow(radius: 8)
       .onTapGesture {
         self.shouldPresentActionSheet = true
       }

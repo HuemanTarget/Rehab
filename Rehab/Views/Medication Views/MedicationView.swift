@@ -20,54 +20,76 @@ struct MedicationView: View {
     NavigationView {
       ZStack {
         List {
-          HStack {
-            MedicationImageView()
-            VStack(alignment: .leading, spacing: 2) {
-              HStack {
-                Text("Pill name")
-                  .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                
-                Spacer()
-                
-                Button(action: {
-                  // Add 30 to quantity
-                }) {
-                  Text("Refill")
-                    .padding(10)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
+          ForEach(self.pills, id: \.self) { pill in
+            HStack {
+              VStack(alignment: .leading, spacing: 2) {
+                HStack {
+                  Text(pill.name ?? "Unkown")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                  
+                  Spacer()
+                  
+                  Button(action: {
+                    print("Refill Hit")
+                  }) {
+                    Text("Refill")
+                      .padding(8)
+                      .background(Color.blue)
+                      .foregroundColor(.white)
+                      .clipShape(RoundedRectangle(cornerRadius: 5))
+                  }
                 }
-              }
-              Text("Pill shape / Pill Color / Pill logo")
-                .font(.subheadline)
-              HStack {
-                Text("30 remaining")
-                Button(action: {
-                  //Add 1 to pills quantity
-                }) {
-                  Image(systemName: "plus.circle")
+                HStack {
+                  Image(pill.shape!)
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(.white)
-                    .background(Circle().fill(Color.green))
-                    .frame(width: 35, height: 35)
-                } //: PLUS BUTTON
-                Text("-")
-                Button(action: {
-                  //Minus 1 to pill quantity
-                }) {
-                  Image(systemName: "minus.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.white)
-                    .background(Circle().fill(Color.red))
-                    .frame(width: 35, height: 35)
-                } //: MINUS BUTTON
-              }
-            }
-          }
-        }
+                    .frame(width: 50, height: 50)
+                  
+                  Spacer()
+                  
+                  Text("Color: \(pill.color ?? "N/A")")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                  
+                  Spacer()
+                  
+                  Text("Logo: \(pill.logo ?? "N/A")")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                }
+                HStack {
+                  Text("\(pill.pillQuantity ?? "Unkown") pills remaining")
+                  
+                  Spacer()
+                  
+                  Button(action: {
+                    print("plus hit")
+                  }) {
+                    Image(systemName: "plus.circle")
+                      .resizable()
+                      .scaledToFit()
+                      .foregroundColor(.white)
+                      .background(Circle().fill(Color.green))
+                      .frame(width: 35, height: 35)
+                  } //: PLUS BUTTON
+                  Text("-")
+                  Button(action: {
+                    print("minus hit")
+                  }) {
+                    Image(systemName: "minus.circle")
+                      .resizable()
+                      .scaledToFit()
+                      .foregroundColor(.white)
+                      .background(Circle().fill(Color.red))
+                      .frame(width: 35, height: 35)
+                  } //: MINUS BUTTON
+                } //: HSTACK
+              } //: VSTACK
+            } //: HSTACK
+          } //: FOREACH
+          .onDelete(perform: deletePill)
+        } //: LIST
+        .navigationBarTitle("Medication", displayMode: .inline)
       } //: ZSTACK
       .sheet(isPresented: $showingAddPillView) {
         AddMedicationView().environment(\.managedObjectContext, self.managedObjectContext)
@@ -101,6 +123,20 @@ struct MedicationView: View {
       ) //: OVERLAY
     } //: NAVIGATION
   }
+  
+  private func deletePill(at offsets: IndexSet) {
+    for index in offsets {
+      let pill = pills[index]
+      managedObjectContext.delete(pill)
+      
+      do {
+        try managedObjectContext.save()
+      } catch {
+        print(error)
+      }
+    }
+  }
+  
 }
 
 // MARK: - PREVIEW
