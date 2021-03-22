@@ -11,6 +11,11 @@ import MessageUI
 struct TabBarView: View {
   // MARK: - PROPERTIES
 //  private let messageComposeDelegate = MessageComposerDelegate()
+  @Environment(\.managedObjectContext) var managedObjectContext
+  
+  @FetchRequest(entity: Bell.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Bell.phoneNumber, ascending: false)]) var bells: FetchedResults<Bell>
+  
+  @State private var showingBellSettingsView: Bool = false
   
   // MARK: - BODY
   var body: some View {
@@ -42,8 +47,21 @@ struct TabBarView: View {
             .foregroundColor(.red)
         }
       }))
+      .navigationBarItems(trailing: Button(action: {
+        sendMessage()
+      }, label: {
+        HStack(spacing: 2) {
+          Image(systemName: "bell.fill").frame(width: 44, height: 44)
+            .foregroundColor(.red)
+          Text("Help")
+            .foregroundColor(.red)
+        }
+      }))
     } //: TABVIEW
-  }
+    .sheet(isPresented: $showingBellSettingsView) {
+      BellSettingsView().environment(\.managedObjectContext, self.managedObjectContext)
+    }
+  } //: NAVIGATION
   
   func sendMessage(){
     let sms: String = "sms:+15627610792&body=Full vacinated people now get free Krispy Kreme Donuts. Reply to find out more information."
