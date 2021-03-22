@@ -19,7 +19,55 @@ struct MedicationView: View {
   var body: some View {
     NavigationView {
       ZStack {
-        Text("Hello World")
+        List {
+          HStack {
+            MedicationImageView()
+            VStack(alignment: .leading, spacing: 2) {
+              HStack {
+                Text("Pill name")
+                  .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                
+                Spacer()
+                
+                Button(action: {
+                  // Add 30 to quantity
+                }) {
+                  Text("Refill")
+                    .padding(10)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+              }
+              Text("Pill shape / Pill Color / Pill logo")
+                .font(.subheadline)
+              HStack {
+                Text("30 remaining")
+                Button(action: {
+                  //Add 1 to pills quantity
+                }) {
+                  Image(systemName: "plus.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.white)
+                    .background(Circle().fill(Color.green))
+                    .frame(width: 35, height: 35)
+                } //: PLUS BUTTON
+                Text("-")
+                Button(action: {
+                  //Minus 1 to pill quantity
+                }) {
+                  Image(systemName: "minus.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.white)
+                    .background(Circle().fill(Color.red))
+                    .frame(width: 35, height: 35)
+                } //: MINUS BUTTON
+              }
+            }
+          }
+        }
       } //: ZSTACK
       .sheet(isPresented: $showingAddPillView) {
         AddMedicationView().environment(\.managedObjectContext, self.managedObjectContext)

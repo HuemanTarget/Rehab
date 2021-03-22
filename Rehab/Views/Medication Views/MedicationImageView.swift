@@ -20,8 +20,8 @@ struct MedicationImageView: View {
       .resizable()
       .scaledToFit()
 //      .aspectRatio(contentMode: .fill)
-//      .frame(width: 300, height: 300)
-      .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+      .frame(width: 75, height: 75)
+      .clipShape(Circle())
       .overlay(Circle().stroke(Color.white, lineWidth: 4))
       .shadow(radius: 10)
       .onTapGesture {

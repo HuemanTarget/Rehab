@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct MedicationRowView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  // MARK: - PROPERTIES
+  @FetchRequest(entity: Pill.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Pill.name, ascending: true)]) var pills: FetchedResults<Pill>
+  
+  // MARK: - BODY
+  var body: some View {
+    ZStack {
+      List {
+        
+      }
     }
+  }
 }
 
+// MARK: - PREVIEW
 struct MedicationRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        MedicationRowView()
-          .previewLayout(.sizeThatFits)
-          .padding()
-    }
+  static var previews: some View {
+    MedicationRowView()
+      .previewLayout(.sizeThatFits)
+      .padding()
+  }
 }
