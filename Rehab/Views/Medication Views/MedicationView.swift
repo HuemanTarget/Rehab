@@ -10,10 +10,15 @@ import SwiftUI
 struct MedicationView: View {
   // MARK: - PROPERTIES
   @Environment(\.managedObjectContext) var managedObjectContext
+  @Environment(\.presentationMode) var presentationMode
   
   @FetchRequest(entity: Pill.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Pill.name, ascending: true)]) var pills: FetchedResults<Pill>
   
   @State private var showingAddPillView: Bool = false
+  
+  @State private var errorShowing: Bool = false
+  @State private var errorTitle: String = ""
+  @State private var errorMessage: String = ""
   
   // MARK: - BODY
   var body: some View {
@@ -44,7 +49,7 @@ struct MedicationView: View {
                   }) {
                     Text("Refill")
                       .padding(8)
-                      .background(Color.blue)
+                      .background(Color("SpaceCadet"))
                       .foregroundColor(.white)
                       .clipShape(RoundedRectangle(cornerRadius: 5))
                   }
@@ -69,6 +74,7 @@ struct MedicationView: View {
                     .fontWeight(.bold)
                 }
                 HStack {
+                  
                   Text("\(pill.pillQuantity ?? "Unkown") pills remaining")
                   
                   Spacer()
@@ -90,7 +96,7 @@ struct MedicationView: View {
                       .resizable()
                       .scaledToFit()
                       .foregroundColor(.white)
-                      .background(Circle().fill(Color.green))
+                      .background(Circle().fill(Color("Manatee")))
                       .frame(width: 35, height: 35)
                   } //: PLUS BUTTON
                   .buttonStyle(PlainButtonStyle())
@@ -107,13 +113,21 @@ struct MedicationView: View {
                       print(error)
                     }
                     
+                    if quantity! <= 6 {
+                      self.errorShowing = true
+                      self.errorTitle = "This Medication\nIs Getting Low"
+                      self.errorMessage = "If needed, please get a refill soon."
+                      
+                      return
+                    }
+                    self.presentationMode.wrappedValue.dismiss()
                     
                   }) {
                     Image(systemName: "minus.circle")
                       .resizable()
                       .scaledToFit()
                       .foregroundColor(.white)
-                      .background(Circle().fill(Color.red))
+                      .background(Circle().fill(Color("ImperialRed")))
                       .frame(width: 35, height: 35)
                   } //: MINUS BUTTON
                   .buttonStyle(PlainButtonStyle())
@@ -125,9 +139,18 @@ struct MedicationView: View {
         } //: LIST
         .navigationBarTitle("Medication", displayMode: .inline)
         .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+        
+        if pills.count == 0 {
+          Text("There Are No Medication Entries")
+        }
+        
+        
       } //: ZSTACK
       .sheet(isPresented: $showingAddPillView) {
         AddMedicationView().environment(\.managedObjectContext, self.managedObjectContext)
+      }
+      .alert(isPresented: $errorShowing) {
+        Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
       }
       .overlay(
         ZStack {

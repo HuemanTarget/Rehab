@@ -87,31 +87,12 @@ struct TabBarView: View {
   } //: NAVIGATION
   
   func sendMessage(){
-    let sms: String = "sms:+13105008314&body=I love U!"
+    let sms: String = "sms:+13108067483&body=Ring! Ring! I need your help!"
     let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
   }
 }
 
-//extension TabBarView {
-//  private class MessageComposerDelegate: NSObject, MFMessageComposeViewControllerDelegate {
-//    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-//      // Customize here
-//      controller.dismiss(animated: true)
-//    }
-//  }
-//  /// Present an message compose view controller modally in UIKit environment
-//  private func presentMessageCompose() {
-//    guard MFMessageComposeViewController.canSendText() else {
-//      return
-//    }
-//    let vc = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
-//    let composeVC = MFMessageComposeViewController()
-//    composeVC.messageComposeDelegate = messageComposeDelegate
-//
-//    vc?.present(composeVC, animated: true)
-//  }
-//}
 
 // MARK: - PREVIEW
 struct TabBarView_Previews: PreviewProvider {

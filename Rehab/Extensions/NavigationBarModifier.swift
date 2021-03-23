@@ -17,13 +17,13 @@ struct NavigationBarModifier: ViewModifier {
     let coloredAppearance = UINavigationBarAppearance()
     coloredAppearance.configureWithTransparentBackground()
     coloredAppearance.backgroundColor = .clear
-    coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-    coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(red: 237, green: 242, blue: 244)]
+    coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 237, green: 242, blue: 244)]
     
     UINavigationBar.appearance().standardAppearance = coloredAppearance
     UINavigationBar.appearance().compactAppearance = coloredAppearance
     UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-    UINavigationBar.appearance().tintColor = .white
+//    UINavigationBar.appearance().tintColor = .white
     
   }
   

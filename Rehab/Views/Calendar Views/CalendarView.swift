@@ -58,7 +58,7 @@ struct CalendarView: View {
 //        .buttonStyle(PrimaryButtonStyle())
         .font(.system(size: 14, weight: .bold, design: .default))
         .frame(width: 150, height: 50)
-        .background(Color.blue)
+        .background(Color("SpaceCadet"))
         .cornerRadius(9)
         .foregroundColor(.white)
         .padding(.bottom, 20)
@@ -80,7 +80,9 @@ struct CalendarView: View {
         //Image(systemName: "plus").frame(width: 44, height: 44)
         HStack {
           Text("Add")
+            .foregroundColor(Color("AliceBlue"))
           Image(systemName: "calendar")
+            .foregroundColor(Color("AliceBlue"))
         }
       }))
     }
