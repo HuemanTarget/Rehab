@@ -42,8 +42,32 @@
 		4EED44C126028F14002D4A15 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44C026028F14002D4A15 /* AddMedicationView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E35793C260A50720030CEB1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E35795C260A543E0030CEB1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4E35790D260956700030CEB1 /* BellSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellSettingsView.swift; sourceTree = "<group>"; };
+		4E35794B260A543D0030CEB1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4E53ADE02608F71D00DF2A09 /* MedicationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRowView.swift; sourceTree = "<group>"; };
 		4E53ADE32608F7CC00DF2A09 /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		4E53ADE62608F81500DF2A09 /* MedicationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationImageView.swift; sourceTree = "<group>"; };
@@ -100,10 +124,19 @@
 			path = TabBarView;
 			sourceTree = "<group>";
 		};
+		4E357948260A543D0030CEB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E35794B260A543D0030CEB1 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E580E6125FEBFAE00AB4F0B = {
 			isa = PBXGroup;
 			children = (
 				4E580E6C25FEBFAE00AB4F0B /* Rehab */,
+				4E357948260A543D0030CEB1 /* Frameworks */,
 				4E580E6B25FEBFAE00AB4F0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -238,6 +271,8 @@
 				4E580E6625FEBFAE00AB4F0B /* Sources */,
 				4E580E6725FEBFAE00AB4F0B /* Frameworks */,
 				4E580E6825FEBFAE00AB4F0B /* Resources */,
+				4E35793C260A50720030CEB1 /* Embed Watch Content */,
+				4E35795C260A543E0030CEB1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -464,6 +499,7 @@
 		4E580E8225FEBFAF00AB4F0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +522,7 @@
 		4E580E8325FEBFAF00AB4F0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
