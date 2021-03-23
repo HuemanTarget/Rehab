@@ -108,14 +108,14 @@ struct AddMedicationView: View {
     
             } else {
               self.errorShowing = true
-              self.errorTitle = "Invalid Pill Name"
-              self.errorMessage = "Please enter something for\nthe pill name."
+              self.errorTitle = "Invalid Medication Name"
+              self.errorMessage = "Please enter something for\nthe medication name."
               
               return
             } //: CONDITIONAL
             self.presentationMode.wrappedValue.dismiss()
           }) {
-            Text("Save Pill")
+            Text("Save Medication")
               .font(.system(size: 20, weight: .bold, design: .default))
               .padding(10)
               .frame(minWidth: 0, maxWidth: .infinity)
@@ -131,7 +131,7 @@ struct AddMedicationView: View {
       } //: VSTACK
       .keyboardAdaptive()
       .background(Color("AliceBlue").edgesIgnoringSafeArea(.bottom))
-      .navigationBarTitle("New Pill", displayMode: .inline)
+      .navigationBarTitle("New Medication", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         trailing:

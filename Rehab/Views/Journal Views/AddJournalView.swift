@@ -46,6 +46,7 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
+            .foregroundColor(Color("SpaceCadet"))
           
           
           
@@ -55,6 +56,7 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
+            .foregroundColor(Color("SpaceCadet"))
             .keyboardType(.numberPad)
           
           // Blood Pressure
@@ -64,6 +66,7 @@ struct AddJournalView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
+              .foregroundColor(Color("SpaceCadet"))
               .keyboardType(.numberPad)
             
             Text(" / ")
@@ -73,6 +76,7 @@ struct AddJournalView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
+              .foregroundColor(Color("SpaceCadet"))
               .keyboardType(.numberPad)
           }
           
@@ -93,6 +97,7 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
+            .foregroundColor(Color("SpaceCadet"))
           
           // Save Button
           Button(action: {
@@ -152,7 +157,7 @@ struct AddJournalView: View {
               .font(.system(size: 20, weight: .bold, design: .default))
               .padding(10)
               .frame(minWidth: 0, maxWidth: .infinity)
-              .background(Color.blue)
+              .background(Color("SpaceCadet"))
               .cornerRadius(9)
               .foregroundColor(.white)
           } //: BUTTON
@@ -163,27 +168,9 @@ struct AddJournalView: View {
         Spacer()
       } //: VSTACK
       .keyboardAdaptive()
-//      .offset(y: -self.value)
-//      .animation(.spring())
-//      .onAppear {
-//
-//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
-//
-//          let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-//          let height = value.height
-//
-//          self.value = height
-//
-//        }
-//
-//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
-//
-//          self.value = 0
-//
-//        }
-//
-//      }
+      .background(Color("AliceBlue").edgesIgnoringSafeArea(.bottom))
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
+      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         trailing:
           Button(action: {
