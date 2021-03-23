@@ -69,11 +69,12 @@ struct BellSettingsView: View {
               .cornerRadius(9)
               .foregroundColor(.white)
           } //: BUTTON
-          .padding(.horizontal)
-          .padding(.vertical, 10)
+          
           
           Spacer()
         } //: VSTACK
+        .padding(.horizontal)
+
       } //: VSTACK
     } //: NAVIGATION
   }

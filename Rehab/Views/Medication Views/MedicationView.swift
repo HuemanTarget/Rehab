@@ -30,7 +30,17 @@ struct MedicationView: View {
                   Spacer()
                   
                   Button(action: {
-                    print("Refill Hit")
+                    let quantity = Int(pill.pillQuantity!)
+                    let refill = String(quantity! + 30)
+                    
+                    pill.pillQuantity = refill
+                    
+                    do {
+                      try self.managedObjectContext.save()
+                    } catch {
+                      print(error)
+                    }
+                    
                   }) {
                     Text("Refill")
                       .padding(8)
@@ -38,6 +48,7 @@ struct MedicationView: View {
                       .foregroundColor(.white)
                       .clipShape(RoundedRectangle(cornerRadius: 5))
                   }
+                  .buttonStyle(PlainButtonStyle())
                 }
                 HStack {
                   Image(pill.shape!)
@@ -63,7 +74,17 @@ struct MedicationView: View {
                   Spacer()
                   
                   Button(action: {
-                    print("plus hit")
+                    let quantity = Int(pill.pillQuantity!)
+                    let add = String(quantity! + 1)
+                    
+                    pill.pillQuantity = add
+                    
+                    do {
+                      try self.managedObjectContext.save()
+                    } catch {
+                      print(error)
+                    }
+                    
                   }) {
                     Image(systemName: "plus.circle")
                       .resizable()
@@ -72,9 +93,21 @@ struct MedicationView: View {
                       .background(Circle().fill(Color.green))
                       .frame(width: 35, height: 35)
                   } //: PLUS BUTTON
+                  .buttonStyle(PlainButtonStyle())
                   Text("-")
                   Button(action: {
-                    print("minus hit")
+                    let quantity = Int(pill.pillQuantity!)
+                    let minus = String(quantity! - 1)
+                    
+                    pill.pillQuantity = minus
+                    
+                    do {
+                      try self.managedObjectContext.save()
+                    } catch {
+                      print(error)
+                    }
+                    
+                    
                   }) {
                     Image(systemName: "minus.circle")
                       .resizable()
@@ -83,6 +116,7 @@ struct MedicationView: View {
                       .background(Circle().fill(Color.red))
                       .frame(width: 35, height: 35)
                   } //: MINUS BUTTON
+                  .buttonStyle(PlainButtonStyle())
                 } //: HSTACK
               } //: VSTACK
             } //: HSTACK
