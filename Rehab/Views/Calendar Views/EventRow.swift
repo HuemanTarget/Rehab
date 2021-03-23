@@ -40,7 +40,6 @@ struct EventRow: View {
           .padding(.bottom, 2)
         Text(event.title)
           .font(.headline)
-          .foregroundColor(Color("SpaceCadet"))
       }
       
       Spacer()

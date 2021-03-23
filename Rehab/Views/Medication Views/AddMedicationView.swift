@@ -44,11 +44,6 @@ struct AddMedicationView: View {
           Text("Pill Shape:")
             .padding(.top, 0)
           Picker("Pain", selection: $shape) {
-//            Image("capsule").tag(0)
-//            Image("circular").tag(1)
-//            Image("gell").tag(2)
-//            Image("long-split").tag(3)
-//            Image("oval-split").tag(4)
             ForEach(shapes, id: \.self) { shape in
               Image("\(shape)").tag(shape)
             }
@@ -130,7 +125,6 @@ struct AddMedicationView: View {
         Spacer()
       } //: VSTACK
       .keyboardAdaptive()
-      .background(Color("AliceBlue").edgesIgnoringSafeArea(.bottom))
       .navigationBarTitle("New Medication", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(

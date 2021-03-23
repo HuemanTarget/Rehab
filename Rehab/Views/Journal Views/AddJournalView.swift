@@ -168,7 +168,6 @@ struct AddJournalView: View {
         Spacer()
       } //: VSTACK
       .keyboardAdaptive()
-      .background(Color("AliceBlue").edgesIgnoringSafeArea(.bottom))
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(

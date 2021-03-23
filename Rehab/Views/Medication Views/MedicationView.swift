@@ -164,7 +164,7 @@ struct MedicationView: View {
               .opacity(0.15)
               .frame(width: 88, height: 88, alignment: .center)
           } //: GROUP
-
+          
           Button(action: {
             self.showingAddPillView.toggle()
           }) {
