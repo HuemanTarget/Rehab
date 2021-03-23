@@ -14,20 +14,24 @@ struct TabBarView: View {
   //  private let messageComposeDelegate = MessageComposerDelegate()
   @Environment(\.managedObjectContext) var managedObjectContext
   
-//  @FetchRequest(entity: Bell.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Bell.phoneNumber, ascending: false)]) var bells: FetchedResults<Bell>
+  //  @FetchRequest(entity: Bell.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Bell.phoneNumber, ascending: false)]) var bells: FetchedResults<Bell>
   
-//  @ObservedObject var bell: Bell
+  //  @ObservedObject var bell: Bell
   
   @State private var showingBellSettingsView: Bool = false
   
-//  init(id objectID: NSManagedObjectID, in context: NSManagedObjectContext) {
-//    if let bell = try? context.existingObject(with: objectID) as? Bell {
-//      self.bell = bell
-//    } else {
-//      self.bell = Bell(context: context)
-//      try? context.save()
-//    }
-//  }
+  //  init(id objectID: NSManagedObjectID, in context: NSManagedObjectContext) {
+  //    if let bell = try? context.existingObject(with: objectID) as? Bell {
+  //      self.bell = bell
+  //    } else {
+  //      self.bell = Bell(context: context)
+  //      try? context.save()
+  //    }
+  //  }
+  
+  init() {
+    UITabBar.appearance().barTintColor = UIColor(red: 43, green: 45, blue: 66)
+  }
   
   // MARK: - BODY
   var body: some View {
@@ -48,6 +52,8 @@ struct TabBarView: View {
             Label("Journal", systemImage: "book.closed")
           }
       }
+      .accentColor(Color("AliceBlue"))
+      .font(.headline)
       .navigationBarTitle("Rehab", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
@@ -65,13 +71,13 @@ struct TabBarView: View {
                 .fontWeight(.bold)
             }
           })
-//        trailing:
-//          Button(action: {
-//            self.showingBellSettingsView.toggle()
-//          }, label: {
-//            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
-//              .foregroundColor(.blue)
-//          })
+        //        trailing:
+        //          Button(action: {
+        //            self.showingBellSettingsView.toggle()
+        //          }, label: {
+        //            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
+        //              .foregroundColor(.blue)
+        //          })
         
       )
     } //: TABVIEW
