@@ -85,12 +85,20 @@ struct JournalView: View {
           Button(action: {
             self.showingAddJournalView.toggle()
           }) {
-            Image(systemName: "book.closed.fill")
-              .resizable()
-              .scaledToFit()
-              .foregroundColor(Color("AmaranthRed"))
-              .background(Circle().fill(Color("AmaranthRed")).opacity(0.3))
-              .frame(width: 48, height: 48, alignment: .center)
+            ZStack {
+              Image(systemName: "book.closed.fill")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(Color("AmaranthRed"))
+                .background(Circle().fill(Color("AmaranthRed")).opacity(0.3))
+                .frame(width: 48, height: 48, alignment: .center)
+              
+              Image(systemName: "plus")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.white)
+                .frame(width: 30, height: 30, alignment: .center)
+            }
           }
         } //: ZSTACK
         .padding(.bottom, 15)

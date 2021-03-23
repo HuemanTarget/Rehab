@@ -168,12 +168,21 @@ struct MedicationView: View {
           Button(action: {
             self.showingAddPillView.toggle()
           }) {
-            Image(systemName: "pills.fill")
-              .resizable()
-              .scaledToFit()
-              .foregroundColor(Color("AmaranthRed"))
-              .background(Circle().fill(Color("AmaranthRed")).opacity(0.1))
-              .frame(width: 48, height: 48, alignment: .center)
+            ZStack {
+              Image(systemName: "pills.fill")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(Color("AmaranthRed"))
+                .background(Circle().fill(Color("AmaranthRed")).opacity(0.1))
+                .frame(width: 48, height: 48, alignment: .center)
+              
+              Image(systemName: "plus")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.white)
+                .frame(width: 30, height: 30, alignment: .center)
+            }
+
           }
         } //: ZSTACK
         .padding(.bottom, 15)
