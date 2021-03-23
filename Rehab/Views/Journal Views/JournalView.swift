@@ -59,6 +59,7 @@ struct JournalView: View {
           .onDelete(perform: deleteJournal)
         } //: LIST
         .navigationBarTitle("Journal", displayMode: .inline)
+        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         
         if journals.count == 0 {
           Text("There Are No Journal Entries")
@@ -72,11 +73,11 @@ struct JournalView: View {
         ZStack {
           Group {
             Circle()
-              .fill(Color.blue)
+              .fill(Color("AmaranthRed"))
               .opacity(0.2)
               .frame(width: 68, height: 68, alignment: .center)
             Circle()
-              .fill(Color.blue)
+              .fill(Color("AmaranthRed"))
               .opacity(0.15)
               .frame(width: 88, height: 88, alignment: .center)
           } //: GROUP
@@ -84,10 +85,11 @@ struct JournalView: View {
           Button(action: {
             self.showingAddJournalView.toggle()
           }) {
-            Image(systemName: "book.circle.fill")
+            Image(systemName: "book.closed.fill")
               .resizable()
               .scaledToFit()
-              .background(Circle().fill(Color("ColorBase")))
+              .foregroundColor(Color("AmaranthRed"))
+              .background(Circle().fill(Color("AmaranthRed")).opacity(0.3))
               .frame(width: 48, height: 48, alignment: .center)
           }
         } //: ZSTACK
@@ -112,6 +114,16 @@ struct JournalView: View {
       }
     }
   }
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
 }
 
 // MARK: - PREVIEW

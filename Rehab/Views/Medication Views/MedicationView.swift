@@ -124,6 +124,7 @@ struct MedicationView: View {
           .onDelete(perform: deletePill)
         } //: LIST
         .navigationBarTitle("Medication", displayMode: .inline)
+        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       } //: ZSTACK
       .sheet(isPresented: $showingAddPillView) {
         AddMedicationView().environment(\.managedObjectContext, self.managedObjectContext)
@@ -132,11 +133,11 @@ struct MedicationView: View {
         ZStack {
           Group {
             Circle()
-              .fill(Color.blue)
+              .fill(Color("AmaranthRed"))
               .opacity(0.2)
               .frame(width: 68, height: 68, alignment: .center)
             Circle()
-              .fill(Color.blue)
+              .fill(Color("AmaranthRed"))
               .opacity(0.15)
               .frame(width: 88, height: 88, alignment: .center)
           } //: GROUP
@@ -147,7 +148,8 @@ struct MedicationView: View {
             Image(systemName: "pills.fill")
               .resizable()
               .scaledToFit()
-              .background(Circle().fill(Color("ColorBase")))
+              .foregroundColor(Color("AmaranthRed"))
+              .background(Circle().fill(Color("AmaranthRed")).opacity(0.1))
               .frame(width: 48, height: 48, alignment: .center)
           }
         } //: ZSTACK

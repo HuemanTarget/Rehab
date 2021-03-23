@@ -49,25 +49,29 @@ struct TabBarView: View {
           }
       }
       .navigationBarTitle("Rehab", displayMode: .inline)
+      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         leading:
           Button(action: {
             sendMessage()
           }, label: {
             HStack(spacing: 2) {
-              Image(systemName: "bell.fill").frame(width: 44, height: 44)
-                .foregroundColor(.red)
+              Image(systemName: "bell.fill")
+                .foregroundColor(Color("ImperialRed"))
+                .font(.title)
               Text("Help")
-                .foregroundColor(.red)
+                .foregroundColor(Color("ImperialRed"))
+                .font(.title2)
+                .fontWeight(.bold)
             }
-          }),
-        trailing:
-          Button(action: {
-            self.showingBellSettingsView.toggle()
-          }, label: {
-            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
-              .foregroundColor(.blue)
           })
+//        trailing:
+//          Button(action: {
+//            self.showingBellSettingsView.toggle()
+//          }, label: {
+//            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
+//              .foregroundColor(.blue)
+//          })
         
       )
     } //: TABVIEW

@@ -71,6 +71,7 @@ struct CalendarView: View {
         }
       }
       .navigationBarTitle("Calendar", displayMode: .inline)
+      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(trailing: Button(action: {
         self.selectedEvent = nil
         self.activeSheet = .calendarEdit
