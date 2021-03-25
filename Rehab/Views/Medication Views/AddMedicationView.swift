@@ -12,6 +12,8 @@ struct AddMedicationView: View {
   @Environment(\.managedObjectContext) var managedObjectContext
   @Environment(\.presentationMode) var presentationMode
   
+  @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 2)
+  
   @State private var name: String = ""
   @State private var shape: String = ""
   @State private var color: String = ""
@@ -22,12 +24,14 @@ struct AddMedicationView: View {
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
+  @State private var value: CGFloat = 0
+  
   let shapes = [ "capsule", "circular", "gell", "long-split", "oval-split" ]
   
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      VStack {
+      ScrollView {
         VStack(alignment: .leading, spacing: 20) {
           
           // Name
@@ -119,8 +123,8 @@ struct AddMedicationView: View {
         .padding(.vertical, 10)
         
         Spacer()
-      } //: VSTACK
-      .keyboardAdaptive()
+      } //: SCROLL
+//      .keyboardAdaptive()
       .navigationBarTitle("New Medication", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(

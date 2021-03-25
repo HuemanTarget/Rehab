@@ -14,55 +14,57 @@ struct ContentView: View {
   
   // MARK: - BODY
   var body: some View {
-    ZStack {
-      if isUnlocked || LAContext() == .none {
-        TabBarView()
-      } else {
-//        AppLockView()
-        Button(action: {
-          self.authenticate()
-        }) {
-          VStack {
-            Image(systemName: "faceid")
-              .padding(5)
-              .font(.system(size: 75))
-              .foregroundColor(Color("ImperialRed"))
-            Text("Unlock Rehab")
-              .font(.title3)
-              .fontWeight(.bold)
-              .foregroundColor(Color("ImperialRed"))
-          }
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
-          .background(Color("SpaceCadet"))
-          .edgesIgnoringSafeArea(.all)
-        }
-      }
-    } //: ZSTACK
+    TabBarView()
+    
+//    ZStack {
+//      if isUnlocked || LAContext() == .none {
+//        TabBarView()
+//      } else {
+////        AppLockView()
+//        Button(action: {
+//          self.authenticate()
+//        }) {
+//          VStack {
+//            Image(systemName: "faceid")
+//              .padding(5)
+//              .font(.system(size: 75))
+//              .foregroundColor(Color("ImperialRed"))
+//            Text("Unlock Rehab")
+//              .font(.title3)
+//              .fontWeight(.bold)
+//              .foregroundColor(Color("ImperialRed"))
+//          }
+//          .frame(maxWidth: .infinity, maxHeight: .infinity)
+//          .background(Color("SpaceCadet"))
+//          .edgesIgnoringSafeArea(.all)
+//        }
+//      }
+//    } //: ZSTACK
   }
   
   //: FUNCTIONS
-  func authenticate() {
-    let context = LAContext()
-    var error: NSError?
-    
-    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-      let reason = "Please authenticate yourself to unlock Rehab."
-      
-      context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-        
-        DispatchQueue.main.async {
-          if success {
-            self.isUnlocked = true
-          } else {
-            // error
-          }
-        }
-      }
-    } else {
-      // no biometrics
-//      self.isUnlocked = true
-    }
-  }
+//  func authenticate() {
+//    let context = LAContext()
+//    var error: NSError?
+//    
+//    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+//      let reason = "Please authenticate yourself to unlock Rehab."
+//      
+//      context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+//        
+//        DispatchQueue.main.async {
+//          if success {
+//            self.isUnlocked = true
+//          } else {
+//            // error
+//          }
+//        }
+//      }
+//    } else {
+//      // no biometrics
+////      self.isUnlocked = true
+//    }
+//  }
   
 }
 

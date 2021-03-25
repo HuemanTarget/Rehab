@@ -33,7 +33,7 @@ struct AddJournalView: View {
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      VStack {
+      ScrollView {
         VStack(alignment: .leading, spacing: 20) {
           
           // Date
@@ -42,24 +42,24 @@ struct AddJournalView: View {
           
           // Description
           TextField("Journal Description", text: $desc)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
 
           
           // Heart Rate
           TextField("Heart Rate - BPM", text: $hr)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
             .keyboardType(.numberPad)
           
           // Blood Pressure
           HStack {
             TextField("BP - Systolic", text: $bp)
-              .padding(5)
+              .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
@@ -68,7 +68,7 @@ struct AddJournalView: View {
             Text(" / ")
             
             TextField("BP - Diastolic", text: $bpd)
-              .padding(5)
+              .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
@@ -88,10 +88,11 @@ struct AddJournalView: View {
           
           // Misc Notes
           TextField("Misc Notes", text: $notes)
-            .padding(5)
+            .padding(40)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
+            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
           
           // Save Button
           Button(action: {
@@ -160,8 +161,8 @@ struct AddJournalView: View {
         .padding(.vertical, 10)
         
         Spacer()
-      } //: VSTACK
-      .keyboardAdaptive()
+      } //: SCROLL
+//      .keyboardAdaptive()
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
