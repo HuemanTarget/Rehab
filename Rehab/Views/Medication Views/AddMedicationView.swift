@@ -36,10 +36,10 @@ struct AddMedicationView: View {
           
           // Name
           TextField("Name", text: $name)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
             .padding(.top, 5)
 
           
@@ -60,24 +60,24 @@ struct AddMedicationView: View {
           
           // Color
           TextField("Color", text: $color)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
           
           // Logo
           TextField("Logo", text: $logo)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
           
           // Quantity
           TextField("Quantity", text: $pillQuantity)
-            .padding(5)
+            .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 20, weight: .bold, design: .default))
+            .font(.system(size: 24, weight: .bold, design: .default))
             .keyboardType(.numberPad)
           
           // Save Button
@@ -112,7 +112,7 @@ struct AddMedicationView: View {
           }) {
             Text("Save Medication")
               .font(.system(size: 20, weight: .bold, design: .default))
-              .padding(10)
+              .padding(20)
               .frame(minWidth: 0, maxWidth: .infinity)
               .background(Color("SpaceCadet"))
               .cornerRadius(9)

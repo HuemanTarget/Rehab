@@ -150,7 +150,7 @@ struct AddJournalView: View {
           }) {
             Text("Save Journal Entry")
               .font(.system(size: 20, weight: .bold, design: .default))
-              .padding(10)
+              .padding(20)
               .frame(minWidth: 0, maxWidth: .infinity)
               .background(Color("SpaceCadet"))
               .cornerRadius(9)
