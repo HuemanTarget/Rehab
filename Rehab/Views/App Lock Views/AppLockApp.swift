@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+//@main
 struct AppLockApp: App {
   // MARK: - PROPERTIES
   @StateObject var appLockVM = AppLockViewModel()
