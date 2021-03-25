@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Rehab needs Touch ID or Face ID permission for app lock</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -26,6 +24,8 @@
 	<string>Rehab needs permission to your calendars to import into the app</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Rehab needs permission to your camera to take photos and store in the app</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Rehab needs Touch ID or Face ID permission for app lock</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Rehab needs acces to your photo library to add photos to the app</string>
 	<key>UIApplicationSceneManifest</key>

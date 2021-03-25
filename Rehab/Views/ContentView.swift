@@ -15,7 +15,7 @@ struct ContentView: View {
   // MARK: - BODY
   var body: some View {
     ZStack {
-      if isUnlocked {
+      if isUnlocked || LAContext() == .none {
         TabBarView()
       } else {
 //        AppLockView()
@@ -60,6 +60,7 @@ struct ContentView: View {
       }
     } else {
       // no biometrics
+//      self.isUnlocked = true
     }
   }
   
