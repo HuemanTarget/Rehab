@@ -46,9 +46,7 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
-          
-          
+
           
           // Heart Rate
           TextField("Heart Rate - BPM", text: $hr)
@@ -56,7 +54,6 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
             .keyboardType(.numberPad)
           
           // Blood Pressure
@@ -66,7 +63,6 @@ struct AddJournalView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
-              .foregroundColor(Color("SpaceCadet"))
               .keyboardType(.numberPad)
             
             Text(" / ")
@@ -76,7 +72,6 @@ struct AddJournalView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
-              .foregroundColor(Color("SpaceCadet"))
               .keyboardType(.numberPad)
           }
           
@@ -97,7 +92,6 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
           
           // Save Button
           Button(action: {

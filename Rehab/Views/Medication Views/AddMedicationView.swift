@@ -37,7 +37,6 @@ struct AddMedicationView: View {
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
             .padding(.top, 5)
-            .foregroundColor(Color("SpaceCadet"))
 
           
           // Shape
@@ -61,7 +60,6 @@ struct AddMedicationView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
           
           // Logo
           TextField("Logo", text: $logo)
@@ -69,7 +67,6 @@ struct AddMedicationView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
           
           // Quantity
           TextField("Quantity", text: $pillQuantity)
@@ -77,7 +74,6 @@ struct AddMedicationView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 20, weight: .bold, design: .default))
-            .foregroundColor(Color("SpaceCadet"))
             .keyboardType(.numberPad)
           
           // Save Button

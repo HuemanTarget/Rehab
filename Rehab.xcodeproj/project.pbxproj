@@ -23,6 +23,7 @@
 		4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */; };
 		4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8D25FEC10600AB4F0B /* JournalView.swift */; };
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
+		4EE1DBCC260CE8470031ACB3 /* AppLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -86,6 +87,7 @@
 		4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
 		4E580E8D25FEC10600AB4F0B /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockViewModel.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
+				4EE1DBC8260CE7E50031ACB3 /* App Lock Views */,
 				4E35790C2609564E0030CEB1 /* TabBarView */,
 				4EED447F26017503002D4A15 /* Journal Views */,
 				4EED44AD26025BCB002D4A15 /* Calendar Views */,
@@ -195,6 +198,14 @@
 				4E580E6F25FEBFAE00AB4F0B /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4EE1DBC8260CE7E50031ACB3 /* App Lock Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */,
+			);
+			path = "App Lock Views";
 			sourceTree = "<group>";
 		};
 		4EED447F26017503002D4A15 /* Journal Views */ = {
@@ -343,6 +354,7 @@
 				4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */,
 				4EED44A52602579E002D4A15 /* KeyboardAvoidance.swift in Sources */,
 				4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */,
+				4EE1DBCC260CE8470031ACB3 /* AppLockViewModel.swift in Sources */,
 				4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */,
 				4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */,
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
@@ -507,6 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Rehab/Preview Content\"";
 				DEVELOPMENT_TEAM = 58XKH6936U;
 				ENABLE_PREVIEWS = YES;
@@ -519,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pompouscatstudios.Rehab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -530,6 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Rehab/Preview Content\"";
 				DEVELOPMENT_TEAM = 58XKH6936U;
 				ENABLE_PREVIEWS = YES;
@@ -542,7 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pompouscatstudios.Rehab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
