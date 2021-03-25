@@ -24,6 +24,7 @@
 		4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8D25FEC10600AB4F0B /* JournalView.swift */; };
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
 		4EE1DBCC260CE8470031ACB3 /* AppLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */; };
+		4EE1DBCF260CE92D0031ACB3 /* AppLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE1DBCE260CE92D0031ACB3 /* AppLockApp.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -88,6 +89,7 @@
 		4E580E8D25FEC10600AB4F0B /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockViewModel.swift; sourceTree = "<group>"; };
+		4EE1DBCE260CE92D0031ACB3 /* AppLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockApp.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				4EE1DBCB260CE8470031ACB3 /* AppLockViewModel.swift */,
+				4EE1DBCE260CE92D0031ACB3 /* AppLockApp.swift */,
 			);
 			path = "App Lock Views";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
 				4EED449426017EB1002D4A15 /* Notifications.swift in Sources */,
 				4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */,
+				4EE1DBCF260CE92D0031ACB3 /* AppLockApp.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
 				4EED44C126028F14002D4A15 /* AddMedicationView.swift in Sources */,
 				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
