@@ -20,6 +20,7 @@ struct AddMedicationView: View {
   @State private var logo: String = ""
   @State private var pillQuantity: String = ""
   @State private var dosage: String = ""
+  @State private var dosageMeasurement: String = "mg"
   
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
@@ -28,6 +29,8 @@ struct AddMedicationView: View {
   @State private var value: CGFloat = 0
   
   let shapes = [ "capsule", "circular", "gell", "long-split", "oval-split" ]
+  
+  let mesurements = [ "mg", "mL" ]
   
   // MARK: - BODY
   var body: some View {
@@ -44,12 +47,27 @@ struct AddMedicationView: View {
             .padding(.top, 5)
 
           // Dosage
-          TextField("Dosage", text: $dosage)
-            .padding(10)
-            .background(Color(UIColor.tertiarySystemFill))
-            .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
-            .padding(.top, 5)
+          HStack {
+            TextField("Dosage", text: $dosage)
+              .padding(10)
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 24, weight: .bold, design: .default))
+              .padding(.top, 5)
+              .keyboardType(.numberPad)
+            
+            Spacer()
+            
+            Picker("Dosage Measurement", selection: $dosageMeasurement) {
+              ForEach(mesurements, id: \.self) {
+                Text($0)
+              }
+            }
+            .frame(height: 20)
+            .pickerStyle(SegmentedPickerStyle())
+            .scaledToFit()
+            .scaleEffect(CGSize(width: 1.8, height: 1.65))
+          }
           
           // Shape
           Text("Pill Shape:")
@@ -98,6 +116,7 @@ struct AddMedicationView: View {
               pill.logo = self.logo
               pill.pillQuantity = self.pillQuantity
               pill.dosage = self.dosage
+              pill.dosageMeasurement = self.dosageMeasurement
               pill.id = UUID()
               
               do {

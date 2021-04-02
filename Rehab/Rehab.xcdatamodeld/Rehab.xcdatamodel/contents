@@ -18,6 +18,7 @@
     <entity name="Pill" representedClassName="Pill" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="dosage" optional="YES" attributeType="String"/>
+        <attribute name="dosageMeasurement" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="logo" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -27,6 +28,6 @@
     <elements>
         <element name="Bell" positionX="-54" positionY="63" width="128" height="74"/>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="Pill" positionX="-54" positionY="54" width="128" height="134"/>
+        <element name="Pill" positionX="-54" positionY="54" width="128" height="149"/>
     </elements>
 </model>
