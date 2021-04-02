@@ -81,7 +81,7 @@ struct MedicationView: View {
                   
                   Spacer()
                   
-                  Text("Logo: \(pill.logo ?? "N/A")")
+                  Text("\(pill.usage ?? "N/A") x day")
                     .font(.subheadline)
                     .fontWeight(.bold)
                 }

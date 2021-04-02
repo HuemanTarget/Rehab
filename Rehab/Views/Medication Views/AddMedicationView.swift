@@ -17,10 +17,13 @@ struct AddMedicationView: View {
   @State private var name: String = ""
   @State private var shape: String = ""
   @State private var color: String = ""
-  @State private var logo: String = ""
+  @State private var usage: String = ""
   @State private var pillQuantity: String = ""
   @State private var dosage: String = ""
   @State private var dosageMeasurement: String = "mg"
+  @State private var morning: Bool = false
+  @State private var noon: Bool = false
+  @State private var night: Bool = false
   
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
@@ -45,7 +48,7 @@ struct AddMedicationView: View {
             .cornerRadius(9)
             .font(.system(size: 24, weight: .bold, design: .default))
             .padding(.top, 5)
-
+          
           // Dosage
           HStack {
             TextField("Dosage", text: $dosage)
@@ -92,11 +95,33 @@ struct AddMedicationView: View {
             .font(.system(size: 24, weight: .bold, design: .default))
           
           // Logo
-          TextField("Logo", text: $logo)
-            .padding(10)
-            .background(Color(UIColor.tertiarySystemFill))
-            .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+          HStack {
+            TextField("Per Day", text: $usage)
+              .padding(10)
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 24, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+            
+            Toggle(isOn: $morning) {
+              Text("Morning")
+                .font(.subheadline)
+            }
+            .toggleStyle(CheckboxStyle())
+            
+            Toggle(isOn: $noon) {
+              Text("Noon")
+                .font(.subheadline)
+            }
+            .toggleStyle(CheckboxStyle())
+            
+            Toggle(isOn: $night) {
+              Text("Night")
+                .font(.subheadline)
+              
+            }
+            .toggleStyle(CheckboxStyle())
+          }
           
           // Quantity
           TextField("Quantity", text: $pillQuantity)
@@ -113,7 +138,7 @@ struct AddMedicationView: View {
               pill.name = self.name
               pill.shape = self.shape
               pill.color = self.color
-              pill.logo = self.logo
+              pill.usage = self.usage
               pill.pillQuantity = self.pillQuantity
               pill.dosage = self.dosage
               pill.dosageMeasurement = self.dosageMeasurement
@@ -123,13 +148,13 @@ struct AddMedicationView: View {
                 try self.managedObjectContext.save()
                 self.name = ""
                 self.color = ""
-                self.logo = ""
+                self.usage = ""
                 self.pillQuantity = ""
                 self.dosage = ""
               } catch {
                 print(error)
               }
-    
+              
             } else {
               self.errorShowing = true
               self.errorTitle = "Invalid Medication Name"
@@ -153,7 +178,7 @@ struct AddMedicationView: View {
         
         Spacer()
       } //: SCROLL
-//      .keyboardAdaptive()
+      //      .keyboardAdaptive()
       .navigationBarTitle("New Medication", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(

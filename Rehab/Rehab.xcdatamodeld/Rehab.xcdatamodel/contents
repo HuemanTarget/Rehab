@@ -20,10 +20,10 @@
         <attribute name="dosage" optional="YES" attributeType="String"/>
         <attribute name="dosageMeasurement" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="logo" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="pillQuantity" optional="YES" attributeType="String"/>
         <attribute name="shape" optional="YES" attributeType="String"/>
+        <attribute name="usage" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Bell" positionX="-54" positionY="63" width="128" height="74"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E224BC12617D78400931617 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E224BC02617D78400931617 /* CheckboxStyle.swift */; };
 		4E35790E260956700030CEB1 /* BellSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E35790D260956700030CEB1 /* BellSettingsView.swift */; };
 		4E357962260A6A510030CEB1 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */; };
 		4E53ADE12608F71D00DF2A09 /* MedicationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53ADE02608F71D00DF2A09 /* MedicationRowView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E224BC02617D78400931617 /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 		4E35790D260956700030CEB1 /* BellSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellSettingsView.swift; sourceTree = "<group>"; };
 		4E35794B260A543D0030CEB1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				4EED449E26025708002D4A15 /* UIResponderCurrent.swift */,
 				4EED44A126025769002D4A15 /* KeyboardHeightPublisher.swift */,
 				4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */,
+				4E224BC02617D78400931617 /* CheckboxStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */,
 				4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */,
 				4EED44A52602579E002D4A15 /* KeyboardAvoidance.swift in Sources */,
+				4E224BC12617D78400931617 /* CheckboxStyle.swift in Sources */,
 				4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */,
 				4EED44B226025CDE002D4A15 /* EventRow.swift in Sources */,
 				4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */,
