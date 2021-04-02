@@ -19,6 +19,7 @@ struct AddMedicationView: View {
   @State private var color: String = ""
   @State private var logo: String = ""
   @State private var pillQuantity: String = ""
+  @State private var dosage: String = ""
   
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
@@ -42,6 +43,13 @@ struct AddMedicationView: View {
             .font(.system(size: 24, weight: .bold, design: .default))
             .padding(.top, 5)
 
+          // Dosage
+          TextField("Dosage", text: $dosage)
+            .padding(10)
+            .background(Color(UIColor.tertiarySystemFill))
+            .cornerRadius(9)
+            .font(.system(size: 24, weight: .bold, design: .default))
+            .padding(.top, 5)
           
           // Shape
           Text("Pill Shape:")
@@ -89,6 +97,7 @@ struct AddMedicationView: View {
               pill.color = self.color
               pill.logo = self.logo
               pill.pillQuantity = self.pillQuantity
+              pill.dosage = self.dosage
               pill.id = UUID()
               
               do {
@@ -97,6 +106,7 @@ struct AddMedicationView: View {
                 self.color = ""
                 self.logo = ""
                 self.pillQuantity = ""
+                self.dosage = ""
               } catch {
                 print(error)
               }
