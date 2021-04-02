@@ -81,28 +81,6 @@ struct MedicationView: View {
                   
                   Button(action: {
                     let quantity = Int(pill.pillQuantity!)
-                    let add = String(quantity! + 1)
-                    
-                    pill.pillQuantity = add
-                    
-                    do {
-                      try self.managedObjectContext.save()
-                    } catch {
-                      print(error)
-                    }
-                    
-                  }) {
-                    Image(systemName: "plus.circle")
-                      .resizable()
-                      .scaledToFit()
-                      .foregroundColor(.white)
-                      .background(Circle().fill(Color("Manatee")))
-                      .frame(width: 35, height: 35)
-                  } //: PLUS BUTTON
-                  .buttonStyle(PlainButtonStyle())
-                  Text("-")
-                  Button(action: {
-                    let quantity = Int(pill.pillQuantity!)
                     let minus = String(quantity! - 1)
                     
                     pill.pillQuantity = minus
@@ -130,6 +108,28 @@ struct MedicationView: View {
                       .background(Circle().fill(Color("ImperialRed")))
                       .frame(width: 35, height: 35)
                   } //: MINUS BUTTON
+                  .buttonStyle(PlainButtonStyle())
+                  Text("-")
+                  Button(action: {
+                    let quantity = Int(pill.pillQuantity!)
+                    let add = String(quantity! + 1)
+                    
+                    pill.pillQuantity = add
+                    
+                    do {
+                      try self.managedObjectContext.save()
+                    } catch {
+                      print(error)
+                    }
+                    
+                  }) {
+                    Image(systemName: "plus.circle")
+                      .resizable()
+                      .scaledToFit()
+                      .foregroundColor(.white)
+                      .background(Circle().fill(Color("Manatee")))
+                      .frame(width: 35, height: 35)
+                  } //: PLUS BUTTON
                   .buttonStyle(PlainButtonStyle())
                 } //: HSTACK
               } //: VSTACK
