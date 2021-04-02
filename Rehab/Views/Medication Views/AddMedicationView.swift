@@ -59,8 +59,8 @@ struct AddMedicationView: View {
             Spacer()
             
             Picker("Dosage Measurement", selection: $dosageMeasurement) {
-              ForEach(mesurements, id: \.self) {
-                Text($0)
+              ForEach(mesurements, id: \.self) { dose in
+                Text("\(dose)").tag(dose)
               }
             }
             .frame(height: 20)

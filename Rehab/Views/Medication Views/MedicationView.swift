@@ -31,6 +31,18 @@ struct MedicationView: View {
                 HStack {
                   Text(pill.name ?? "Unkown")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
+                  
+                  Text(" - ")
+                    .font(.title)
+                    .fontWeight(.bold)
+                  
+                  Text(pill.dosage ?? "Unkown")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                  Text(pill.dosageMeasurement ?? "Unkown")
+                    .font(.title3)
+                    .fontWeight(.bold)
                   
                   Spacer()
                   
