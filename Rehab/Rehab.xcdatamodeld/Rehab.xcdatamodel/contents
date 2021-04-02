@@ -20,7 +20,10 @@
         <attribute name="dosage" optional="YES" attributeType="String"/>
         <attribute name="dosageMeasurement" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="morning" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="night" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="noon" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="pillQuantity" optional="YES" attributeType="String"/>
         <attribute name="shape" optional="YES" attributeType="String"/>
         <attribute name="usage" optional="YES" attributeType="String"/>
@@ -28,6 +31,6 @@
     <elements>
         <element name="Bell" positionX="-54" positionY="63" width="128" height="74"/>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="Pill" positionX="-54" positionY="54" width="128" height="149"/>
+        <element name="Pill" positionX="-54" positionY="54" width="128" height="194"/>
     </elements>
 </model>

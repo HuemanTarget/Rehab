@@ -30,7 +30,7 @@ struct MedicationView: View {
               VStack(alignment: .leading, spacing: 2) {
                 HStack {
                   Text(pill.name ?? "Unkown")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.title2)
                     .fontWeight(.bold)
                   
                   Text(" - ")
@@ -38,10 +38,10 @@ struct MedicationView: View {
                     .fontWeight(.bold)
                   
                   Text(pill.dosage ?? "Unkown")
-                    .font(.title3)
+                    .font(.subheadline)
                     .fontWeight(.bold)
                   Text(pill.dosageMeasurement ?? "Unkown")
-                    .font(.title3)
+                    .font(.subheadline)
                     .fontWeight(.bold)
                   
                   Spacer()
@@ -80,11 +80,30 @@ struct MedicationView: View {
                     .fontWeight(.bold)
                   
                   Spacer()
-                  
-                  Text("\(pill.usage ?? "N/A") x day")
+                }
+                
+                HStack {
+                  Text("\(pill.usage ?? "N/A") x dose")
                     .font(.subheadline)
                     .fontWeight(.bold)
+                  
+                  Spacer()
+                  
+                  Text(pill.morning ? "morning"  : "")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                  
+                  Text(pill.noon ? "noon"  : "")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                  
+                  Text(pill.night ? "night"  : "")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                  
+                  Spacer()
                 }
+                
                 HStack {
                   
                   Text("\(pill.pillQuantity ?? "Unkown") pills remaining")

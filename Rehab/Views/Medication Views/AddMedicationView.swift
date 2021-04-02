@@ -96,11 +96,11 @@ struct AddMedicationView: View {
           
           // Logo
           HStack {
-            TextField("Per Day", text: $usage)
+            TextField("Per Dose", text: $usage)
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 24, weight: .bold, design: .default))
+              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
             
             Toggle(isOn: $morning) {
@@ -142,6 +142,9 @@ struct AddMedicationView: View {
               pill.pillQuantity = self.pillQuantity
               pill.dosage = self.dosage
               pill.dosageMeasurement = self.dosageMeasurement
+              pill.morning = self.morning
+              pill.noon = self.noon
+              pill.night = self.night
               pill.id = UUID()
               
               do {
@@ -151,6 +154,9 @@ struct AddMedicationView: View {
                 self.usage = ""
                 self.pillQuantity = ""
                 self.dosage = ""
+                self.morning = false
+                self.noon = false
+                self.night = false
               } catch {
                 print(error)
               }
