@@ -18,7 +18,7 @@ struct AddMedicationView: View {
   @State private var shape: String = "capsule"
   @State private var color: String = ""
   @State private var usage: String = ""
-  @State private var pillQuantity: String = ""
+  @State private var pillQuantity: String = "0"
   @State private var dosage: String = ""
   @State private var dosageMeasurement: String = "mg"
   @State private var morning: Bool = false

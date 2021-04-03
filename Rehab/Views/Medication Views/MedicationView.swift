@@ -67,6 +67,7 @@ struct MedicationView: View {
                   }
                   .buttonStyle(PlainButtonStyle())
                   
+                  
                 }
                 HStack {
                   Image(pill.shape!)
