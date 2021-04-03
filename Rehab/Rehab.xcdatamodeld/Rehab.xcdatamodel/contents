@@ -13,7 +13,10 @@
         <attribute name="hr" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="oxygen" optional="YES" attributeType="String"/>
         <attribute name="pain" optional="YES" attributeType="String"/>
+        <attribute name="temperature" optional="YES" attributeType="String"/>
+        <attribute name="tempType" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Pill" representedClassName="Pill" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
@@ -30,7 +33,7 @@
     </entity>
     <elements>
         <element name="Bell" positionX="-54" positionY="63" width="128" height="74"/>
-        <element name="Journal" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="194"/>
         <element name="Pill" positionX="-54" positionY="54" width="128" height="194"/>
     </elements>
 </model>

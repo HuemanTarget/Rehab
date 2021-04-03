@@ -21,6 +21,9 @@ struct AddJournalView: View {
   @State private var bpd: String = ""
   @State private var pain: String = "N/A"
   @State private var notes: String = ""
+  @State private var temperature: String = ""
+  @State private var tempType: String = "F"
+  @State private var oxygen: String = ""
   
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
@@ -29,6 +32,8 @@ struct AddJournalView: View {
   @State private var value: CGFloat = 0
   
   let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  
+  let temps = ["F", "C"]
   
   // MARK: - BODY
   var body: some View {
@@ -49,12 +54,21 @@ struct AddJournalView: View {
 
           
           // Heart Rate
-          TextField("Heart Rate - BPM", text: $hr)
-            .padding(10)
-            .background(Color(UIColor.tertiarySystemFill))
-            .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
-            .keyboardType(.numberPad)
+          HStack {
+            TextField("Heart Rate", text: $hr)
+              .padding(10)
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 24, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+            
+            TextField("Oxygen %", text: $oxygen)
+              .padding(10)
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 24, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+          }
           
           // Blood Pressure
           HStack {
@@ -73,6 +87,27 @@ struct AddJournalView: View {
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
+          }
+          
+          // Temperature
+          HStack {
+            TextField("Temperature", text: $temperature)
+              .padding(10)
+              .background(Color(UIColor.tertiarySystemFill))
+              .cornerRadius(9)
+              .font(.system(size: 20, weight: .bold, design: .default))
+              .keyboardType(.numberPad)
+            
+            Picker("Dosage Measurement", selection: $tempType) {
+              ForEach(temps, id: \.self) { temp in
+                Text("\(temp)").tag(temp)
+              }
+            }
+            .frame(height: 20)
+            .pickerStyle(SegmentedPickerStyle())
+            .scaledToFit()
+            .scaleEffect(CGSize(width: 1.8, height: 1.5))
+            
           }
           
           // Pain
@@ -107,6 +142,14 @@ struct AddJournalView: View {
               bpd = "-"
             }
             
+            if self.temperature == "" {
+              temperature = "N/A"
+            }
+            
+            if self.oxygen == "" {
+              oxygen = "N/A"
+            }
+            
 //            if self.bpd == "" {
 //              bpd = "N/A"
 //            }
@@ -125,6 +168,9 @@ struct AddJournalView: View {
               journal.bpd = self.bpd
               journal.pain = self.pain
               journal.notes = self.notes
+              journal.temperature = self.temperature
+              journal.oxygen = self.oxygen
+              journal.tempType = self.tempType
               journal.id = UUID()
               
               do {
@@ -133,8 +179,9 @@ struct AddJournalView: View {
                 self.hr = ""
                 self.bp = ""
                 self.bpd = ""
-                self.pain = "N/A"
                 self.notes = ""
+                self.temperature = ""
+                self.oxygen = ""
               } catch {
                 print(error)
               }

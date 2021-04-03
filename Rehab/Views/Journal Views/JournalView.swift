@@ -50,6 +50,18 @@ struct JournalView: View {
               .padding(.bottom, 2)
               .font(.subheadline)
               
+              HStack {
+                Text("Temp: \(journal.temperature ?? "N/A") \(journal.tempType ?? "N/A")")
+                
+                Spacer()
+                
+                Text("Oxygen: \(journal.oxygen ?? "N/A")%")
+                
+                Spacer()
+              }
+              .padding(.bottom, 2)
+              .font(.subheadline)
+              
               Text("Notes: \(journal.notes!)")
                 .padding(.bottom, 2)
               

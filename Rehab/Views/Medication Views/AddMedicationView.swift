@@ -15,7 +15,7 @@ struct AddMedicationView: View {
   @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 2)
   
   @State private var name: String = ""
-  @State private var shape: String = ""
+  @State private var shape: String = "capsule"
   @State private var color: String = ""
   @State private var usage: String = ""
   @State private var pillQuantity: String = ""
@@ -133,7 +133,24 @@ struct AddMedicationView: View {
           
           // Save Button
           Button(action: {
-            if self.name != "" && self.pillQuantity != "" {
+            if self.pillQuantity == "" {
+              pillQuantity = "N/A"
+            }
+            
+            if self.color == "" {
+              color = "N/A"
+            }
+            
+            if self.dosage == "" {
+              dosage = "N/A"
+            }
+            
+            if self.usage == "" {
+              usage = "N/A"
+            }
+            
+            
+            if self.name != "" {
               let pill = Pill(context: self.managedObjectContext)
               pill.name = self.name
               pill.shape = self.shape
@@ -163,8 +180,8 @@ struct AddMedicationView: View {
               
             } else {
               self.errorShowing = true
-              self.errorTitle = "Invalid Medication Name and Pill Quantity"
-              self.errorMessage = "Please enter something for\nthe medication name and pill quantity."
+              self.errorTitle = "Invalid Medication Name"
+              self.errorMessage = "Please enter something for\nthe medication name."
               
               return
             } //: CONDITIONAL

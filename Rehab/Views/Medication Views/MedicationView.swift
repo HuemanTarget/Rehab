@@ -76,7 +76,7 @@ struct MedicationView: View {
                   
                   Spacer()
                   
-                  Text("\(pill.color ?? "N/A")")
+                  Text("Color: \(pill.color ?? "N/A")")
                     .font(.subheadline)
                     .fontWeight(.bold)
                   
