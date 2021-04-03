@@ -66,6 +66,7 @@ struct MedicationView: View {
                       .clipShape(RoundedRectangle(cornerRadius: 5))
                   }
                   .buttonStyle(PlainButtonStyle())
+                  
                 }
                 HStack {
                   Image(pill.shape!)
@@ -75,7 +76,7 @@ struct MedicationView: View {
                   
                   Spacer()
                   
-                  Text("Color: \(pill.color ?? "N/A")")
+                  Text("\(pill.color ?? "N/A")")
                     .font(.subheadline)
                     .fontWeight(.bold)
                   
@@ -83,21 +84,24 @@ struct MedicationView: View {
                 }
                 
                 HStack {
-                  Text("\(pill.usage ?? "N/A") x dose")
+                  Text("\(pill.usage ?? "N/A") x per dose")
                     .font(.subheadline)
                     .fontWeight(.bold)
                   
                   Spacer()
                   
                   Text(pill.morning ? "morning"  : "")
+                    .foregroundColor(Color("DoseGreen"))
                     .font(.subheadline)
                     .fontWeight(.bold)
                   
                   Text(pill.noon ? "noon"  : "")
+                    .foregroundColor(Color("DoseGreen"))
                     .font(.subheadline)
                     .fontWeight(.bold)
                   
                   Text(pill.night ? "night"  : "")
+                    .foregroundColor(Color("DoseGreen"))
                     .font(.subheadline)
                     .fontWeight(.bold)
                   

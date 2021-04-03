@@ -133,7 +133,7 @@ struct AddMedicationView: View {
           
           // Save Button
           Button(action: {
-            if self.name != "" {
+            if self.name != "" && self.pillQuantity != "" {
               let pill = Pill(context: self.managedObjectContext)
               pill.name = self.name
               pill.shape = self.shape
@@ -163,8 +163,8 @@ struct AddMedicationView: View {
               
             } else {
               self.errorShowing = true
-              self.errorTitle = "Invalid Medication Name"
-              self.errorMessage = "Please enter something for\nthe medication name."
+              self.errorTitle = "Invalid Medication Name and Pill Quantity"
+              self.errorMessage = "Please enter something for\nthe medication name and pill quantity."
               
               return
             } //: CONDITIONAL
