@@ -14,6 +14,8 @@ struct TabBarView: View {
   //  private let messageComposeDelegate = MessageComposerDelegate()
   @Environment(\.managedObjectContext) var managedObjectContext
   
+  var phoneNumber = "310-806-7483"
+  
   //  @FetchRequest(entity: Bell.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Bell.phoneNumber, ascending: false)]) var bells: FetchedResults<Bell>
   
   //  @ObservedObject var bell: Bell
@@ -59,10 +61,14 @@ struct TabBarView: View {
       .navigationBarItems(
         leading:
           Button(action: {
-            sendMessage()
+            let phone = "tel://"
+            let phoneNumberformatted = phone + phoneNumber
+            guard let url = URL(string: phoneNumberformatted) else { return }
+            UIApplication.shared.open(url)
+            //            sendMessage()
           }, label: {
             HStack(spacing: 2) {
-              Image(systemName: "bell.fill")
+              Image(systemName: "phone.fill")
                 .foregroundColor(Color("ImperialRed"))
                 .font(.title)
               Text("Help")
