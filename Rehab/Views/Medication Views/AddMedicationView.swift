@@ -34,7 +34,7 @@ struct AddMedicationView: View {
   
   let mesurements = [ "mg", "mL" ]
   
-  let haptics = UIImpactFeedbackGenerator(style: .medium)
+  let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
   // MARK: - BODY
   var body: some View {
@@ -186,6 +186,7 @@ struct AddMedicationView: View {
               
               return
             } //: CONDITIONAL
+            hapticImpact.impactOccurred()
             self.presentationMode.wrappedValue.dismiss()
           }) {
             Text("Save Medication")

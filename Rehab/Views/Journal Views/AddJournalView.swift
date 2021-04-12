@@ -35,6 +35,8 @@ struct AddJournalView: View {
   
   let temps = ["F", "C"]
   
+  let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
+  
   // MARK: - BODY
   var body: some View {
     NavigationView {
@@ -193,6 +195,7 @@ struct AddJournalView: View {
               
               return
             } //: CONDITIONAL
+            hapticImpact.impactOccurred()
             self.presentationMode.wrappedValue.dismiss()
           }) {
             Text("Save Journal Entry")

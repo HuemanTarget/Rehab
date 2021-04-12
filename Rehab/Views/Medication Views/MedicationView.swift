@@ -20,6 +20,8 @@ struct MedicationView: View {
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
+  let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
+  
   // MARK: - BODY
   var body: some View {
     NavigationView {
@@ -51,6 +53,8 @@ struct MedicationView: View {
                     let refill = String(quantity! + 30)
                     
                     pill.pillQuantity = refill
+                    
+                    hapticImpact.impactOccurred()
                     
                     do {
                       try self.managedObjectContext.save()
@@ -121,6 +125,8 @@ struct MedicationView: View {
                     
                     pill.pillQuantity = minus
                     
+                    hapticImpact.impactOccurred()
+                    
                     do {
                       try self.managedObjectContext.save()
                     } catch {
@@ -151,6 +157,8 @@ struct MedicationView: View {
                     let add = String(quantity! + 1)
                     
                     pill.pillQuantity = add
+                    
+                    hapticImpact.impactOccurred()
                     
                     do {
                       try self.managedObjectContext.save()
