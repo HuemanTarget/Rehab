@@ -65,6 +65,9 @@ struct AddMedicationView: View {
             Picker("Dosage Measurement", selection: $dosageMeasurement) {
               ForEach(mesurements, id: \.self) { dose in
                 Text("\(dose)").tag(dose)
+                  .onTapGesture {
+                    hapticImpact.impactOccurred()
+                  }
               }
             }
             .frame(height: 20)
@@ -79,6 +82,9 @@ struct AddMedicationView: View {
           Picker("Pain", selection: $shape) {
             ForEach(shapes, id: \.self) { shape in
               Image("\(shape)").tag(shape)
+                .onTapGesture {
+                  hapticImpact.impactOccurred()
+                }
             }
           }
           .frame(height: 40)
@@ -107,18 +113,27 @@ struct AddMedicationView: View {
             Toggle(isOn: $morning) {
               Text("Morning")
                 .font(.subheadline)
+                .onTapGesture {
+                  hapticImpact.impactOccurred()
+                }
             }
             .toggleStyle(CheckboxStyle())
             
             Toggle(isOn: $noon) {
               Text("Noon")
                 .font(.subheadline)
+                .onTapGesture {
+                  hapticImpact.impactOccurred()
+                }
             }
             .toggleStyle(CheckboxStyle())
             
             Toggle(isOn: $night) {
               Text("Night")
                 .font(.subheadline)
+                .onTapGesture {
+                  hapticImpact.impactOccurred()
+                }
               
             }
             .toggleStyle(CheckboxStyle())

@@ -103,6 +103,9 @@ struct AddJournalView: View {
             Picker("Dosage Measurement", selection: $tempType) {
               ForEach(temps, id: \.self) { temp in
                 Text("\(temp)").tag(temp)
+                  .onTapGesture {
+                    hapticImpact.impactOccurred()
+                  }
               }
             }
             .frame(height: 20)
@@ -117,6 +120,9 @@ struct AddJournalView: View {
           Picker("Pain", selection: $pain) {
             ForEach(painLevels, id: \.self) {
               Text($0)
+                .onTapGesture {
+                  hapticImpact.impactOccurred()
+                }
             }
           }
           .pickerStyle(SegmentedPickerStyle())
