@@ -96,7 +96,7 @@ struct AddJournalView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
-              .keyboardType(.numberPad)
+              .keyboardType(.decimalPad)
             
             Picker("Dosage Measurement", selection: $tempType) {
               ForEach(temps, id: \.self) { temp in

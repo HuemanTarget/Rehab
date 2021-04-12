@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Rehab needs permission to access your location to add to the calendar</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Rehab needs permission to access your contacts to import their location into the calendar</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Rehab needs permission to add the calendar event location in the app</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -30,8 +24,14 @@
 	<string>Rehab needs permission to your calendars to import into the app</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Rehab needs permission to your camera to take photos and store in the app</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Rehab needs permission to access your contacts to import their location into the calendar</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Rehab needs Touch ID or Face ID permission for app lock</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Rehab needs permission to add the calendar event location in the app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Rehab needs permission to access your location to add to the calendar</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Rehab needs acces to your photo library to add photos to the app</string>
 	<key>UIApplicationSceneManifest</key>

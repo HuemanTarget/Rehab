@@ -241,6 +241,23 @@ struct MedicationView: View {
     }
   }
   
+  // MARK: - FUNCTIONS
+//  private func refill(at offsets: IndexSet) {
+//    for index in offsets {
+//      let pill = pills[index]
+//      let quantity = Int(pill.pillQuantity!)
+//      let refill = String(quantity! + 30)
+//      
+//      pill.pillQuantity = refill
+//      
+//      do {
+//        try self.managedObjectContext.save()
+//      } catch {
+//        print(error)
+//      }
+//    }
+//  }
+  
 }
 
 // MARK: - PREVIEW
