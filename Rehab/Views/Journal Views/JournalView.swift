@@ -65,7 +65,6 @@ struct JournalView: View {
               Text("Notes: \(journal.notes!)")
                 .padding(.bottom, 2)
               
-              Divider()
             }
           } //: FOREACH
           .onDelete(perform: deleteJournal)

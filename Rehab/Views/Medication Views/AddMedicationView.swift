@@ -65,9 +65,6 @@ struct AddMedicationView: View {
             Picker("Dosage Measurement", selection: $dosageMeasurement) {
               ForEach(mesurements, id: \.self) { dose in
                 Text("\(dose)").tag(dose)
-                  .onTapGesture {
-                    hapticImpact.impactOccurred()
-                  }
               }
             }
             .frame(height: 20)
