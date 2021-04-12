@@ -15,25 +15,26 @@ struct AddMedicationView: View {
   @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 2)
   
   @State private var name: String = ""
-  @State private var shape: String = "capsule"
+  @State private var shape: String = "nopill"
   @State private var color: String = ""
   @State private var usage: String = ""
-  @State private var pillQuantity: String = "0"
+  @State private var pillQuantity: String = ""
   @State private var dosage: String = ""
   @State private var dosageMeasurement: String = "mg"
   @State private var morning: Bool = false
   @State private var noon: Bool = false
   @State private var night: Bool = false
-  
   @State private var errorShowing: Bool = false
   @State private var errorTitle: String = ""
   @State private var errorMessage: String = ""
   
   @State private var value: CGFloat = 0
   
-  let shapes = [ "capsule", "circular", "gell", "long-split", "oval-split" ]
+  let shapes = [ "nopill", "capsule", "circular", "gell", "long-split", "oval-split" ]
   
   let mesurements = [ "mg", "mL" ]
+  
+  let haptics = UIImpactFeedbackGenerator(style: .medium)
   
   // MARK: - BODY
   var body: some View {
@@ -57,7 +58,7 @@ struct AddMedicationView: View {
               .cornerRadius(9)
               .font(.system(size: 24, weight: .bold, design: .default))
               .padding(.top, 5)
-              .keyboardType(.numberPad)
+              .keyboardType(.decimalPad)
             
             Spacer()
             
@@ -101,7 +102,7 @@ struct AddMedicationView: View {
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
               .font(.system(size: 20, weight: .bold, design: .default))
-              .keyboardType(.numberPad)
+              .keyboardType(.decimalPad)
             
             Toggle(isOn: $morning) {
               Text("Morning")
@@ -134,7 +135,7 @@ struct AddMedicationView: View {
           // Save Button
           Button(action: {
             if self.pillQuantity == "" {
-              pillQuantity = "N/A"
+              pillQuantity = "0"
             }
             
             if self.color == "" {
