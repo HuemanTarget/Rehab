@@ -5,6 +5,9 @@
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Disclaimer" representedClassName="Disclaimer" syncable="YES" codeGenerationType="class">
+        <attribute name="disclaimer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
         <attribute name="bp" optional="YES" attributeType="String"/>
         <attribute name="bpd" optional="YES" attributeType="String"/>
@@ -35,5 +38,6 @@
         <element name="Bell" positionX="-54" positionY="63" width="128" height="74"/>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="194"/>
         <element name="Pill" positionX="-54" positionY="54" width="128" height="194"/>
+        <element name="Disclaimer" positionX="-54" positionY="99" width="128" height="44"/>
     </elements>
 </model>
