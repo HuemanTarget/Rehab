@@ -24,6 +24,7 @@
 		4E580E8B25FEC0E900AB4F0B /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */; };
 		4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8D25FEC10600AB4F0B /* JournalView.swift */; };
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
+		4E59E32F2625521600B042A7 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59E32E2625521600B042A7 /* DisclaimerView.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -88,6 +89,7 @@
 		4E580E8A25FEC0E900AB4F0B /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
 		4E580E8D25FEC10600AB4F0B /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		4E59E32E2625521600B042A7 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		4E580E8525FEC08B00AB4F0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E59E32D2625520100B042A7 /* Disclaimer */,
 				4E580E7125FEBFAE00AB4F0B /* ContentView.swift */,
 				4E35790C2609564E0030CEB1 /* TabBarView */,
 				4EED447F26017503002D4A15 /* Journal Views */,
@@ -197,6 +200,14 @@
 				4E580E6F25FEBFAE00AB4F0B /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4E59E32D2625520100B042A7 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				4E59E32E2625521600B042A7 /* DisclaimerView.swift */,
+			);
+			path = Disclaimer;
 			sourceTree = "<group>";
 		};
 		4EED447F26017503002D4A15 /* Journal Views */ = {
@@ -355,6 +366,7 @@
 				4E53ADE72608F81500DF2A09 /* MedicationImageView.swift in Sources */,
 				4E580E6E25FEBFAE00AB4F0B /* AppDelegate.swift in Sources */,
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
+				4E59E32F2625521600B042A7 /* DisclaimerView.swift in Sources */,
 				4EED449426017EB1002D4A15 /* Notifications.swift in Sources */,
 				4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
