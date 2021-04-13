@@ -12,9 +12,15 @@ struct ContentView: View {
   // MARK: - PROPERTIES
   @State private var isUnlocked = false
   
+  @FetchRequest(entity: Disclaimer.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Disclaimer.disclaimer, ascending: false)]) var disclaimer: FetchedResults<Disclaimer>
+  
   // MARK: - BODY
   var body: some View {
-    TabBarView()
+    VStack {
+
+        TabBarView()
+
+    }
     
 //    ZStack {
 //      if isUnlocked || LAContext() == .none {

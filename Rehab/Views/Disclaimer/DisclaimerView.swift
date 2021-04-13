@@ -23,11 +23,12 @@ struct DisclaimerView: View {
   // MARK: - BODY
   var body: some View {
     VStack {
+      Spacer()
+      
       Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
         .padding(40)
         .font(.title3)
       
-      Spacer()
       
       Button(action: {
 
@@ -63,6 +64,8 @@ struct DisclaimerView: View {
           .cornerRadius(9)
           .foregroundColor(.white)
       } //: BUTTON
+      
+      Spacer()
     } //: VSTACK
     .padding(.horizontal)
     .padding(.vertical, 10)
