@@ -25,6 +25,7 @@
 		4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E8D25FEC10600AB4F0B /* JournalView.swift */; };
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
 		4E59E32F2625521600B042A7 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59E32E2625521600B042A7 /* DisclaimerView.swift */; };
+		4ED388F22653530A00DC0064 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED388F12653530A00DC0064 /* CoreDataManager.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -90,6 +91,7 @@
 		4E580E8D25FEC10600AB4F0B /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4E59E32E2625521600B042A7 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		4ED388F12653530A00DC0064 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -158,10 +160,12 @@
 		4E580E6C25FEBFAE00AB4F0B /* Rehab */ = {
 			isa = PBXGroup;
 			children = (
+				4ED388F0265352F000DC0064 /* Managers */,
 				4EED448126017538002D4A15 /* Styles */,
 				4EED449926017FC9002D4A15 /* Helpers */,
 				4EED448826017BFA002D4A15 /* Extensions */,
 				4E580E9325FEC5D800AB4F0B /* App */,
+				4ED388EF265351B000DC0064 /* ViewModels */,
 				4E580E8525FEC08B00AB4F0B /* Views */,
 				4E580E7625FEBFAF00AB4F0B /* Assets.xcassets */,
 				4E580E7B25FEBFAF00AB4F0B /* LaunchScreen.storyboard */,
@@ -208,6 +212,21 @@
 				4E59E32E2625521600B042A7 /* DisclaimerView.swift */,
 			);
 			path = Disclaimer;
+			sourceTree = "<group>";
+		};
+		4ED388EF265351B000DC0064 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4ED388F0265352F000DC0064 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4ED388F12653530A00DC0064 /* CoreDataManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		4EED447F26017503002D4A15 /* Journal Views */ = {
@@ -354,6 +373,7 @@
 				4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */,
 				4E53ADE12608F71D00DF2A09 /* MedicationRowView.swift in Sources */,
 				4EED448E26017C36002D4A15 /* EventExtension.swift in Sources */,
+				4ED388F22653530A00DC0064 /* CoreDataManager.swift in Sources */,
 				4EED44B8260261C9002D4A15 /* EventEditView.swift in Sources */,
 				4EED44A52602579E002D4A15 /* KeyboardAvoidance.swift in Sources */,
 				4E224BC12617D78400931617 /* CheckboxStyle.swift in Sources */,
