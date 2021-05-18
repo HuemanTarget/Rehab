@@ -31,4 +31,18 @@ class CoreDataManager {
     
   }
   
+  var viewContext: NSManagedObjectContext {
+    return persistentContainer.viewContext
+  }
+  
+  func getJournalById(id: NSManagedObjectID) -> Journal? {
+    
+    do {
+      return try persistentContainer.viewContext.existingObject(with: id) as? Journal
+    } catch {
+      print(error)
+      return nil
+    }
+  }
+  
 }
