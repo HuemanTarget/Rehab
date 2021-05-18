@@ -45,4 +45,45 @@ class CoreDataManager {
     }
   }
   
+  func getAllJournals() -> [Journal] {
+    
+    let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+    
+    do {
+      return try persistentContainer.viewContext.fetch(fetchRequest)
+    } catch {
+      return []
+    }
+  }
+  
+  func getPillById(id: NSManagedObjectID) -> Pill? {
+    
+    do {
+      return try persistentContainer.viewContext.existingObject(with: id) as? Pill
+    } catch {
+      print(error)
+      return nil
+    }
+  }
+  
+  func getAllPills() -> [Pill] {
+    
+    let fetchRequest: NSFetchRequest<Pill> = Pill.fetchRequest()
+    
+    do {
+      return try persistentContainer.viewContext.fetch(fetchRequest)
+    } catch {
+      return []
+    }
+  }
+  
+  func save() {
+    do {
+      try persistentContainer.viewContext.save()
+    } catch {
+      persistentContainer.viewContext.rollback()
+      print("Failed to save \(error)")
+    }
+  }
+  
 }
