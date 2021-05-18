@@ -58,34 +58,34 @@ struct TabBarView: View {
       .font(.headline)
       .navigationBarTitle("Rehab", displayMode: .inline)
       .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-      .navigationBarItems(
-        leading:
-          Button(action: {
-            let phone = "tel://"
-            let phoneNumberformatted = phone + phoneNumber
-            guard let url = URL(string: phoneNumberformatted) else { return }
-            UIApplication.shared.open(url)
-            //            sendMessage()
-          }, label: {
-            HStack(spacing: 2) {
-              Image(systemName: "phone.fill")
-                .foregroundColor(Color("ImperialRed"))
-                .font(.title)
-              Text("Help")
-                .foregroundColor(Color("ImperialRed"))
-                .font(.title2)
-                .fontWeight(.bold)
-            }
-          })
-        //        trailing:
-        //          Button(action: {
-        //            self.showingBellSettingsView.toggle()
-        //          }, label: {
-        //            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
-        //              .foregroundColor(.blue)
-        //          })
-        
-      )
+//      .navigationBarItems(
+////        leading:
+////          Button(action: {
+////            let phone = "tel://"
+////            let phoneNumberformatted = phone + phoneNumber
+////            guard let url = URL(string: phoneNumberformatted) else { return }
+////            UIApplication.shared.open(url)
+////            //            sendMessage()
+////          }, label: {
+////            HStack(spacing: 2) {
+////              Image(systemName: "phone.fill")
+////                .foregroundColor(Color("ImperialRed"))
+////                .font(.title)
+////              Text("Help")
+////                .foregroundColor(Color("ImperialRed"))
+////                .font(.title2)
+////                .fontWeight(.bold)
+////            }
+////          })
+//        //        trailing:
+//        //          Button(action: {
+//        //            self.showingBellSettingsView.toggle()
+//        //          }, label: {
+//        //            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
+//        //              .foregroundColor(.blue)
+//        //          })
+//
+//      )
     } //: TABVIEW
     .sheet(isPresented: $showingBellSettingsView) {
       BellSettingsView().environment(\.managedObjectContext, self.managedObjectContext)

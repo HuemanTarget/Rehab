@@ -35,9 +35,9 @@ struct DisclaimerView: View {
         acceptTerms = true
         
         if self.acceptTerms != false {
-          let disclaimer = Disclaimer(context: self.managedObjectContext)
+//          let disclaimer = Disclaimer(context: self.managedObjectContext)
           
-          disclaimer.disclaimer = self.acceptTerms
+//          disclaimer.disclaimer = self.acceptTerms
           
           do {
             try self.managedObjectContext.save()
