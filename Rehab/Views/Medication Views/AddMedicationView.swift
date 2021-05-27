@@ -39,7 +39,7 @@ struct AddMedicationView: View {
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      ScrollView {
+      Form {
         VStack(alignment: .leading, spacing: 20) {
           
           // Name
@@ -47,7 +47,7 @@ struct AddMedicationView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+//            .font(.system(size: 24, weight: .bold, design: .default))
             .padding(.top, 5)
           
           // Dosage
@@ -56,7 +56,7 @@ struct AddMedicationView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 24, weight: .bold, design: .default))
+//              .font(.system(size: 24, weight: .bold, design: .default))
               .padding(.top, 5)
               .keyboardType(.decimalPad)
             
@@ -70,41 +70,41 @@ struct AddMedicationView: View {
             .frame(height: 20)
             .pickerStyle(SegmentedPickerStyle())
             .scaledToFit()
-            .scaleEffect(CGSize(width: 1.8, height: 1.65))
+            .scaleEffect(CGSize(width: 1.6, height: 1.4))
           }
           
           // Shape
-          Text("Pill Shape:")
-            .padding(.top, 0)
-          Picker("Pain", selection: $shape) {
-            ForEach(shapes, id: \.self) { shape in
-              Image("\(shape)").tag(shape)
-                .onTapGesture {
-                  hapticImpact.impactOccurred()
-                }
-            }
-          }
-          .frame(height: 40)
-          .pickerStyle(SegmentedPickerStyle())
-          .scaledToFit()
-          .scaleEffect(CGSize(width: 1, height: 2.0))
-          .padding(.top, 5)
-          .padding(.bottom, 5)
+//          Text("Pill Shape:")
+//            .padding(.top, 0)
+//          Picker("Pain", selection: $shape) {
+//            ForEach(shapes, id: \.self) { shape in
+//              Image("\(shape)").tag(shape)
+//                .onTapGesture {
+//                  hapticImpact.impactOccurred()
+//                }
+//            }
+//          }
+//          .frame(height: 40)
+//          .pickerStyle(SegmentedPickerStyle())
+//          .scaledToFit()
+//          .scaleEffect(CGSize(width: 1, height: 2.0))
+//          .padding(.top, 5)
+//          .padding(.bottom, 5)
           
           // Color
-          TextField("Color", text: $color)
-            .padding(10)
-            .background(Color(UIColor.tertiarySystemFill))
-            .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
-          
+//          TextField("Color", text: $color)
+//            .padding(10)
+//            .background(Color(UIColor.tertiarySystemFill))
+//            .cornerRadius(9)
+//            .font(.system(size: 24, weight: .bold, design: .default))
+//
           // Logo
           HStack {
             TextField("Per Dose", text: $usage)
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
+//              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.decimalPad)
             
             Toggle(isOn: $morning) {
@@ -141,7 +141,7 @@ struct AddMedicationView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+//            .font(.system(size: 24, weight: .bold, design: .default))
             .keyboardType(.numberPad)
           
           // Save Button
@@ -211,7 +211,7 @@ struct AddMedicationView: View {
           } //: BUTTON
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
         } //: VSTACK
-        .padding(.horizontal)
+//        .padding(.horizontal)
         .padding(.vertical, 10)
         
         Spacer()

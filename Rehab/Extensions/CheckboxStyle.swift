@@ -11,7 +11,7 @@ struct CheckboxStyle: ToggleStyle {
   
   func makeBody(configuration: Self.Configuration) -> some View {
     
-    return HStack {
+    return VStack {
       
       configuration.label
       
@@ -24,7 +24,6 @@ struct CheckboxStyle: ToggleStyle {
           configuration.isOn.toggle()
         }
     }
-    
   }
 }
 
