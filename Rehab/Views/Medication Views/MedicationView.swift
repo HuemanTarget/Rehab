@@ -181,9 +181,19 @@ struct MedicationView: View {
           } //: FOREACH
           .onDelete(perform: deletePill)
         } //: LIST
-        .navigationBarTitle("Medication", displayMode: .inline)
+        .navigationBarTitle("Medication")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-        
+        .navigationBarItems(trailing: Button(action: {
+          self.showingAddPillView = true
+        }, label: {
+          //Image(systemName: "plus").frame(width: 44, height: 44)
+          HStack {
+            Text("Add")
+              .foregroundColor(.red)
+            Image(systemName: "pills")
+              .foregroundColor(.red)
+          }
+        }))
         if pills.count == 0 {
           Text("There Are No Medication Entries")
         }
@@ -196,43 +206,43 @@ struct MedicationView: View {
       .alert(isPresented: $errorShowing) {
         Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
       }
-      .overlay(
-        ZStack {
-          Group {
-            Circle()
-              .fill(Color("AmaranthRed"))
-              .opacity(0.2)
-              .frame(width: 68, height: 68, alignment: .center)
-            Circle()
-              .fill(Color("AmaranthRed"))
-              .opacity(0.15)
-              .frame(width: 88, height: 88, alignment: .center)
-          } //: GROUP
-          
-          Button(action: {
-            self.showingAddPillView.toggle()
-          }) {
-            ZStack {
-              Image(systemName: "pills.fill")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(Color("AmaranthRed"))
-                .background(Circle().fill(Color("AmaranthRed")).opacity(0.1))
-                .frame(width: 48, height: 48, alignment: .center)
-              
-              Image(systemName: "plus")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.white)
-                .frame(width: 30, height: 30, alignment: .center)
-            }
-
-          }
-        } //: ZSTACK
-        .padding(.bottom, 15)
-        .padding(.trailing, 15)
-        , alignment: .bottomTrailing
-      ) //: OVERLAY
+//      .overlay(
+//        ZStack {
+//          Group {
+//            Circle()
+//              .fill(Color("AmaranthRed"))
+//              .opacity(0.2)
+//              .frame(width: 68, height: 68, alignment: .center)
+//            Circle()
+//              .fill(Color("AmaranthRed"))
+//              .opacity(0.15)
+//              .frame(width: 88, height: 88, alignment: .center)
+//          } //: GROUP
+//
+//          Button(action: {
+//            self.showingAddPillView.toggle()
+//          }) {
+//            ZStack {
+//              Image(systemName: "pills.fill")
+//                .resizable()
+//                .scaledToFit()
+//                .foregroundColor(Color("AmaranthRed"))
+//                .background(Circle().fill(Color("AmaranthRed")).opacity(0.1))
+//                .frame(width: 48, height: 48, alignment: .center)
+//
+//              Image(systemName: "plus")
+//                .resizable()
+//                .scaledToFit()
+//                .foregroundColor(.white)
+//                .frame(width: 30, height: 30, alignment: .center)
+//            }
+//
+//          }
+//        } //: ZSTACK
+//        .padding(.bottom, 15)
+//        .padding(.trailing, 15)
+//        , alignment: .bottomTrailing
+//      ) //: OVERLAY
     } //: NAVIGATION
   }
   
