@@ -193,7 +193,10 @@ struct MedicationView: View {
             Image(systemName: "pills")
               .foregroundColor(.red)
           }
+          .padding(8)
+          .border(Color.red, width: 3)
         }))
+        
         if pills.count == 0 {
           Text("There Are No Medication Entries")
         }

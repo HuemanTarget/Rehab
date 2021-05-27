@@ -47,6 +47,7 @@ struct AddMedicationView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
+            .modifier(CustomTextFieldModifier())
 //            .font(.system(size: 24, weight: .bold, design: .default))
             .padding(.top, 5)
           
@@ -56,6 +57,7 @@ struct AddMedicationView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 24, weight: .bold, design: .default))
               .padding(.top, 5)
               .keyboardType(.decimalPad)
@@ -67,10 +69,11 @@ struct AddMedicationView: View {
                 Text("\(dose)").tag(dose)
               }
             }
-            .frame(height: 20)
+//            .frame(height: 20)
             .pickerStyle(SegmentedPickerStyle())
+            .modifier(CustomTextFieldModifier())
             .scaledToFit()
-            .scaleEffect(CGSize(width: 1.6, height: 1.4))
+            .scaleEffect(CGSize(width: 1.4, height: 1.5))
           }
           
           // Shape
@@ -104,6 +107,7 @@ struct AddMedicationView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.decimalPad)
             
@@ -116,6 +120,7 @@ struct AddMedicationView: View {
             }
             .toggleStyle(CheckboxStyle())
             
+            
             Toggle(isOn: $noon) {
               Text("Noon")
                 .font(.subheadline)
@@ -124,6 +129,7 @@ struct AddMedicationView: View {
                 }
             }
             .toggleStyle(CheckboxStyle())
+            
             
             Toggle(isOn: $night) {
               Text("Night")
@@ -141,6 +147,7 @@ struct AddMedicationView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
+            .modifier(CustomTextFieldModifier())
 //            .font(.system(size: 24, weight: .bold, design: .default))
             .keyboardType(.numberPad)
           
