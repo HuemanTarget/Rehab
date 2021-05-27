@@ -57,7 +57,7 @@ struct TabBarView: View {
       .accentColor(Color("AliceBlue"))
       .font(.headline)
       .navigationBarTitle("Rehab", displayMode: .inline)
-      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+//      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
 //      .navigationBarItems(
 ////        leading:
 ////          Button(action: {

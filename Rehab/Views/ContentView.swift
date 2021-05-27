@@ -6,71 +6,28 @@
 //
 
 import SwiftUI
-import LocalAuthentication
 
 struct ContentView: View {
-  // MARK: - PROPERTIES
-  @State private var isUnlocked = false
+  @AppStorage("agreed") var userAgreed: Bool?
+  @State private var displayPopupMessage: Bool = true
   
-//  @FetchRequest(entity: Disclaimer.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Disclaimer.disclaimer, ascending: false)]) var disclaimer: FetchedResults<Disclaimer>
-  
-  // MARK: - BODY
   var body: some View {
-    VStack {
-
+    if userAgreed ?? false {
+      TabBarView()
+    } else {
+      VStack {
         TabBarView()
-
+      }
+      .alert(isPresented: $displayPopupMessage){
+        Alert(title: Text("User Agreement"), message: Text("This app is for personal use only and should not be used for medical advice. Please consult your doctor for any medical questions or issues."), dismissButton: .default(Text("Agree"), action: {
+          let agree: Bool = true
+          userAgreed = agree
+        })
+        )
+      }
     }
-    
-//    ZStack {
-//      if isUnlocked || LAContext() == .none {
-//        TabBarView()
-//      } else {
-////        AppLockView()
-//        Button(action: {
-//          self.authenticate()
-//        }) {
-//          VStack {
-//            Image(systemName: "faceid")
-//              .padding(5)
-//              .font(.system(size: 75))
-//              .foregroundColor(Color("ImperialRed"))
-//            Text("Unlock Rehab")
-//              .font(.title3)
-//              .fontWeight(.bold)
-//              .foregroundColor(Color("ImperialRed"))
-//          }
-//          .frame(maxWidth: .infinity, maxHeight: .infinity)
-//          .background(Color("SpaceCadet"))
-//          .edgesIgnoringSafeArea(.all)
-//        }
-//      }
-//    } //: ZSTACK
   }
   
-  //: FUNCTIONS
-//  func authenticate() {
-//    let context = LAContext()
-//    var error: NSError?
-//    
-//    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-//      let reason = "Please authenticate yourself to unlock Rehab."
-//      
-//      context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-//        
-//        DispatchQueue.main.async {
-//          if success {
-//            self.isUnlocked = true
-//          } else {
-//            // error
-//          }
-//        }
-//      }
-//    } else {
-//      // no biometrics
-////      self.isUnlocked = true
-//    }
-//  }
   
 }
 

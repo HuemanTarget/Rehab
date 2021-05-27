@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct AddJournalView: View {
   // MARK: - PROPERTIES
@@ -53,7 +54,7 @@ struct AddJournalView: View {
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
             .font(.system(size: 24, weight: .bold, design: .default))
-
+            
           
           // Heart Rate
           HStack {
@@ -205,13 +206,16 @@ struct AddJournalView: View {
             self.presentationMode.wrappedValue.dismiss()
           }) {
             Text("Save Journal Entry")
-              .font(.system(size: 20, weight: .bold, design: .default))
-              .padding(20)
+              .bold()
+              .foregroundColor(.red)
+//              .font(.system(size: 20, weight: .bold, design: .default))
+//              .padding(20)
               .frame(minWidth: 0, maxWidth: .infinity)
-              .background(Color("SpaceCadet"))
-              .cornerRadius(9)
-              .foregroundColor(.white)
+//              .background(Color("SpaceCadet"))
+//              .cornerRadius(9)
+//              .foregroundColor(.white)
           } //: BUTTON
+          .softButtonStyle(RoundedRectangle(cornerRadius: 20))
         } //: VSTACK
         .padding(.horizontal)
         .padding(.vertical, 10)

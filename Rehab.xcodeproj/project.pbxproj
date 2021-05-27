@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E224BC12617D78400931617 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E224BC02617D78400931617 /* CheckboxStyle.swift */; };
+		4E2266CB2657138C0086A87C /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 4E2266CA2657138C0086A87C /* Neumorphic */; };
 		4E35790E260956700030CEB1 /* BellSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E35790D260956700030CEB1 /* BellSettingsView.swift */; };
 		4E357962260A6A510030CEB1 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */; };
 		4E53ADE12608F71D00DF2A09 /* MedicationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53ADE02608F71D00DF2A09 /* MedicationRowView.swift */; };
@@ -26,6 +27,7 @@
 		4E580E9125FEC4B900AB4F0B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E580E9025FEC4B900AB4F0B /* TabBarView.swift */; };
 		4E59E32F2625521600B042A7 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59E32E2625521600B042A7 /* DisclaimerView.swift */; };
 		4ED388F22653530A00DC0064 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED388F12653530A00DC0064 /* CoreDataManager.swift */; };
+		4ED7CEB8266024520049F69A /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEB7266024520049F69A /* AgreementView.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -92,6 +94,7 @@
 		4E580E9025FEC4B900AB4F0B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4E59E32E2625521600B042A7 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		4ED388F12653530A00DC0064 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4ED7CEB7266024520049F69A /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2266CB2657138C0086A87C /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				4E59E32E2625521600B042A7 /* DisclaimerView.swift */,
+				4ED7CEB7266024520049F69A /* AgreementView.swift */,
 			);
 			path = Disclaimer;
 			sourceTree = "<group>";
@@ -315,6 +320,9 @@
 			dependencies = (
 			);
 			name = Rehab;
+			packageProductDependencies = (
+				4E2266CA2657138C0086A87C /* Neumorphic */,
+			);
 			productName = Rehab;
 			productReference = 4E580E6A25FEBFAE00AB4F0B /* Rehab.app */;
 			productType = "com.apple.product-type.application";
@@ -342,6 +350,9 @@
 				Base,
 			);
 			mainGroup = 4E580E6125FEBFAE00AB4F0B;
+			packageReferences = (
+				4E2266C92657138C0086A87C /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 4E580E6B25FEBFAE00AB4F0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,6 +394,7 @@
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
 				4E53ADE42608F7CC00DF2A09 /* SUImagePickerView.swift in Sources */,
 				4EED449B26017FFA002D4A15 /* EventsRepository.swift in Sources */,
+				4ED7CEB8266024520049F69A /* AgreementView.swift in Sources */,
 				4E53ADE72608F81500DF2A09 /* MedicationImageView.swift in Sources */,
 				4E580E6E25FEBFAE00AB4F0B /* AppDelegate.swift in Sources */,
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
@@ -606,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E2266C92657138C0086A87C /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E2266CA2657138C0086A87C /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E2266C92657138C0086A87C /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4E580E7325FEBFAE00AB4F0B /* Rehab.xcdatamodeld */ = {
