@@ -41,7 +41,7 @@ struct AddJournalView: View {
   // MARK: - BODY
   var body: some View {
     NavigationView {
-      ScrollView {
+      Form {
         VStack(alignment: .leading, spacing: 20) {
           
           // Date
@@ -217,11 +217,12 @@ struct AddJournalView: View {
           } //: BUTTON
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
         } //: VSTACK
-        .padding(.horizontal)
+//        .padding(.horizontal)
         .padding(.vertical, 10)
         
         Spacer()
       } //: SCROLL
+      
 //      .keyboardAdaptive()
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
       .navigationBarItems(

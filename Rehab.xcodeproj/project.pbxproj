@@ -28,6 +28,10 @@
 		4ED388F22653530A00DC0064 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED388F12653530A00DC0064 /* CoreDataManager.swift */; };
 		4ED7CEB8266024520049F69A /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEB7266024520049F69A /* AgreementView.swift */; };
 		4ED7CEBB266025360049F69A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEBA266025360049F69A /* AuthenticationView.swift */; };
+		4ED7CEC0266031850049F69A /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEBF266031850049F69A /* LinearGradient+Extensions.swift */; };
+		4ED7CEC3266031CF0049F69A /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEC2266031CF0049F69A /* Color+Extensions.swift */; };
+		4ED7CEC7266035C20049F69A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEC6266035C20049F69A /* UIColor+Extensions.swift */; };
+		4ED7CECA266036210049F69A /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEC9266036210049F69A /* View+Extensions.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -95,6 +99,10 @@
 		4ED388F12653530A00DC0064 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4ED7CEB7266024520049F69A /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		4ED7CEBA266025360049F69A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		4ED7CEBF266031850049F69A /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
+		4ED7CEC2266031CF0049F69A /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		4ED7CEC6266035C20049F69A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		4ED7CEC9266036210049F69A /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -263,6 +271,10 @@
 				4EED449E26025708002D4A15 /* UIResponderCurrent.swift */,
 				4EED44A126025769002D4A15 /* KeyboardHeightPublisher.swift */,
 				4E224BC02617D78400931617 /* CheckboxStyle.swift */,
+				4ED7CEBF266031850049F69A /* LinearGradient+Extensions.swift */,
+				4ED7CEC2266031CF0049F69A /* Color+Extensions.swift */,
+				4ED7CEC6266035C20049F69A /* UIColor+Extensions.swift */,
+				4ED7CEC9266036210049F69A /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,12 +406,15 @@
 				4E580E7525FEBFAE00AB4F0B /* Rehab.xcdatamodeld in Sources */,
 				4E53ADE42608F7CC00DF2A09 /* SUImagePickerView.swift in Sources */,
 				4EED449B26017FFA002D4A15 /* EventsRepository.swift in Sources */,
+				4ED7CEC0266031850049F69A /* LinearGradient+Extensions.swift in Sources */,
 				4ED7CEBB266025360049F69A /* AuthenticationView.swift in Sources */,
+				4ED7CEC3266031CF0049F69A /* Color+Extensions.swift in Sources */,
 				4ED7CEB8266024520049F69A /* AgreementView.swift in Sources */,
 				4E53ADE72608F81500DF2A09 /* MedicationImageView.swift in Sources */,
 				4E580E6E25FEBFAE00AB4F0B /* AppDelegate.swift in Sources */,
 				4E580E8E25FEC10600AB4F0B /* JournalView.swift in Sources */,
 				4E59E32F2625521600B042A7 /* DisclaimerView.swift in Sources */,
+				4ED7CECA266036210049F69A /* View+Extensions.swift in Sources */,
 				4EED449426017EB1002D4A15 /* Notifications.swift in Sources */,
 				4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */,
 				4E580E7025FEBFAE00AB4F0B /* SceneDelegate.swift in Sources */,
@@ -407,6 +422,7 @@
 				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
 				4EED44A826025A3A002D4A15 /* GeometryGetter.swift in Sources */,
 				4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */,
+				4ED7CEC7266035C20049F69A /* UIColor+Extensions.swift in Sources */,
 				4EED449F26025708002D4A15 /* UIResponderCurrent.swift in Sources */,
 				4EED449726017EFD002D4A15 /* EKCalendarExtension.swift in Sources */,
 				4EED44AF26025C00002D4A15 /* CalendarChooser.swift in Sources */,
