@@ -33,6 +33,7 @@
 		4ED7CEC7266035C20049F69A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEC6266035C20049F69A /* UIColor+Extensions.swift */; };
 		4ED7CECA266036210049F69A /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CEC9266036210049F69A /* View+Extensions.swift */; };
 		4ED7CECD2660390A0049F69A /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CECC2660390A0049F69A /* TabBarItemView.swift */; };
+		4ED7CED026603A660049F69A /* TabBarRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7CECF26603A660049F69A /* TabBarRowView.swift */; };
 		4EED442F2600213F002D4A15 /* AddJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED442E2600213F002D4A15 /* AddJournalView.swift */; };
 		4EED44832601756B002D4A15 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */; };
 		4EED448626017668002D4A15 /* SecondaryCaptionTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */; };
@@ -105,6 +106,7 @@
 		4ED7CEC6266035C20049F69A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4ED7CEC9266036210049F69A /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		4ED7CECC2660390A0049F69A /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		4ED7CECF26603A660049F69A /* TabBarRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRowView.swift; sourceTree = "<group>"; };
 		4EED442E2600213F002D4A15 /* AddJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalView.swift; sourceTree = "<group>"; };
 		4EED44822601756B002D4A15 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4EED448526017668002D4A15 /* SecondaryCaptionTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCaptionTextStyle.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				4E580E9025FEC4B900AB4F0B /* TabBarView.swift */,
 				4E35790D260956700030CEB1 /* BellSettingsView.swift */,
 				4ED7CECC2660390A0049F69A /* TabBarItemView.swift */,
+				4ED7CECF26603A660049F69A /* TabBarRowView.swift */,
 			);
 			path = TabBarView;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				4EED449126017E42002D4A15 /* TimeIntervalExtension.swift in Sources */,
 				4EED44A826025A3A002D4A15 /* GeometryGetter.swift in Sources */,
 				4EED44B526025F03002D4A15 /* SelectedCalendarsList.swift in Sources */,
+				4ED7CED026603A660049F69A /* TabBarRowView.swift in Sources */,
 				4ED7CEC7266035C20049F69A /* UIColor+Extensions.swift in Sources */,
 				4EED449F26025708002D4A15 /* UIResponderCurrent.swift in Sources */,
 				4EED449726017EFD002D4A15 /* EKCalendarExtension.swift in Sources */,
