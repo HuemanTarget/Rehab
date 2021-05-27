@@ -55,12 +55,13 @@ struct CalendarView: View {
         }) {
           Text("Select Calendars")
         }
+        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
 //        .buttonStyle(PrimaryButtonStyle())
-        .font(.system(size: 14, weight: .bold, design: .default))
-        .frame(width: 150, height: 50)
-        .background(Color("SpaceCadet"))
-        .cornerRadius(9)
-        .foregroundColor(.white)
+//        .font(.system(size: 14, weight: .bold, design: .default))
+//        .frame(width: 150, height: 50)
+//        .background(Color.blue)
+//        .cornerRadius(9)
+//        .foregroundColor(.white)
         .padding(.bottom, 20)
         .sheet(isPresented: $showingSheet) {
           if self.activeSheet == .calendarChooser {
@@ -71,7 +72,7 @@ struct CalendarView: View {
         }
       }
       .navigationBarTitle("Calendar", displayMode: .inline)
-      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+//      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(trailing: Button(action: {
         self.selectedEvent = nil
         self.activeSheet = .calendarEdit
@@ -80,9 +81,9 @@ struct CalendarView: View {
         //Image(systemName: "plus").frame(width: 44, height: 44)
         HStack {
           Text("Add")
-            .foregroundColor(Color("AliceBlue"))
+            .foregroundColor(.red)
           Image(systemName: "calendar")
-            .foregroundColor(Color("AliceBlue"))
+            .foregroundColor(.red)
         }
       }))
     }

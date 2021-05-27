@@ -70,7 +70,7 @@ struct JournalView: View {
           .onDelete(perform: deleteJournal)
         } //: LIST
         .navigationBarTitle("Journal", displayMode: .inline)
-        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+//        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         
         if journals.count == 0 {
           Text("There Are No Journal Entries")

@@ -224,7 +224,6 @@ struct AddJournalView: View {
       } //: SCROLL
 //      .keyboardAdaptive()
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
-      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         trailing:
           Button(action: {

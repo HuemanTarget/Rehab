@@ -202,13 +202,14 @@ struct AddMedicationView: View {
             self.presentationMode.wrappedValue.dismiss()
           }) {
             Text("Save Medication")
-              .font(.system(size: 20, weight: .bold, design: .default))
-              .padding(20)
+              .bold()
+              .foregroundColor(.red)
+//              .font(.system(size: 20, weight: .bold, design: .default))
+
               .frame(minWidth: 0, maxWidth: .infinity)
-              .background(Color("SpaceCadet"))
-              .cornerRadius(9)
-              .foregroundColor(.white)
+//              .cornerRadius(9)
           } //: BUTTON
+          .softButtonStyle(RoundedRectangle(cornerRadius: 20))
         } //: VSTACK
         .padding(.horizontal)
         .padding(.vertical, 10)
@@ -217,7 +218,7 @@ struct AddMedicationView: View {
       } //: SCROLL
       //      .keyboardAdaptive()
       .navigationBarTitle("New Medication", displayMode: .inline)
-      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+//      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         trailing:
           Button(action: {

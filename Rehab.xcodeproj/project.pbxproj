@@ -10,7 +10,6 @@
 		4E224BC12617D78400931617 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E224BC02617D78400931617 /* CheckboxStyle.swift */; };
 		4E2266CB2657138C0086A87C /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 4E2266CA2657138C0086A87C /* Neumorphic */; };
 		4E35790E260956700030CEB1 /* BellSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E35790D260956700030CEB1 /* BellSettingsView.swift */; };
-		4E357962260A6A510030CEB1 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */; };
 		4E53ADE12608F71D00DF2A09 /* MedicationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53ADE02608F71D00DF2A09 /* MedicationRowView.swift */; };
 		4E53ADE42608F7CC00DF2A09 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53ADE32608F7CC00DF2A09 /* SUImagePickerView.swift */; };
 		4E53ADE72608F81500DF2A09 /* MedicationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53ADE62608F81500DF2A09 /* MedicationImageView.swift */; };
@@ -76,7 +75,6 @@
 		4E224BC02617D78400931617 /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 		4E35790D260956700030CEB1 /* BellSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellSettingsView.swift; sourceTree = "<group>"; };
 		4E35794B260A543D0030CEB1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		4E53ADE02608F71D00DF2A09 /* MedicationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRowView.swift; sourceTree = "<group>"; };
 		4E53ADE32608F7CC00DF2A09 /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		4E53ADE62608F81500DF2A09 /* MedicationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationImageView.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 				4EED449626017EFD002D4A15 /* EKCalendarExtension.swift */,
 				4EED449E26025708002D4A15 /* UIResponderCurrent.swift */,
 				4EED44A126025769002D4A15 /* KeyboardHeightPublisher.swift */,
-				4E357961260A6A510030CEB1 /* NavigationBarModifier.swift */,
 				4E224BC02617D78400931617 /* CheckboxStyle.swift */,
 			);
 			path = Extensions;
@@ -417,7 +414,6 @@
 				4E35790E260956700030CEB1 /* BellSettingsView.swift in Sources */,
 				4EED44A226025769002D4A15 /* KeyboardHeightPublisher.swift in Sources */,
 				4EED44AB26025A6B002D4A15 /* KeyboardGuardian.swift in Sources */,
-				4E357962260A6A510030CEB1 /* NavigationBarModifier.swift in Sources */,
 				4E580E7225FEBFAE00AB4F0B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

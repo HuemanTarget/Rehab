@@ -182,7 +182,7 @@ struct MedicationView: View {
           .onDelete(perform: deletePill)
         } //: LIST
         .navigationBarTitle("Medication", displayMode: .inline)
-        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+//        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         
         if pills.count == 0 {
           Text("There Are No Medication Entries")
