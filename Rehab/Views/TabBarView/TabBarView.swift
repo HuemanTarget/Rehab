@@ -9,85 +9,71 @@ import SwiftUI
 import MessageUI
 import CoreData
 
+enum SmartView {
+  case calendar
+  case medication
+  case journal
+}
+
 struct TabBarView: View {
   // MARK: - PROPERTIES
-  //  private let messageComposeDelegate = MessageComposerDelegate()
   @Environment(\.managedObjectContext) var managedObjectContext
-  
+  @State var selectedItem = SmartView.calendar
   var phoneNumber = "310-806-7483"
   
   
-  @State private var showingBellSettingsView: Bool = false
-  
-  
-//  init() {
-//    UITabBar.appearance().barTintColor = UIColor(red: 43, green: 45, blue: 66)
-//  }
-  
   // MARK: - BODY
   var body: some View {
-    NavigationView {
-      TabView {
-        CalendarView()
-          .tabItem {
-            Label("Calendar", systemImage: "calendar")
+    GeometryReader { geometry in
+      VStack(spacing: 0) {
+        ZStack {
+          if self.selectedItem == .calendar {
+            CalendarView()
+            MedicationView().hidden()
+            JournalView().hidden()
+          } else if self.selectedItem == .medication {
+            CalendarView().hidden()
+            MedicationView()
+            JournalView().hidden()
+          } else if self.selectedItem == .journal {
+            CalendarView().hidden()
+            MedicationView().hidden()
+            JournalView()
           }
+        }
         
-        MedicationView()
-          .tabItem {
-            Label("Medication", systemImage: "pills")
-          }
         
-        JournalView()
-          .tabItem {
-            Label("Journal", systemImage: "book.closed")
-          }
+        TabBarRowView(
+          selectedItem: self.$selectedItem,
+          tabBarItems: [
+            TabBarItemView(
+              selectedItem: self.$selectedItem,
+              smartView: .calendar, icon: "calendar"),
+            TabBarItemView(
+              selectedItem: self.$selectedItem,
+              smartView: .medication, icon: "pills"),
+            TabBarItemView(
+              selectedItem: self.$selectedItem,
+              smartView: .journal, icon: "book.closed")
+          ])
+//          .padding(.bottom)
+          .background(Color.lairBackgroundGray)
       }
-//      .accentColor(Color("AliceBlue"))
-      .font(.headline)
-      .navigationBarTitle("Rehab", displayMode: .inline)
-//      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-      .navigationBarItems(
-        leading:
-          Button(action: {
-            sendMessage()
-          }, label: {
-            HStack(spacing: 2) {
-              Image(systemName: "bell.fill")
-                .foregroundColor(Color("ImperialRed"))
-                .font(.title)
-              Text("Help")
-                .foregroundColor(Color("ImperialRed"))
-                .font(.title2)
-                .fontWeight(.bold)
-            }
-          })
-//        //        trailing:
-//        //          Button(action: {
-//        //            self.showingBellSettingsView.toggle()
-//        //          }, label: {
-//        //            Image(systemName: "gearshape.fill").frame(width: 44, height: 44)
-//        //              .foregroundColor(.blue)
-//        //          })
-//
-      )
-    } //: TABVIEW
-    .sheet(isPresented: $showingBellSettingsView) {
-      BellSettingsView().environment(\.managedObjectContext, self.managedObjectContext)
+      .edgesIgnoringSafeArea(.bottom)
     }
-  } //: NAVIGATION
+    
+//    func sendMessage(){
+//      let sms: String = "sms:+13108067483&body=Ring! Ring! I need your help!"
+//      let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//      UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+//    }
+  }
+}
   
-  func sendMessage(){
-    let sms: String = "sms:+13108067483&body=Ring! Ring! I need your help!"
-    let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+  
+  // MARK: - PREVIEW
+  struct TabBarView_Previews: PreviewProvider {
+    static var previews: some View {
+      TabBarView()
+    }
   }
-}
-
-
-// MARK: - PREVIEW
-struct TabBarView_Previews: PreviewProvider {
-  static var previews: some View {
-    TabBarView()
-  }
-}

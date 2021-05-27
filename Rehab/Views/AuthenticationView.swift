@@ -14,33 +14,35 @@ struct AuthenticationView: View {
   @State private var willMoveToNextScreen = false
   
   var body: some View {
-    VStack {
-      Text("Please Authenticate Using")
-        .padding(.bottom, 50)
-        .font(.headline)
-      
-      if isUnlocked {
-        ContentView()
-      } else {
-        Button(action: {
-          auth()
-        }) {
-          Image(systemName: "faceid")
-            .font(.largeTitle)
-        }
-      }
-      
-      if noAuth {
-        Button(action: {
-          willMoveToNextScreen = true
-        }) {
-          Text("Press To Enter \n Without Authentication")
-            .multilineTextAlignment(.center)
-        }
-        .padding(.top, 20)
+    ZStack {
+      VStack {
+        Text("Please Authenticate Using")
+          .padding(.bottom, 50)
+          .font(.headline)
         
-      }
-    }.navigate(to: ContentView(), when: $willMoveToNextScreen)
+        if isUnlocked {
+          ContentView()
+        } else {
+          Button(action: {
+            auth()
+          }) {
+            Image(systemName: "faceid")
+              .font(.largeTitle)
+          }
+        }
+        
+        if noAuth {
+          Button(action: {
+            willMoveToNextScreen = true
+          }) {
+            Text("Press To Enter \n Without Authentication")
+              .multilineTextAlignment(.center)
+          }
+          .padding(.top, 20)
+          
+        }
+      }.navigate(to: ContentView(), when: $willMoveToNextScreen)
+    }
     
   }
   

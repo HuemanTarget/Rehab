@@ -20,10 +20,10 @@ struct AddJournalView: View {
   @State private var hr: String = ""
   @State private var bp: String = ""
   @State private var bpd: String = ""
-  @State private var pain: String = "N/A"
+  @State private var pain: String = "0"
   @State private var notes: String = ""
   @State private var temperature: String = ""
-  @State private var tempType: String = "F"
+  @State private var tempType: String = "°F"
   @State private var oxygen: String = ""
   
   @State private var errorShowing: Bool = false
@@ -32,9 +32,9 @@ struct AddJournalView: View {
   
   @State private var value: CGFloat = 0
   
-  let painLevels = ["N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  let painLevels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
-  let temps = ["F", "C"]
+  let temps = ["°F", "°C"]
   
   let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
@@ -53,7 +53,7 @@ struct AddJournalView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+//            .font(.system(size: 24, weight: .bold, design: .default))
             
           
           // Heart Rate
@@ -62,14 +62,14 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 24, weight: .bold, design: .default))
+//              .font(.system(size: 24, weight: .bold, design: .default))
               .keyboardType(.numberPad)
             
             TextField("Oxygen %", text: $oxygen)
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 24, weight: .bold, design: .default))
+//              .font(.system(size: 24, weight: .bold, design: .default))
               .keyboardType(.numberPad)
           }
           
@@ -79,7 +79,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
+//              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
             
             Text(" / ")
@@ -88,7 +88,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
+//              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
           }
           
@@ -98,7 +98,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
-              .font(.system(size: 20, weight: .bold, design: .default))
+//              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.decimalPad)
             
             Picker("Dosage Measurement", selection: $tempType) {
@@ -112,7 +112,7 @@ struct AddJournalView: View {
             .frame(height: 20)
             .pickerStyle(SegmentedPickerStyle())
             .scaledToFit()
-            .scaleEffect(CGSize(width: 1.8, height: 1.5))
+            .scaleEffect(CGSize(width: 1.6, height: 1.4))
             
           }
           
@@ -135,7 +135,7 @@ struct AddJournalView: View {
             .padding(40)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
-            .font(.system(size: 24, weight: .bold, design: .default))
+//            .font(.system(size: 24, weight: .bold, design: .default))
             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
           
           // Save Button

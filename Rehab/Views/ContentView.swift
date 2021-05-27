@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum SmartView {
-  case calendar
-  case medication
-  case journal
-}
 
 struct ContentView: View {
   @AppStorage("agreed") var userAgreed: Bool?
