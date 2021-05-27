@@ -53,6 +53,7 @@ struct AddJournalView: View {
             .padding(10)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
+            .modifier(CustomTextFieldModifier())
 //            .font(.system(size: 24, weight: .bold, design: .default))
             
           
@@ -62,6 +63,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 24, weight: .bold, design: .default))
               .keyboardType(.numberPad)
             
@@ -69,6 +71,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 24, weight: .bold, design: .default))
               .keyboardType(.numberPad)
           }
@@ -79,6 +82,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
             
@@ -88,6 +92,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.numberPad)
           }
@@ -98,6 +103,7 @@ struct AddJournalView: View {
               .padding(10)
               .background(Color(UIColor.tertiarySystemFill))
               .cornerRadius(9)
+              .modifier(CustomTextFieldModifier())
 //              .font(.system(size: 20, weight: .bold, design: .default))
               .keyboardType(.decimalPad)
             
@@ -109,10 +115,11 @@ struct AddJournalView: View {
                   }
               }
             }
-            .frame(height: 20)
+//            .frame(height: 20)
             .pickerStyle(SegmentedPickerStyle())
+            .modifier(CustomTextFieldModifier())
             .scaledToFit()
-            .scaleEffect(CGSize(width: 1.6, height: 1.4))
+            .scaleEffect(CGSize(width: 1.5, height: 1.4))
             
           }
           
@@ -127,6 +134,7 @@ struct AddJournalView: View {
             }
           }
           .pickerStyle(SegmentedPickerStyle())
+          .modifier(CustomTextFieldModifier())
           .padding(0)
           
           
@@ -135,6 +143,7 @@ struct AddJournalView: View {
             .padding(40)
             .background(Color(UIColor.tertiarySystemFill))
             .cornerRadius(9)
+            .modifier(CustomTextFieldModifier())
 //            .font(.system(size: 24, weight: .bold, design: .default))
             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
           
@@ -222,6 +231,7 @@ struct AddJournalView: View {
         
         Spacer()
       } //: SCROLL
+      
       
 //      .keyboardAdaptive()
       .navigationBarTitle("New Journal Entry", displayMode: .inline)
