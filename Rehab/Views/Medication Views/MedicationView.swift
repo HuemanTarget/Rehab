@@ -64,29 +64,31 @@ struct MedicationView: View {
                     
                   }) {
                     Text("Refill")
-                      .padding(8)
-                      .background(Color("SpaceCadet"))
-                      .foregroundColor(.white)
-                      .clipShape(RoundedRectangle(cornerRadius: 5))
+                      .frame(width: 40, height: 5)
+                      .padding(.trailing, 8)
+//                      .background(Color("SpaceCadet"))
+//                      .foregroundColor(.white)
+//                      .clipShape(RoundedRectangle(cornerRadius: 5))
                   }
-                  .buttonStyle(PlainButtonStyle())
+                  .softButtonStyle(RoundedRectangle(cornerRadius: 20), mainColor: Color.red, textColor: Color.white)
+//                  .buttonStyle(PlainButtonStyle())
                   
                   
                 }
-                HStack {
-                  Image(pill.shape!)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-                  
-                  Spacer()
-                  
-                  Text("Color: \(pill.color ?? "N/A")")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                  
-                  Spacer()
-                }
+//                HStack {
+//                  Image(pill.shape!)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 50, height: 50)
+//
+//                  Spacer()
+//
+//                  Text("Color: \(pill.color ?? "N/A")")
+//                    .font(.subheadline)
+//                    .fontWeight(.bold)
+//
+//                  Spacer()
+//                }
                 
                 HStack {
                   Text("\(pill.usage ?? "N/A") x per dose")
@@ -140,17 +142,19 @@ struct MedicationView: View {
                       
                       return
                     }
-                    self.presentationMode.wrappedValue.dismiss()
+//                    self.presentationMode.wrappedValue.dismiss()
                     
                   }) {
                     Image(systemName: "minus.circle")
                       .resizable()
                       .scaledToFit()
-                      .foregroundColor(.white)
-                      .background(Circle().fill(Color("ImperialRed")))
-                      .frame(width: 35, height: 35)
+//                      .foregroundColor(.white)
+//                      .background(Circle().fill(Color("ImperialRed")))
+                      .frame(width: 10, height: 10)
                   } //: MINUS BUTTON
-                  .buttonStyle(PlainButtonStyle())
+                  .softButtonStyle(Circle(), mainColor: Color.red, textColor: Color.white)
+//                  .buttonStyle(PlainButtonStyle())
+                  
                   Text("-")
                   Button(action: {
                     let quantity = Int(pill.pillQuantity!)
