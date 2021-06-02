@@ -21,6 +21,11 @@ struct TabBarView: View {
   @State var selectedItem = SmartView.calendar
   var phoneNumber = "310-806-7483"
   
+  init() {
+       UITableView.appearance().separatorStyle = .none
+       UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
+       UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+    }
   
   // MARK: - BODY
   var body: some View {

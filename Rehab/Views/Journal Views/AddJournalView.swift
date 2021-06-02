@@ -38,7 +38,10 @@ struct AddJournalView: View {
   
   let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
-  
+  init() {
+    UINavigationBar.appearance().largeTitleTextAttributes =
+      [.foregroundColor: UIColor.lairDarkGray]
+  }
   
   // MARK: - BODY
   var body: some View {

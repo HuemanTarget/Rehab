@@ -27,6 +27,7 @@ struct JournalView: View {
 //      [.foregroundColor: UIColor.lairDarkGray]
 //  }
   
+  
   // MARK: - BODY
   var body: some View {
     NavigationView {
@@ -68,6 +69,7 @@ struct JournalView: View {
                 
                 Spacer()
               }
+              
               .padding(.bottom, 2)
               .font(.subheadline)
               
@@ -77,7 +79,9 @@ struct JournalView: View {
             }
           } //: FOREACH
           .onDelete(perform: deleteJournal)
+//          .background(Color.green)
         } //: LIST
+        
         .navigationBarTitle("Journal")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         .navigationBarItems(trailing: Button(action: {
