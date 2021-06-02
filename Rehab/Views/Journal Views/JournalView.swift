@@ -44,42 +44,54 @@ struct JournalView: View {
           }
           
           ForEach(self.journals, id: \.self) { journal in
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 5) {
               Text("\(journal.date ?? Date(), formatter: self.dateFormatter)")
-                .padding(.bottom, 2)
+                .padding(.bottom, 1)
                 .font(.subheadline)
               
               Text(journal.desc ?? "Unkown")
-                .padding(.bottom, 2)
-                .font(.title)
+                .font(.title2)
+                .fontWeight(.bold)
+
+                
               HStack {
                 Text("HR: \(journal.hr!)" )
+                  .font(.subheadline)
+                  .fontWeight(.bold)
                 
                 Spacer()
                 
                 Text("BP: \(journal.bp ?? "N/A") / \(journal.bpd ?? "N/A")")
+                  .font(.subheadline)
+                  .fontWeight(.bold)
                 
                 Spacer()
                 
                 Text("Pain Level: \(journal.pain!)")
+                  .font(.subheadline)
+                  .fontWeight(.bold)
               }
-              .padding(.bottom, 2)
-              .font(.subheadline)
               
               HStack {
                 Text("Temp: \(journal.temperature ?? "N/A") \(journal.tempType ?? "N/A")")
+                  .font(.subheadline)
+                  .fontWeight(.bold)
                 
                 Spacer()
                 
                 Text("Oxygen: \(journal.oxygen ?? "N/A")%")
+                  .font(.subheadline)
+                  .fontWeight(.bold)
                 
                 Spacer()
               }
               
-              .padding(.bottom, 2)
-              .font(.subheadline)
+//              .padding(.bottom, 2)
+//              .font(.subheadline)
               
               Text("Notes: \(journal.notes!)")
+                .font(.subheadline)
+                .fontWeight(.bold)
                 .padding(.bottom, 2)
               
             }

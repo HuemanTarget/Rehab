@@ -23,6 +23,6 @@ struct SelectedCalendarsList: View {
     }
     
     var body: some View {
-        joinedText.foregroundColor(.secondary)
+        joinedText.foregroundColor(.black)
     }
 }

@@ -105,9 +105,10 @@ struct MedicationView: View {
 //                }
                 
                 HStack {
-                  Text("\(pill.usage ?? "N/A") x per dose")
+                  Text("\(pill.usage ?? "N/A") pill(s) per dose")
                     .font(.subheadline)
                     .fontWeight(.bold)
+                  
                   
                   Spacer()
                   
@@ -132,7 +133,8 @@ struct MedicationView: View {
                 HStack {
                   
                   Text("\(pill.pillQuantity ?? "Unkown") pills remaining")
-                  
+                    .font(.subheadline)
+                    .fontWeight(.bold)
                   Spacer()
                   
                   Button(action: {
@@ -159,12 +161,13 @@ struct MedicationView: View {
 //                    self.presentationMode.wrappedValue.dismiss()
                     
                   }) {
-                    Image(systemName: "minus.circle")
-                      .resizable()
-                      .scaledToFit()
-//                      .foregroundColor(.white)
-//                      .background(Circle().fill(Color("ImperialRed")))
-                      .frame(width: 10, height: 10)
+//                    Image(systemName: "minus.circle")
+//                      .resizable()
+//                      .scaledToFit()
+////                      .foregroundColor(.white)
+////                      .background(Circle().fill(Color("ImperialRed")))
+//                      .frame(width: 10)
+                    Text("-")
                   } //: MINUS BUTTON
                   .softButtonStyle(Circle(), mainColor: Color.red, textColor: Color.white)
 //                  .buttonStyle(PlainButtonStyle())
@@ -185,14 +188,16 @@ struct MedicationView: View {
                     }
                     
                   }) {
-                    Image(systemName: "plus.circle")
-                      .resizable()
-                      .scaledToFit()
-                      .foregroundColor(.white)
-                      .background(Circle().fill(Color("Manatee")))
-                      .frame(width: 35, height: 35)
+//                    Image(systemName: "plus.circle")
+//                      .resizable()
+//                      .scaledToFit()
+//                      .foregroundColor(.white)
+//                      .background(Circle().fill(Color("Manatee")))
+//                      .frame(width: 35, height: 35)
+                    Text("+")
                   } //: PLUS BUTTON
-                  .buttonStyle(PlainButtonStyle())
+                  .softButtonStyle(Circle(), mainColor: Color.green, textColor: Color.white)
+//                  .buttonStyle(PlainButtonStyle())
                 } //: HSTACK
               } //: VSTACK
             } //: HSTACK

@@ -36,28 +36,30 @@ struct AuthenticationView: View {
             if isUnlocked {
               ContentView()
             } else {
-              Button(action: {
-                auth()
-              }) {
-                Image(systemName: "faceid")
-                  .font(.system(size: 50))
-                  .foregroundColor(.black)
-              }
-              .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-
- 
-
+              VStack {
                 Button(action: {
-                  isUnlocked = true
-    
-                  }) {
-                    Text("Press To Enter \n Without FaceID")
-                      .multilineTextAlignment(.center)
-                      .foregroundColor(.black)
-                      .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
-                  }
-                  .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                .padding(.top, 30)
+                  auth()
+                }) {
+                  Image(systemName: "faceid")
+                    .font(.system(size: 50))
+                    .foregroundColor(.black)
+                }
+                .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+
+   
+
+                  Button(action: {
+                    isUnlocked = true
+      
+                    }) {
+                      Text("Press To Enter \n Without FaceID")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
+                        .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
+                    }
+                    .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                  .padding(.top, 30)
+              }
             }
             
   //          if noAuth {

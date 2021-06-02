@@ -15,20 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rehab Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Isj-TD-Y0V">
-                                <rect key="frame" x="31" y="268" width="353" height="361"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="SpaceCadet"/>
-                        <constraints>
-                            <constraint firstItem="Isj-TD-Y0V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="224" id="8MP-s5-a7d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Isj-TD-Y0V" secondAttribute="trailing" constant="30" id="CGO-ht-5Ce"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Isj-TD-Y0V" secondAttribute="bottom" constant="233" id="Mmh-Xp-0YN"/>
-                            <constraint firstItem="Isj-TD-Y0V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="Vfr-hc-b8K"/>
-                        </constraints>
+                        <color key="backgroundColor" name="ColorBase"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,9 +25,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rehab Icon" width="1024" height="1024"/>
-        <namedColor name="SpaceCadet">
-            <color red="0.16862745098039217" green="0.17647058823529413" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ColorBase">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
