@@ -27,6 +27,10 @@ struct MedicationView: View {
     NavigationView {
       ZStack {
         List {
+          if pills.count == 0 {
+            Text("There Are No Medication Entries")
+          }
+          
           ForEach(self.pills, id: \.self) { pill in
             HStack {
               VStack(alignment: .leading, spacing: 2) {
@@ -183,8 +187,10 @@ struct MedicationView: View {
               } //: VSTACK
             } //: HSTACK
           } //: FOREACH
+          
           .onDelete(perform: deletePill)
         } //: LIST
+//        padding(.top, 10)
         .navigationBarTitle("Medication")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         .navigationBarItems(trailing: Button(action: {
@@ -201,9 +207,9 @@ struct MedicationView: View {
           .border(Color.red, width: 3)
         }))
         
-        if pills.count == 0 {
-          Text("There Are No Medication Entries")
-        }
+//        if pills.count == 0 {
+//          Text("There Are No Medication Entries")
+//        }
         
         
       } //: ZSTACK

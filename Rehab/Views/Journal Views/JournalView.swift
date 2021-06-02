@@ -33,6 +33,10 @@ struct JournalView: View {
       ZStack {
 //        Color.lairBackgroundGray.edgesIgnoringSafeArea(.all)
         List {
+          if journals.count == 0 {
+            Text("There Are No Journal Entries")
+          }
+          
           ForEach(self.journals, id: \.self) { journal in
             VStack(alignment: .leading) {
               Text("\(journal.date ?? Date(), formatter: self.dateFormatter)")
@@ -88,9 +92,9 @@ struct JournalView: View {
               .foregroundColor(.red)
           }
         }))
-        if journals.count == 0 {
-          Text("There Are No Journal Entries")
-        }
+//        if journals.count == 0 {
+//          Text("There Are No Journal Entries")
+//        }
         
       } //: ZSTACK
       .sheet(isPresented: $showingAddJournalView) {

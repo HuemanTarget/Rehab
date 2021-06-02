@@ -28,64 +28,77 @@ struct CalendarView: View {
     showingSheet = true
   }
   
+  init() {
+    UINavigationBar.appearance().largeTitleTextAttributes =
+      [.foregroundColor: UIColor.lairDarkGray]
+  }
+  
   var body: some View {
     NavigationView {
-      VStack {
-        List {
-          if eventsRepository.events?.isEmpty ?? true {
-            Text("No upcoming events")
-              .font(.headline)
-              .foregroundColor(.secondary)
-          }
-          
-          ForEach(eventsRepository.events ?? [], id: \.self) { event in
-            EventRow(event: event).onTapGesture {
-              self.showEditFor(event)
+      ZStack {
+        Color(.lairBackgroundGray)
+          .edgesIgnoringSafeArea(.all)
+        VStack {
+          List {
+            if eventsRepository.events?.isEmpty ?? true {
+              Text("No upcoming events")
+            }
+            
+            ForEach(eventsRepository.events ?? [], id: \.self) { event in
+              EventRow(event: event).onTapGesture {
+                self.showEditFor(event)
+              }
             }
           }
-        }
-        
-        SelectedCalendarsList(selectedCalendars: Array(eventsRepository.selectedCalendars ?? []))
-          .padding(.vertical)
-          .padding(.horizontal, 5)
-        
-        Button(action: {
-          self.activeSheet = .calendarChooser
-          self.showingSheet = true
-        }) {
-          Text("Select Calendars")
-        }
-        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-//        .buttonStyle(PrimaryButtonStyle())
-//        .font(.system(size: 14, weight: .bold, design: .default))
-//        .frame(width: 150, height: 50)
-//        .background(Color.blue)
-//        .cornerRadius(9)
-//        .foregroundColor(.white)
-        .padding(.bottom, 20)
-        .sheet(isPresented: $showingSheet) {
-          if self.activeSheet == .calendarChooser {
-            CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
-          } else {
-            EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
+          
+          
+          
+          SelectedCalendarsList(selectedCalendars: Array(eventsRepository.selectedCalendars ?? []))
+            .padding(.vertical)
+            .padding(.horizontal, 5)
+          
+          Button(action: {
+            self.activeSheet = .calendarChooser
+            self.showingSheet = true
+          }) {
+            Text("Select Calendars")
           }
+          .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+  //        .buttonStyle(PrimaryButtonStyle())
+  //        .font(.system(size: 14, weight: .bold, design: .default))
+  //        .frame(width: 150, height: 50)
+  //        .background(Color.blue)
+  //        .cornerRadius(9)
+  //        .foregroundColor(.white)
+          .padding(.bottom, 20)
+          
+          
+          .sheet(isPresented: $showingSheet) {
+            if self.activeSheet == .calendarChooser {
+              CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
+            } else {
+              EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
+            }
+          }
+          
         }
-      }
-      .navigationBarTitle("Calendar")
-//      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-      .navigationBarItems(trailing: Button(action: {
-        self.selectedEvent = nil
-        self.activeSheet = .calendarEdit
-        self.showingSheet = true
-      }, label: {
-        //Image(systemName: "plus").frame(width: 44, height: 44)
-        HStack {
-          Text("Add")
-            .foregroundColor(.red)
-          Image(systemName: "calendar")
-            .foregroundColor(.red)
-        }
+        
+        .navigationBarTitle("Calendar")
+  //      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+        .navigationBarItems(trailing: Button(action: {
+          self.selectedEvent = nil
+          self.activeSheet = .calendarEdit
+          self.showingSheet = true
+        }, label: {
+          //Image(systemName: "plus").frame(width: 44, height: 44)
+          HStack {
+            Text("Add")
+              .foregroundColor(.red)
+            Image(systemName: "calendar")
+              .foregroundColor(.red)
+          }
       }))
+      }
     }
   }
 }
