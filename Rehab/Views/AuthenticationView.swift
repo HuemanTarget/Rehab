@@ -9,6 +9,7 @@ import SwiftUI
 import LocalAuthentication
 
 struct AuthenticationView: View {
+  @State var isActive = false
   @State var isUnlocked: Bool = false
   @State var noAuth: Bool = false
   @State private var willMoveToNextScreen = false
@@ -23,40 +24,60 @@ struct AuthenticationView: View {
   
   var body: some View {
     
-    VStack {
-      Text("Please Log Into Rehab \n using FaceID")
-        .padding(.bottom, 30)
-        .multilineTextAlignment(.center)
-        .font(.title)
-      
-      if isUnlocked {
-        ContentView()
-      } else {
-        Button(action: {
-          auth()
-        }) {
-          Image(systemName: "faceid")
-            .font(.system(size: 40))
-            .foregroundColor(.black)
+      ZStack {
+        Color.lairBackgroundGray.edgesIgnoringSafeArea(.all)
+        VStack {
+          VStack {
+//            Text("Please Log Into Rehab \n using FaceID")
+//              .padding(.bottom, 30)
+//              .multilineTextAlignment(.center)
+//              .font(.title)
+            
+            if isUnlocked {
+              ContentView()
+            } else {
+              Button(action: {
+                auth()
+              }) {
+                Image(systemName: "faceid")
+                  .font(.system(size: 50))
+                  .foregroundColor(.black)
+              }
+              .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+
+ 
+
+                Button(action: {
+                  isUnlocked = true
+    
+                  }) {
+                    Text("Press To Enter \n Without FaceID")
+                      .multilineTextAlignment(.center)
+                      .foregroundColor(.black)
+                      .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
+                  }
+                  .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                .padding(.top, 30)
+            }
+            
+  //          if noAuth {
+  //            Button(action: {
+  //              willMoveToNextScreen = true
+  //
+  //            }) {
+  //              Text("Press To Enter \n Without Authentication")
+  //                .multilineTextAlignment(.center)
+  //                .foregroundColor(.black)
+  //                .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
+  //            }
+  //            .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+  //            .padding(.top, 30)
+  //
+  //          }
+          }
+  //        .navigate(to: ContentView(), when: $willMoveToNextScreen)
         }
-        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-      }
-      
-      if noAuth {
-        Button(action: {
-          willMoveToNextScreen = true
-        }) {
-          Text("Press To Enter \n Without Authentication")
-            .multilineTextAlignment(.center)
-            .foregroundColor(.black)
-            .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
-        }
-        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-        .padding(.top, 30)
-        
-      }
     }
-    .navigate(to: ContentView(), when: $willMoveToNextScreen)
     
   }
   
