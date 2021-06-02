@@ -22,16 +22,15 @@ struct JournalView: View {
     return formatter
   }
   
-  init() {
-    UINavigationBar.appearance().largeTitleTextAttributes =
-      [.foregroundColor: UIColor.lairDarkGray]
-  }
+//  init() {
+//    UINavigationBar.appearance().largeTitleTextAttributes =
+//      [.foregroundColor: UIColor.lairDarkGray]
+//  }
   
   // MARK: - BODY
   var body: some View {
     NavigationView {
       ZStack {
-//        Color.lairBackgroundGray.edgesIgnoringSafeArea(.all)
         List {
           if journals.count == 0 {
             Text("There Are No Journal Entries")
@@ -96,7 +95,9 @@ struct JournalView: View {
 //          Text("There Are No Journal Entries")
 //        }
         
+        
       } //: ZSTACK
+      
       .sheet(isPresented: $showingAddJournalView) {
         AddJournalView().environment(\.managedObjectContext, self.managedObjectContext)
       }
