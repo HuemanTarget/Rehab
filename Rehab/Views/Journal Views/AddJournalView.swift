@@ -39,14 +39,16 @@ struct AddJournalView: View {
   let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
   init() {
-    UINavigationBar.appearance().largeTitleTextAttributes =
-      [.foregroundColor: UIColor.lairDarkGray]
+//    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+    UITableView.appearance().backgroundColor = .clear
+//    UINavigationBar.appearance().backgroundColor = .clear
   }
   
   // MARK: - BODY
   var body: some View {
     NavigationView {
       ZStack {
+        Color.lairBackgroundGray.edgesIgnoringSafeArea(.all)
         Form {
           VStack(alignment: .leading, spacing: 20) {
             
@@ -232,6 +234,7 @@ struct AddJournalView: View {
             } //: BUTTON
             .softButtonStyle(RoundedRectangle(cornerRadius: 20))
           } //: VSTACK
+          
   //        .padding(.horizontal)
           .padding(.vertical, 10)
           
@@ -239,8 +242,10 @@ struct AddJournalView: View {
         } //: SCROLL
         
         
+        
+        
   //      .keyboardAdaptive()
-        .navigationBarTitle("New Journal Entry", displayMode: .inline)
+        .navigationBarTitle("New Journal Entry")
         .navigationBarItems(
           trailing:
             Button(action: {
@@ -252,7 +257,9 @@ struct AddJournalView: View {
         .alert(isPresented: $errorShowing) {
           Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
       }
+        
       }
+      
     } //: NAVIGATION
   }
 }

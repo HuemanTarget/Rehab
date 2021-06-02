@@ -32,6 +32,7 @@ struct JournalView: View {
   var body: some View {
     NavigationView {
       ZStack {
+        Color.lairBackgroundGray
         List {
           if journals.count == 0 {
             Text("There Are No Journal Entries")

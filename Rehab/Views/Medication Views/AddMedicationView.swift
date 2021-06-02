@@ -210,21 +210,43 @@ struct AddMedicationView: View {
           }) {
             Text("Save Medication")
               .bold()
-              .foregroundColor(.red)
+              .foregroundColor(.green)
 //              .font(.system(size: 20, weight: .bold, design: .default))
 
               .frame(minWidth: 0, maxWidth: .infinity)
 //              .cornerRadius(9)
           } //: BUTTON
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+        
+          HStack {
+            Spacer()
+            
+            Button(action: {
+              presentationMode.wrappedValue.dismiss()
+            }) {
+              Text("Close")
+                .bold()
+                .foregroundColor(.red)
+                .frame(minWidth: 0, maxWidth: 100)
+            }
+            .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+            
+            Spacer()
+          }
+          .padding(.top)
+          .padding(.bottom)  
+          
         } //: VSTACK
 //        .padding(.horizontal)
         .padding(.vertical, 10)
         
-        Spacer()
+        
+        
       } //: SCROLL
       //      .keyboardAdaptive()
-      .navigationBarTitle("New Medication", displayMode: .inline)
+//      .navigationBarTitle("New Medication")
+      .navigationBarTitle("")
+      .navigationBarHidden(true)
 //      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
       .navigationBarItems(
         trailing:

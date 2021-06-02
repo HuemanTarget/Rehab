@@ -14,6 +14,7 @@ struct ContentView: View {
   
   var body: some View {
     if userAgreed ?? false {
+      
       TabBarView()
     } else {
       VStack {
