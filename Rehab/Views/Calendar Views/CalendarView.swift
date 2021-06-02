@@ -28,10 +28,10 @@ struct CalendarView: View {
     showingSheet = true
   }
   
-  init() {
-    UINavigationBar.appearance().largeTitleTextAttributes =
-      [.foregroundColor: UIColor.lairDarkGray]
-  }
+//  init() {
+//    UINavigationBar.appearance().largeTitleTextAttributes =
+//      [.foregroundColor: UIColor.lairDarkGray]
+//  }
   
   var body: some View {
     NavigationView {
@@ -53,6 +53,7 @@ struct CalendarView: View {
           
           
           
+          
           SelectedCalendarsList(selectedCalendars: Array(eventsRepository.selectedCalendars ?? []))
             .padding(.vertical)
             .padding(.horizontal, 5)
@@ -62,6 +63,7 @@ struct CalendarView: View {
             self.showingSheet = true
           }) {
             Text("Select Calendars")
+              .foregroundColor(.black)
           }
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
   //        .buttonStyle(PrimaryButtonStyle())

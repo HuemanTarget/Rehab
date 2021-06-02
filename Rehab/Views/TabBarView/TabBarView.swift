@@ -24,7 +24,7 @@ struct TabBarView: View {
   init() {
     UITableView.appearance().separatorStyle = .none
 //    UITableView.appearance().backgroundColor = .clear
-    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
+//    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
     UINavigationBar.appearance().backgroundColor = .clear
     UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
   }

@@ -22,10 +22,15 @@ struct JournalView: View {
     return formatter
   }
   
-//  init() {
+  init() {
 //    UINavigationBar.appearance().largeTitleTextAttributes =
 //      [.foregroundColor: UIColor.lairDarkGray]
-//  }
+    UITableView.appearance().separatorStyle = .none
+//    UITableView.appearance().backgroundColor = .clear
+//    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
+    UINavigationBar.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+  }
   
   
   // MARK: - BODY
@@ -82,7 +87,6 @@ struct JournalView: View {
           .onDelete(perform: deleteJournal)
 //          .background(Color.green)
         } //: LIST
-        
         .navigationBarTitle("Journal")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
         .navigationBarItems(trailing: Button(action: {

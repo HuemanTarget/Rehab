@@ -224,7 +224,7 @@ struct AddJournalView: View {
             }) {
               Text("Save Journal Entry")
                 .bold()
-                .foregroundColor(.red)
+                .foregroundColor(.green)
   //              .font(.system(size: 20, weight: .bold, design: .default))
   //              .padding(20)
                 .frame(minWidth: 0, maxWidth: .infinity)
@@ -233,19 +233,37 @@ struct AddJournalView: View {
   //              .foregroundColor(.white)
             } //: BUTTON
             .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+            
+            HStack {
+              Spacer()
+              
+              Button(action: {
+                presentationMode.wrappedValue.dismiss()
+              }) {
+                Text("Close")
+                  .bold()
+                  .foregroundColor(.red)
+                  .frame(minWidth: 0, maxWidth: 100)
+              }
+              .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+              
+              Spacer()
+            }
+            .padding(.top)
+            .padding(.bottom)
           } //: VSTACK
           
   //        .padding(.horizontal)
           .padding(.vertical, 10)
           
-          Spacer()
         } //: SCROLL
         
         
         
         
   //      .keyboardAdaptive()
-        .navigationBarTitle("New Journal Entry")
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
         .navigationBarItems(
           trailing:
             Button(action: {

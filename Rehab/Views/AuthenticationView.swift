@@ -13,36 +13,50 @@ struct AuthenticationView: View {
   @State var noAuth: Bool = false
   @State private var willMoveToNextScreen = false
   
+  //  init() {
+  //    UITableView.appearance().separatorStyle = .none
+  ////    UITableView.appearance().backgroundColor = .clear
+  ////    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
+  //    UINavigationBar.appearance().backgroundColor = .clear
+  //    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+  //  }
+  
   var body: some View {
-    ZStack {
-      VStack {
-        Text("Please Authenticate Using")
-          .padding(.bottom, 50)
-          .font(.headline)
-        
-        if isUnlocked {
-          ContentView()
-        } else {
-          Button(action: {
-            auth()
-          }) {
-            Image(systemName: "faceid")
-              .font(.largeTitle)
-          }
+    
+    VStack {
+      Text("Please Log Into Rehab \n using FaceID")
+        .padding(.bottom, 30)
+        .multilineTextAlignment(.center)
+        .font(.title)
+      
+      if isUnlocked {
+        ContentView()
+      } else {
+        Button(action: {
+          auth()
+        }) {
+          Image(systemName: "faceid")
+            .font(.system(size: 40))
+            .foregroundColor(.black)
         }
-        
-        if noAuth {
-          Button(action: {
-            willMoveToNextScreen = true
-          }) {
-            Text("Press To Enter \n Without Authentication")
-              .multilineTextAlignment(.center)
-          }
-          .padding(.top, 20)
-          
+        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+      }
+      
+      if noAuth {
+        Button(action: {
+          willMoveToNextScreen = true
+        }) {
+          Text("Press To Enter \n Without Authentication")
+            .multilineTextAlignment(.center)
+            .foregroundColor(.black)
+            .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
         }
-      }.navigate(to: ContentView(), when: $willMoveToNextScreen)
+        .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+        .padding(.top, 30)
+        
+      }
     }
+    .navigate(to: ContentView(), when: $willMoveToNextScreen)
     
   }
   
