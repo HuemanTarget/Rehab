@@ -203,19 +203,34 @@ struct MedicationView: View {
 //        padding(.top, 10)
         .navigationBarTitle("Medication")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-        .navigationBarItems(trailing: Button(action: {
-          self.showingAddPillView = true
-        }, label: {
-          //Image(systemName: "plus").frame(width: 44, height: 44)
-          HStack {
-            Text("Add")
-              .foregroundColor(.red)
-            Image(systemName: "pills")
-              .foregroundColor(.red)
-          }
-          .padding(8)
-          .border(Color.red, width: 3)
-        }))
+//        .navigationBarItems(trailing: Button(action: {
+//          self.showingAddPillView = true
+//        }, label: {
+//          //Image(systemName: "plus").frame(width: 44, height: 44)
+//          HStack {
+//            Text("Add")
+//              .foregroundColor(.red)
+//            Image(systemName: "pills")
+//              .foregroundColor(.red)
+//          }
+//          .padding(8)
+//          .border(Color.red, width: 3)
+//        }))
+        .navigationBarItems(trailing:
+                              HStack {
+                                Button(action: {
+                                  self.showingAddPillView = true
+                                }) {
+                                  HStack {
+                                    Text("Add")
+                                      .foregroundColor(.black)
+                                    Image(systemName: "pills")
+                                      .foregroundColor(.black)
+                                  }
+                                }
+                                .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                              }
+        )
         
 //        if pills.count == 0 {
 //          Text("There Are No Medication Entries")

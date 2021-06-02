@@ -23,11 +23,11 @@ struct JournalView: View {
   }
   
   init() {
-//    UINavigationBar.appearance().largeTitleTextAttributes =
-//      [.foregroundColor: UIColor.lairDarkGray]
+    //    UINavigationBar.appearance().largeTitleTextAttributes =
+    //      [.foregroundColor: UIColor.lairDarkGray]
     UITableView.appearance().separatorStyle = .none
-//    UITableView.appearance().backgroundColor = .clear
-//    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
+    //    UITableView.appearance().backgroundColor = .clear
+    //    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
     UINavigationBar.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
     UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
   }
@@ -85,24 +85,39 @@ struct JournalView: View {
             }
           } //: FOREACH
           .onDelete(perform: deleteJournal)
-//          .background(Color.green)
+          //          .background(Color.green)
         } //: LIST
         .navigationBarTitle("Journal")
-//        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-        .navigationBarItems(trailing: Button(action: {
-          self.showingAddJournalView = true
-        }, label: {
-          //Image(systemName: "plus").frame(width: 44, height: 44)
-          HStack {
-            Text("Add")
-              .foregroundColor(.red)
-            Image(systemName: "calendar")
-              .foregroundColor(.red)
-          }
-        }))
-//        if journals.count == 0 {
-//          Text("There Are No Journal Entries")
-//        }
+        //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+        //        .navigationBarItems(trailing: Button(action: {
+        //          self.showingAddJournalView = true
+        //        }, label: {
+        //          //Image(systemName: "plus").frame(width: 44, height: 44)
+        //          HStack {
+        //            Text("Add")
+        //              .foregroundColor(.red)
+        //            Image(systemName: "calendar")
+        //              .foregroundColor(.red)
+        //          }
+        //        }))
+        .navigationBarItems(trailing:
+                              HStack {
+                                Button(action: {
+                                  self.showingAddJournalView = true
+                                }) {
+                                  HStack {
+                                    Text("Add")
+                                      .foregroundColor(.black)
+                                    Image(systemName: "book.closed")
+                                      .foregroundColor(.black)
+                                  }
+                                }
+                                .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                              }
+        )
+        //        if journals.count == 0 {
+        //          Text("There Are No Journal Entries")
+        //        }
         
         
       } //: ZSTACK
@@ -110,42 +125,42 @@ struct JournalView: View {
       .sheet(isPresented: $showingAddJournalView) {
         AddJournalView().environment(\.managedObjectContext, self.managedObjectContext)
       }
-//      .overlay(
-//        ZStack {
-//          Group {
-//            Circle()
-//              .fill(Color("AmaranthRed"))
-//              .opacity(0.2)
-//              .frame(width: 68, height: 68, alignment: .center)
-//            Circle()
-//              .fill(Color("AmaranthRed"))
-//              .opacity(0.15)
-//              .frame(width: 88, height: 88, alignment: .center)
-//          } //: GROUP
-//          
-//          Button(action: {
-//            self.showingAddJournalView.toggle()
-//          }) {
-//            ZStack {
-//              Image(systemName: "book.closed.fill")
-//                .resizable()
-//                .scaledToFit()
-//                .foregroundColor(Color("AmaranthRed"))
-//                .background(Circle().fill(Color("AmaranthRed")).opacity(0.3))
-//                .frame(width: 48, height: 48, alignment: .center)
-//              
-//              Image(systemName: "plus")
-//                .resizable()
-//                .scaledToFit()
-//                .foregroundColor(.white)
-//                .frame(width: 30, height: 30, alignment: .center)
-//            }
-//          }
-//        } //: ZSTACK
-//        .padding(.bottom, 15)
-//        .padding(.trailing, 15)
-//        , alignment: .bottomTrailing
-//      ) //: OVERLAY
+      //      .overlay(
+      //        ZStack {
+      //          Group {
+      //            Circle()
+      //              .fill(Color("AmaranthRed"))
+      //              .opacity(0.2)
+      //              .frame(width: 68, height: 68, alignment: .center)
+      //            Circle()
+      //              .fill(Color("AmaranthRed"))
+      //              .opacity(0.15)
+      //              .frame(width: 88, height: 88, alignment: .center)
+      //          } //: GROUP
+      //
+      //          Button(action: {
+      //            self.showingAddJournalView.toggle()
+      //          }) {
+      //            ZStack {
+      //              Image(systemName: "book.closed.fill")
+      //                .resizable()
+      //                .scaledToFit()
+      //                .foregroundColor(Color("AmaranthRed"))
+      //                .background(Circle().fill(Color("AmaranthRed")).opacity(0.3))
+      //                .frame(width: 48, height: 48, alignment: .center)
+      //
+      //              Image(systemName: "plus")
+      //                .resizable()
+      //                .scaledToFit()
+      //                .foregroundColor(.white)
+      //                .frame(width: 30, height: 30, alignment: .center)
+      //            }
+      //          }
+      //        } //: ZSTACK
+      //        .padding(.bottom, 15)
+      //        .padding(.trailing, 15)
+      //        , alignment: .bottomTrailing
+      //      ) //: OVERLAY
     } //: NAVIGATION
   }
   
@@ -166,13 +181,13 @@ struct JournalView: View {
 }
 
 extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        let newRed = CGFloat(red)/255
-        let newGreen = CGFloat(green)/255
-        let newBlue = CGFloat(blue)/255
-        
-        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
-    }
+  convenience init(red: Int, green: Int, blue: Int) {
+    let newRed = CGFloat(red)/255
+    let newGreen = CGFloat(green)/255
+    let newBlue = CGFloat(blue)/255
+    
+    self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+  }
 }
 
 // MARK: - PREVIEW

@@ -28,10 +28,10 @@ struct CalendarView: View {
     showingSheet = true
   }
   
-//  init() {
-//    UINavigationBar.appearance().largeTitleTextAttributes =
-//      [.foregroundColor: UIColor.lairDarkGray]
-//  }
+  //  init() {
+  //    UINavigationBar.appearance().largeTitleTextAttributes =
+  //      [.foregroundColor: UIColor.lairDarkGray]
+  //  }
   
   var body: some View {
     NavigationView {
@@ -66,12 +66,12 @@ struct CalendarView: View {
               .foregroundColor(.black)
           }
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-  //        .buttonStyle(PrimaryButtonStyle())
-  //        .font(.system(size: 14, weight: .bold, design: .default))
-  //        .frame(width: 150, height: 50)
-  //        .background(Color.blue)
-  //        .cornerRadius(9)
-  //        .foregroundColor(.white)
+          //        .buttonStyle(PrimaryButtonStyle())
+          //        .font(.system(size: 14, weight: .bold, design: .default))
+          //        .frame(width: 150, height: 50)
+          //        .background(Color.blue)
+          //        .cornerRadius(9)
+          //        .foregroundColor(.white)
           .padding(.bottom, 20)
           
           
@@ -86,22 +86,39 @@ struct CalendarView: View {
         }
         
         .navigationBarTitle("Calendar")
-  //      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
-        .navigationBarItems(trailing: Button(action: {
-          self.selectedEvent = nil
-          self.activeSheet = .calendarEdit
-          self.showingSheet = true
-        }, label: {
-          //Image(systemName: "plus").frame(width: 44, height: 44)
-          HStack {
-            Text("Add")
-              .foregroundColor(.red)
-            Image(systemName: "calendar")
-              .foregroundColor(.red)
-          }
-      }))
-      }
+        //      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
+        //        .navigationBarItems(trailing: Button(action: {
+        //          self.selectedEvent = nil
+        //          self.activeSheet = .calendarEdit
+        //          self.showingSheet = true
+        //        }, label: {
+        //          //Image(systemName: "plus").frame(width: 44, height: 44)
+        //          HStack {
+        //            Text("Add")
+        //              .foregroundColor(.red)
+        //            Image(systemName: "calendar")
+        //              .foregroundColor(.red)
+        //          }
+        //      }))
+        .navigationBarItems(trailing:
+                              HStack {
+                                Button(action: {
+                                  self.selectedEvent = nil
+                                  self.activeSheet = .calendarEdit
+                                  self.showingSheet = true
+                                }) {
+                                  HStack {
+                                    Text("Add")
+                                      .foregroundColor(.black)
+                                    Image(systemName: "calendar")
+                                      .foregroundColor(.black)
+                                  }
+                                }
+                                .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                              }
+        )
     }
+  }
   }
 }
 
