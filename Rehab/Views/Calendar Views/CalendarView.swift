@@ -10,13 +10,22 @@ import EventKit
 import Combine
 
 struct CalendarView: View {
-  enum ActiveSheet {
-    case calendarChooser
-    case calendarEdit
+//  enum ActiveSheet {
+//    case calendarChooser
+//    case calendarEdit
+//  }
+  
+  enum ActiveSheet: Identifiable {
+    case calendarChooser, calendarEdit
+
+    var id: Int {
+      hashValue
+    }
   }
   
   @State private var showingSheet = false
-  @State private var activeSheet: ActiveSheet = .calendarChooser
+  @State private var activeSheet: ActiveSheet?
+//  @State private var activeSheet: ActiveSheet?
   
   @ObservedObject var eventsRepository = EventsRepository.shared
   
@@ -75,10 +84,18 @@ struct CalendarView: View {
           .padding(.bottom, 20)
           
           
-          .sheet(isPresented: $showingSheet) {
-            if self.activeSheet == .calendarChooser {
+//          .sheet(isPresented: $showingSheet) {
+//            if self.activeSheet == .calendarChooser {
+//              CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
+//            } else {
+//              EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
+//            }
+//          }
+          .sheet(item: $activeSheet) { item in
+            switch item {
+            case .calendarChooser:
               CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
-            } else {
+            case .calendarEdit:
               EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
             }
           }
