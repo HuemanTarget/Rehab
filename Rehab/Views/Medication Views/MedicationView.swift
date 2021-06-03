@@ -23,13 +23,13 @@ struct MedicationView: View {
   let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
   init() {
-    UINavigationBar.appearance().largeTitleTextAttributes =
-      [.foregroundColor: UIColor.lairDarkGray]
-    UITableView.appearance().separatorStyle = .none
+//    UINavigationBar.appearance().largeTitleTextAttributes =
+//      [.foregroundColor: UIColor.lairDarkGray]
+//    UITableView.appearance().separatorStyle = .none
 //    UITableView.appearance().backgroundColor = .clear
 //    UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
-    UINavigationBar.appearance().backgroundColor = .clear
-    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+//    UINavigationBar.appearance().backgroundColor = .clear
+//    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
   }
   
   // MARK: - BODY
@@ -206,6 +206,7 @@ struct MedicationView: View {
           .onDelete(perform: deletePill)
         } //: LIST
 //        padding(.top, 10)
+        .listStyle(PlainListStyle())
         .navigationBarTitle("Medication")
 //        .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
 //        .navigationBarItems(trailing: Button(action: {

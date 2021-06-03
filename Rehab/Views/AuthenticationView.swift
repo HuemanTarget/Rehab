@@ -55,7 +55,7 @@ struct AuthenticationView: View {
                       Text("Press To Enter \n Without FaceID")
                         .multilineTextAlignment(.center)
                         .foregroundColor(.black)
-                        .frame(minWidth: 0, maxWidth: 200, minHeight: 50)
+                        .frame(minWidth: 0, maxWidth: 125, minHeight: 10)
                     }
                     .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                   .padding(.top, 30)

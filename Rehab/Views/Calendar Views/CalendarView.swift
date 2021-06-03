@@ -10,14 +10,14 @@ import EventKit
 import Combine
 
 struct CalendarView: View {
-//  enum ActiveSheet {
-//    case calendarChooser
-//    case calendarEdit
-//  }
+  //  enum ActiveSheet {
+  //    case calendarChooser
+  //    case calendarEdit
+  //  }
   
   enum ActiveSheet: Identifiable {
     case calendarChooser, calendarEdit
-
+    
     var id: Int {
       hashValue
     }
@@ -25,7 +25,7 @@ struct CalendarView: View {
   
   @State private var showingSheet = false
   @State private var activeSheet: ActiveSheet?
-//  @State private var activeSheet: ActiveSheet?
+  //  @State private var activeSheet: ActiveSheet?
   
   @ObservedObject var eventsRepository = EventsRepository.shared
   
@@ -37,10 +37,10 @@ struct CalendarView: View {
     showingSheet = true
   }
   
-  //  init() {
-  //    UINavigationBar.appearance().largeTitleTextAttributes =
-  //      [.foregroundColor: UIColor.lairDarkGray]
-  //  }
+//  init() {
+//    UINavigationBar.appearance().backgroundColor = .lairBackgroundGray
+//  }
+  
   
   var body: some View {
     NavigationView {
@@ -58,7 +58,8 @@ struct CalendarView: View {
                 self.showEditFor(event)
               }
             }
-          }
+          }.listStyle(PlainListStyle())
+          
           
           
           
@@ -67,6 +68,7 @@ struct CalendarView: View {
             .padding(.vertical)
             .padding(.horizontal, 5)
           
+          
           Button(action: {
             self.activeSheet = .calendarChooser
             self.showingSheet = true
@@ -74,6 +76,7 @@ struct CalendarView: View {
             Text("Select Calendars")
               .foregroundColor(.black)
           }
+          
           .softButtonStyle(RoundedRectangle(cornerRadius: 20))
           //        .buttonStyle(PrimaryButtonStyle())
           //        .font(.system(size: 14, weight: .bold, design: .default))
@@ -84,13 +87,18 @@ struct CalendarView: View {
           .padding(.bottom, 20)
           
           
-//          .sheet(isPresented: $showingSheet) {
-//            if self.activeSheet == .calendarChooser {
-//              CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
-//            } else {
-//              EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
-//            }
-//          }
+          
+          
+          
+          
+          
+          //          .sheet(isPresented: $showingSheet) {
+          //            if self.activeSheet == .calendarChooser {
+          //              CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
+          //            } else {
+          //              EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
+          //            }
+          //          }
           .sheet(item: $activeSheet) { item in
             switch item {
             case .calendarChooser:
@@ -98,9 +106,13 @@ struct CalendarView: View {
             case .calendarEdit:
               EventEditView(eventStore: self.eventsRepository.eventStore, event: self.selectedEvent)
             }
+            
           }
           
+          
         }
+        
+        
         
         .navigationBarTitle("Calendar")
         //      .navigationBarColor(UIColor(red: 43, green: 45, blue: 66))
@@ -134,8 +146,10 @@ struct CalendarView: View {
                                 .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                               }
         )
+      }
+      
     }
-  }
+    
   }
 }
 

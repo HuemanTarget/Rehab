@@ -38,11 +38,11 @@ struct AddJournalView: View {
   
   let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
   
-  init() {
-//    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
-    UITableView.appearance().backgroundColor = .clear
-//    UINavigationBar.appearance().backgroundColor = .clear
-  }
+//  init() {
+////    UITableView.appearance().backgroundColor = UIColor(Color.lairBackgroundGray)
+//    UITableView.appearance().backgroundColor = .clear
+////    UINavigationBar.appearance().backgroundColor = .clear
+//  }
   
   // MARK: - BODY
   var body: some View {
