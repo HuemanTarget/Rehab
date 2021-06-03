@@ -13,7 +13,15 @@ extension TimeInterval {
     return weeks * TimeInterval.week
   }
   
+  static func months(_ months: Double) -> TimeInterval {
+    return months * TimeInterval.month
+  }
+  
   static var week: TimeInterval {
     return 7 * 24 * 60 * 60
+  }
+  
+  static var month: TimeInterval {
+    return 30 * 24 * 60 * 60
   }
 }
