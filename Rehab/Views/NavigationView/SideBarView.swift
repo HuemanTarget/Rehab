@@ -9,7 +9,27 @@ import SwiftUI
 
 struct SideBarView: View {
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    NavigationView {
+      List {
+        NavigationLink(
+          destination: CalendarView(),
+          label: {
+            Label("Calendar", systemImage: "calendar")
+          })
+        NavigationLink(
+          destination: MedicationView(),
+          label: {
+            Label("Calendar", systemImage: "pills")
+          })
+        NavigationLink(
+          destination: JournalView(),
+          label: {
+            Label("Calendar", systemImage: "book.closed")
+          })
+      }
+      .navigationTitle("Rehab")
+      .listStyle(SidebarListStyle())
+    }
   }
 }
 
