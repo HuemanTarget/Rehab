@@ -19,7 +19,7 @@ struct TabBarView: View {
   // MARK: - PROPERTIES
   @Environment(\.managedObjectContext) var managedObjectContext
   @State var selectedItem = SmartView.calendar
-  var phoneNumber = "310-806-7483"
+  var phoneNumber = "000-555-1212"
   
 //  init() {
 //    UITableView.appearance().separatorStyle = .none
