@@ -11,11 +11,19 @@ import SwiftUI
 struct ContentView: View {
   @AppStorage("agreed") var userAgreed: Bool?
   @State private var displayPopupMessage: Bool = true
+  #if os(iOS)
+  @Environment(\.horizontalSizeClass) var horizontalSizeClass
+  #endif
   
   var body: some View {
     if userAgreed ?? false {
-      
-      TabBarView()
+//      #if os(iOS)
+//      if horizontalSizeClass == .compact {
+        TabBarView()
+//      } else {
+//        SideBarView()
+//      }
+//      #endif
     } else {
       VStack {
         TabBarView()

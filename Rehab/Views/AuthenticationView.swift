@@ -37,6 +37,14 @@ struct AuthenticationView: View {
               ContentView()
             } else {
               VStack {
+                Image("Rehab Icon_rev")
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: 200)
+                  .padding(.top, 50)
+                  .padding(.bottom, 100)
+                
+                
                 Button(action: {
                   auth()
                 }) {
@@ -45,20 +53,27 @@ struct AuthenticationView: View {
                     .foregroundColor(.black)
                 }
                 .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+                Text("Please Login \n With FaceID")
+                  .bold()
+                  .font(.subheadline)
 
-   
-
+                if noAuth {
                   Button(action: {
                     isUnlocked = true
       
                     }) {
                       Text("Press To Enter \n Without FaceID")
+                        .bold()
+                        .font(.subheadline)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.black)
                         .frame(minWidth: 0, maxWidth: 125, minHeight: 10)
                     }
                     .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                  .padding(.top, 30)
+                  .padding(.top, 20)
+                }
+                
+                Spacer()
               }
             }
             
