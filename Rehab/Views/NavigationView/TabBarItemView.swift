@@ -13,6 +13,7 @@ struct TabBarItemView: View {
   let uuid = UUID()
   var smartView: SmartView
   var icon: String
+  var title: String
   
   let size: CGFloat = 32
   func isSelected() -> Bool {
@@ -115,6 +116,6 @@ struct TabBarItemView_Previews: PreviewProvider {
   static var previews: some View {
     TabBarItemView(
       selectedItem: .constant(SmartView.calendar),
-      smartView: .calendar, icon: "calendar")
+      smartView: .calendar, icon: "calendar", title: "Calendar")
   }
 }

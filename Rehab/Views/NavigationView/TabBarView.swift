@@ -48,20 +48,20 @@ struct TabBarView: View {
             JournalView()
           }
         }
-        
-        
+
+
         TabBarRowView(
           selectedItem: self.$selectedItem,
           tabBarItems: [
             TabBarItemView(
               selectedItem: self.$selectedItem,
-              smartView: .calendar, icon: "calendar"),
+              smartView: .calendar, icon: "calendar", title: "Calendar"),
             TabBarItemView(
               selectedItem: self.$selectedItem,
-              smartView: .medication, icon: "pills"),
+              smartView: .medication, icon: "pills", title: "Medication"),
             TabBarItemView(
               selectedItem: self.$selectedItem,
-              smartView: .journal, icon: "book.closed")
+              smartView: .journal, icon: "book.closed", title: "Journal")
           ])
           //          .padding(.bottom)
           .background(Color.lairBackgroundGray)

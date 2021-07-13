@@ -9,8 +9,9 @@ import SwiftUI
 
 struct TabBarRowView: View {
   @Binding var selectedItem: SmartView
-  
+
   var tabBarItems: [TabBarItemView]
+  let size: CGFloat = 32
   
   var body: some View {
     HStack {
@@ -18,12 +19,14 @@ struct TabBarRowView: View {
         VStack {
           HStack {
             Spacer()
-            
-            item
-            
+
+            item  
+
             Spacer()
           }
-          Text("")
+          Text(item.title)
+            .bold()
+            .font(.subheadline)
         }
       }
     }
@@ -41,15 +44,21 @@ struct TabBarRowView_Previews: PreviewProvider {
         TabBarItemView(
           selectedItem: .constant(.calendar),
           smartView: .calendar,
-          icon: "calendar"),
+          icon: "calendar",
+          title: "Calendar"
+          ),
         TabBarItemView(
           selectedItem: .constant(.calendar),
           smartView: .medication,
-          icon: "pills"),
+          icon: "pills",
+          title: "Medication"
+        ),
         TabBarItemView(
           selectedItem: .constant(.calendar),
           smartView: .journal,
-          icon: "book.closed")
+          icon: "book.closed",
+          title: "Journal"
+          )
       ]
     )
   }
