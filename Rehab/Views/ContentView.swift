@@ -17,13 +17,7 @@ struct ContentView: View {
   
   var body: some View {
     if userAgreed ?? false {
-//      #if os(iOS)
-//      if horizontalSizeClass == .compact {
-        TabBarView()
-//      } else {
-//        SideBarView()
-//      }
-//      #endif
+      TabBarView()
     } else {
       VStack {
         TabBarView()
@@ -36,10 +30,21 @@ struct ContentView: View {
         )
       }
     }
+    
+//    #if os(iOS)
+//    if horizontalSizeClass == .compact {
+//
+//    } else {
+//      SideBarView()
+//    }
+//    #endif
   }
-  
-  
+
+
 }
+
+
+
 
 // MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
